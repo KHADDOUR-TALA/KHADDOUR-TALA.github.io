@@ -6,19 +6,19 @@
     <title>Tala Khaddour | Robotics Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">Tala Khaddour</div>
+            <a href="index.html" class="logo">Tala Khaddour</a>
             <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About Me</a></li>
-                <li><a href="#academic" class="nav-link">Academic CV</a></li>
-                <li><a href="#professional" class="nav-link">Professional CV</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="academic.html" class="nav-link">Academic CV</a></li>
+                <li><a href="professional.html" class="nav-link">Professional CV</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -31,298 +31,115 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-text">
                 <h1 class="hero-title">Tala Khaddour</h1>
-                <h2 class="hero-subtitle">Welcome To My Portfolio!</h2>
-                <p class="hero-text">
-                    I may not be the most experienced engineer, but I am someone who is always eager to seize new opportunities and is driven by ambition. Thank you for visiting my portfolio, which highlights key moments from my academic and engineering journey. While I may not know who you are, I'm delighted that you've stopped by to explore my profiles and projects.
+                <h2 class="hero-subtitle">Robotics & Intelligent Systems Engineer</h2>
+                <p class="hero-description">
+                    I may not be the most experienced engineer, but I am someone who is always eager to seize new opportunities and is driven by ambition. Thank you for visiting my portfolio, which highlights key moments from my academic and engineering journey.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">View My Projects</a>
-                    <a href="#contact" class="btn-secondary">Contact Me</a>
+                    <a href="academic.html" class="btn btn-primary">Academic CV</a>
+                    <a href="projects.html" class="btn btn-secondary">View Projects</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="image-placeholder">
+                <div class="profile-img">
                     <i class="fas fa-user-circle"></i>
-                    <p>Add your photo here</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="about">
+    <!-- Quick Info -->
+    <section class="quick-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>BSc Robotics Engineering<br>Manara University<br>GPA: 3.28/4.00</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Experience</h3>
+                    <p>Robotics Coach<br>Event Organizer<br>Science Olympiad Coach</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Skills</h3>
+                    <p>ROS • MATLAB • Python<br>C/C++ • Embedded Systems<br>Control Systems</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Achievements</h3>
+                    <p>5th Place WRO Syria<br>Girls in AI Hackathon<br>High School Rank: 3/75</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What I Do -->
+    <section class="what-i-do">
         <div class="container">
             <h2 class="section-title">What I Can Do</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3>Robotics Engineer</h3>
-                    <p>I specialize in control systems, rehabilitation robotics, and embedded systems. Proficient in ROS, MATLAB/Simulink, and adaptive control strategies. Skilled at designing and implementing robotic systems for practical applications, with expertise in hand exoskeleton development and intelligent trajectory control.</p>
+                    <h3>Robotics Engineering</h3>
+                    <p>Design and implementation of robotic systems, control strategies, and rehabilitation exoskeletons using ROS, MATLAB, and adaptive control techniques.</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>AI & Machine Learning</h3>
-                    <p>Experienced in developing Arabic NLP models using LLaMA architecture, neural networks implementation, and computer vision applications. Capable of creating intelligent systems that bridge hardware and software for innovative solutions in rehabilitation and assistive technologies.</p>
+                    <p>Development of intelligent systems including Arabic NLP models, computer vision applications, and neural networks for practical engineering solutions.</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Embedded Systems</h3>
+                    <p>Microcontroller programming, sensor integration, and hardware development using Arduino, Raspberry Pi, and embedded C/C++.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
-                    <h3>Technical Coaching & Mentoring</h3>
-                    <p>At SANAD, I coached students in LEGO robotics, Arduino programming, and path-planning algorithms. Mentored participants for Syrian Science Olympiad, helping them qualify for national competitions. Experienced in organizing educational events and developing problem-solving skills in students.</p>
+                    <h3>Technical Coaching</h3>
+                    <p>Mentoring students in robotics, programming, and problem-solving. Experience coaching for competitions and organizing educational events.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Languages & Frameworks -->
-    <section class="languages">
+    <!-- Technologies -->
+    <section class="technologies">
         <div class="container">
-            <h2 class="section-title">Technologies & Frameworks</h2>
+            <h2 class="section-title">Technologies & Tools</h2>
             <div class="tech-grid">
                 <div class="tech-category">
                     <h3><i class="fas fa-code"></i> Programming</h3>
                     <div class="tech-tags">
-                        <span>C/C++</span>
-                        <span>Python</span>
-                        <span>Arduino</span>
-                        <span>Java</span>
-                        <span>MATLAB</span>
-                        <span>Verilog-HDL</span>
+                        <span>C</span><span>C++</span><span>Python</span><span>Java</span>
+                        <span>MATLAB</span><span>Arduino</span><span>Verilog</span><span>VHDL</span>
                     </div>
                 </div>
                 <div class="tech-category">
-                    <h3><i class="fas fa-cogs"></i> Robotics & Control</h3>
+                    <h3><i class="fas fa-robot"></i> Robotics</h3>
                     <div class="tech-tags">
-                        <span>ROS</span>
-                        <span>PID Control</span>
-                        <span>Adaptive Control</span>
-                        <span>DMRAC</span>
-                        <span>SolidWorks</span>
-                        <span>CATIA</span>
+                        <span>ROS</span><span>SolidWorks</span><span>CATIA</span><span>PID Control</span>
+                        <span>Adaptive Control</span><span>DMRAC</span><span>Simulink</span>
                     </div>
                 </div>
                 <div class="tech-category">
-                    <h3><i class="fas fa-microchip"></i> Embedded Systems</h3>
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
                     <div class="tech-tags">
-                        <span>Microcontrollers</span>
-                        <span>Raspberry Pi</span>
-                        <span>Sensor Integration</span>
-                        <span>Piezoelectric</span>
-                        <span>Energy Harvesting</span>
+                        <span>Git</span><span>Linux</span><span>PyTorch</span><span>OpenCV</span>
+                        <span>Raspberry Pi</span><span>Embedded C</span><span>NLP</span>
                     </div>
-                </div>
-                <div class="tech-category">
-                    <h3><i class="fas fa-project-diagram"></i> AI & Tools</h3>
-                    <div class="tech-tags">
-                        <span>PyTorch</span>
-                        <span>Neural Networks</span>
-                        <span>NLP</span>
-                        <span>Computer Vision</span>
-                        <span>Simulink</span>
-                        <span>Git</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Academic CV -->
-    <section class="cv-section" id="academic">
-        <div class="container">
-            <h2 class="section-title">Academic CV</h2>
-            <div class="cv-timeline">
-                <div class="cv-item">
-                    <div class="cv-date">2020 - 2025</div>
-                    <div class="cv-content">
-                        <h3>Bachelor of Science in Robotics and Intelligent Systems Engineering</h3>
-                        <p class="cv-institution">Manara University, Latakia, Syria</p>
-                        <p class="cv-details">Cumulative GPA: 3.28/4.00 | EQF Level 6</p>
-                        <p class="cv-coursework"><strong>Relevant Coursework:</strong> Embedded Systems, Control Systems, Robotics, AI/ML, Signal Processing, Computer Vision, Path Planning</p>
-                    </div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-date">2020</div>
-                    <div class="cv-content">
-                        <h3>High School Diploma – Scientific Stream</h3>
-                        <p class="cv-institution">National Center for the Distinguished (NCD), Latakia, Syria</p>
-                        <p class="cv-details">Final Grade: 92.3% | Rank: 3/75 | EQF Level 4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Professional CV -->
-    <section class="cv-section" id="professional">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <div class="cv-timeline">
-                <div class="cv-item">
-                    <div class="cv-date">2022 - 2023</div>
-                    <div class="cv-content">
-                        <h3>Coach – Robotics and Arduino Programming</h3>
-                        <p class="cv-institution">SANAD, Latakia, Syria</p>
-                        <ul class="cv-list">
-                            <li>Coached students in LEGO robotics, Arduino programming, and path-planning algorithms</li>
-                            <li>Managed computer maintenance and equipment setup for training sessions</li>
-                            <li>Mentored students on teamwork and systematic problem-solving approaches</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-date">2023</div>
-                    <div class="cv-content">
-                        <h3>Coach – Syrian Science Olympiad (Senior Category)</h3>
-                        <p class="cv-institution">Volunteer Position</p>
-                        <ul class="cv-list">
-                            <li>Guided students in mathematics and advanced problem-solving techniques</li>
-                            <li>Helped participants qualify for national and international competitions</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-date">2017 - 2024</div>
-                    <div class="cv-content">
-                        <h3>Event Organizer</h3>
-                        <p class="cv-institution">Distinction and Creativity Agency</p>
-                        <ul class="cv-list">
-                            <li>Organized educational and science events for students and professionals</li>
-                            <li>Supervised participants and ensured smooth event execution</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="projects" id="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-hand-paper"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Intelligent Hand Exoskeleton for Rehabilitation</h3>
-                        <p>Designed a hand exoskeleton with mirrored motion and stereo vision tracking. Implemented adaptive control strategies (SMC, DMRAC) with sensor filtering for enhanced stability.</p>
-                        <div class="project-tech">
-                            <span>ROS</span>
-                            <span>Python</span>
-                            <span>MATLAB</span>
-                            <span>SolidWorks</span>
-                        </div>
-                        <a href="https://github.com/KHADDOUR-TALA/hand-exoskeleton" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-exchange-alt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Control Strategies Comparison for Exoskeleton</h3>
-                        <p>Compared PD Compensator, PID-Inverse Dynamics, and DMRAC strategies for nonlinear joint control through real-time simulations and robustness evaluation.</p>
-                        <div class="project-tech">
-                            <span>MATLAB/Simulink</span>
-                            <span>Control Systems</span>
-                            <span>PID</span>
-                            <span>DMRAC</span>
-                        </div>
-                        <a href="https://github.com/KHADDOUR-TALA/exoskeleton-control" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-language"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Arabic NLP Model with LLaMA Architecture</h3>
-                        <p>Developed and fine-tuned an Arabic NLP model using LLaMA architecture for natural language understanding and generation tasks.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>PyTorch</span>
-                            <span>NLP</span>
-                            <span>Transformers</span>
-                        </div>
-                        <a href="https://github.com/KHADDOUR-TALA/arabic-nlp" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Electricity Generation Using Piezoelectric Materials</h3>
-                        <p>Built a prototype using piezoelectric material to convert sound into electrical energy, demonstrating practical applications of energy harvesting technology.</p>
-                        <div class="project-tech">
-                            <span>Arduino</span>
-                            <span>Embedded Systems</span>
-                            <span>Piezoelectric</span>
-                            <span>Sensors</span>
-                        </div>
-                        <a href="https://github.com/KHADDOUR-TALA/energy-harvesting" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>Khaddour.tala@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>(+963) 93669678</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>Latakia, Syria</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-language"></i>
-                        <div>
-                            <h3>Languages</h3>
-                            <p>Arabic (Native), English (C1), French (A2)</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/KHADDOUR-TALA" class="social-btn github">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/tala-khaddour" class="social-btn linkedin">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="mailto:Khaddour.tala@gmail.com" class="social-btn email">
-                        <i class="fas fa-envelope"></i> Email
-                    </a>
-                    <a href="resume.pdf" class="social-btn resume">
-                        <i class="fas fa-file-pdf"></i> Download CV
-                    </a>
                 </div>
             </div>
         </div>
@@ -331,13 +148,33 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 Tala Khaddour — Robotics & Intelligent Systems Engineer</p>
-            <p>Portfolio inspired by modern design principles</p>
-            <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-                <a href="resume.pdf">Resume</a>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Tala Khaddour</h3>
+                    <p>Robotics & Intelligent Systems Engineer</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="index.html">Home</a>
+                    <a href="academic.html">Academic CV</a>
+                    <a href="professional.html">Professional CV</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> Khaddour.tala@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> (+963) 93669678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Latakia, Syria</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tala Khaddour. All rights reserved.</p>
+                <div class="social-icons">
+                    <a href="https://github.com/KHADDOUR-TALA" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/tala-khaddour" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:Khaddour.tala@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
     </footer>
