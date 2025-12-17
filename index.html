@@ -3,200 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tala Khaddour | Robotics Portfolio</title>
+    <title>Tala Khaddour | Robotics Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
-    <!-- ===== HERO SECTION ===== -->
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Tala Khaddour</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <h1 class="hero-title">Tala Khaddour</h1>
+            <h1>Tala Khaddour</h1>
             <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
-            <p class="hero-tagline">Designing intelligent, affordable robotic systems for healthcare and post‑conflict environments.</p>
+            <p class="hero-tagline">Designing accessible robotic solutions for healthcare and rehabilitation in resource‑constrained environments.</p>
             <div class="hero-links">
-                <a href="mailto:YOUR_EMAIL@gmail.com" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
+                <a href="mailto:tala@example.com">
+                    <i class="fas fa-envelope"></i> Email
                 </a>
-                <a href="https://github.com/KHADDOUR-TALA" target="_blank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
+                <a href="https://github.com/KHADDOUR-TALA" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
                 </a>
-                <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
+                <a href="https://linkedin.com/in/tala-khaddour" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
                 </a>
-                <a href="assets/docs/cv.pdf" target="_blank" aria-label="Download CV">
+                <a href="assets/pdf/cv.pdf" target="_blank">
                     <i class="fas fa-file-pdf"></i> CV
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <!-- ===== ABOUT / STORY SECTION ===== -->
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I am a Robotics Engineer from Syria, driven by the firsthand experience of seeing how limited access to advanced medical care and rehabilitation affects communities in post‑conflict regions.</p>
-                    <p>My journey began with a deep curiosity for mechanics, evolved through national robotics competitions, and solidified during my degree at XYZ University, where I graduated with <strong>Honors (GPA: X.XX/4.0)</strong>. Witnessing challenges like post‑stroke rehabilitation and devastating fires, I realized that <strong>robotics and AI are not just technologies—they are tools for tangible, equitable impact.</strong></p>
-                    <p>My work focuses on creating <strong>low‑cost, accessible, and intelligent robotic systems</strong>, bridging the gap between advanced research and real‑world application. I am now seeking advanced research opportunities to deepen my expertise in control systems and human‑robot interaction, aiming to develop solutions that are both technologically robust and socially conscious.</p>
+    <!-- Quick Intro -->
+    <section class="section">
+        <div class="container">
+            <h2>Overview</h2>
+            <div class="two-column-grid">
+                <div class="activity-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p><strong>BSc in Mechatronics Engineering</strong><br>
+                    XYZ University<br>
+                    Graduated with Honors (GPA: X.XX/4.0)<br>
+                    <em>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation"</em></p>
                 </div>
-                <div class="about-image">
-                    <img src="assets/images/profile-pic.jpg" alt="Tala Khaddour">
+                
+                <div class="activity-item">
+                    <h3><i class="fas fa-crosshairs"></i> Research Focus</h3>
+                    <p>• Rehabilitation Robotics<br>
+                       • Affordable Assistive Devices<br>
+                       • Human‑Robot Interaction<br>
+                       • Control Systems<br>
+                       • AI for Healthcare Applications</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ===== PROJECTS SECTION ===== -->
-        <section id="projects" class="section">
-            <h2 class="section-title">Projects</h2>
-            <p class="section-subtitle">From concept to prototype: a showcase of applied engineering and research.</p>
-
-            <!-- PROJECT 1 -->
-            <article class="project-card">
+    <!-- Featured Project -->
+    <section class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="text-center">Featured Project</h2>
+            <div class="project-card">
                 <div class="project-header">
                     <h3 class="project-title">Hand Exoskeleton for Rehabilitation</h3>
-                    <p class="project-tagline">A lightweight, self‑alignment robotic hand exoskeleton designed for safe rehabilitation with high tracking accuracy.</p>
+                    <div class="project-meta">Final Year Thesis | 2023</div>
+                    <p class="project-tagline">A lightweight, self‑aligning robotic exoskeleton for hand rehabilitation with high‑precision tracking.</p>
                 </div>
-
-                <!-- PROJECT GALLERY -->
-                <div class="project-gallery">
-                    <img src="assets/images/projects/exoskeleton-1.jpg" alt="Exoskeleton CAD Design">
-                    <img src="assets/images/projects/exoskeleton-2.jpg" alt="Prototype Assembly">
-                    <img src="assets/images/projects/exoskeleton-3.jpg" alt="Control System Diagram">
-                    <img src="assets/images/projects/exoskeleton-4.jpg" alt="Experimental Tracking Results Graph">
-                </div>
-
-                <div class="project-details">
-                    <div class="project-description">
-                        <h4>Technical Highlights</h4>
-                        <ul>
-                            <li><strong>Modeling & Design:</strong> Developed a kinematic model for natural finger motion; designed a self‑alignment mechanism to accommodate anatomical variations.</li>
-                            <li><strong>Control:</strong> Implemented a PID‑based cascade control strategy for precise torque and position tracking.</li>
-                            <li><strong>Sensing:</strong> Integrated flex sensors and IMUs for real‑time gesture recognition and feedback.</li>
-                            <li><strong>Results:</strong> Achieved <strong>&lt;0.5° steady‑state tracking error</strong> and reduced settling time by <strong>20%</strong> compared to a baseline open‑loop controller.</li>
-                        </ul>
-                        <p><strong>My Role:</strong> Lead Designer | System Modeler | Control Algorithm Developer | Experimental Validation.</p>
+                
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-cad.jpg" alt="CAD Design">
+                        <div class="gallery-caption">CAD Design</div>
                     </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-prototype.jpg" alt="Prototype">
+                        <div class="gallery-caption">Working Prototype</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-graph.jpg" alt="Results">
+                        <div class="gallery-caption">Tracking Performance</div>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <h4>Key Achievements</h4>
+                    <p>• Achieved &lt;0.5° tracking error in finger flexion/extension<br>
+                       • Developed self‑alignment mechanism for user comfort<br>
+                       • Implemented cascade PID control for smooth motion<br>
+                       • Reduced production cost by 60% compared to commercial alternatives</p>
+                    
                     <div class="project-links">
-                        <h4>Proof & Resources</h4>
-                        <a href="https://github.com/KHADDOUR-TALA/Exoskeleton" class="link-button" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
-                        <a href="assets/docs/thesis.pdf" class="link-button" target="_blank"><i class="fas fa-file-pdf"></i> Thesis PDF</a>
-                        <a href="https://youtu.be/DEMO_LINK" class="link-button" target="_blank"><i class="fab fa-youtube"></i> Demonstration Video</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- PROJECT 2 (Follow same structure) -->
-            <article class="project-card">
-                <h3 class="project-title">Autonomous Fire‑Fighting Robot</h3>
-                <p class="project-tagline">A compact, vision‑guided robot for early indoor fire detection and suppression.</p>
-                <!-- ... Add gallery, details, links for Project 2 ... -->
-                <div class="project-links">
-                    <a href="https://github.com/KHADDOUR-TALA/FireRobot" class="link-button" target="_blank"><i class="fab fa-github"></i> Code</a>
-                    <a href="https://drive.google.com/DEMO_LINK" class="link-button" target="_blank"><i class="fas fa-video"></i> Field Test</a>
-                </div>
-            </article>
-        </section>
-
-        <!-- ===== VOLUNTEERING & TEACHING SECTION ===== -->
-        <section id="volunteering" class="section">
-            <h2 class="section-title">Volunteering & Leadership</h2>
-            <p class="section-subtitle">Sharing knowledge and building community capacity in robotics.</p>
-
-            <div class="volunteering-grid">
-                <div class="volunteer-item">
-                    <h3><i class="fas fa-chalkboard-teacher"></i> Robotics Coach & Trainer</h3>
-                    <p class="org">Digital Citizen Academy (DCA) & National Olympiad</p>
-                    <ul>
-                        <li>Designed and delivered curriculum for 50+ students with no prior robotics experience.</li>
-                        <li>Mentored teams for the World Robotics Olympiad (WRO), focusing on problem‑solving and engineering principles.</li>
-                        <li>Organized and led hands‑on workshops on Arduino, sensors, and basic automation.</li>
-                    </ul>
-                    <div class="volunteer-gallery">
-                        <img src="assets/images/volunteering/workshop-1.jpg" alt="Teaching a robotics workshop">
-                        <img src="assets/images/volunteering/workshop-2.jpg" alt="Student project presentation">
-                    </div>
-                </div>
-
-                <div class="volunteer-item">
-                    <h3><i class="fas fa-hands-helping"></i> Technical Event Coordinator</h3>
-                    <p class="org">University & Local STEM Events</p>
-                    <ul>
-                        <li>Coordinated the "Robotics for Good" exhibition, showcasing student projects to 200+ visitors.</li>
-                        <li>Acted as a technical judge for local hackathons, evaluating projects on innovation and implementation.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== AWARDS & RECOGNITION ===== -->
-        <section id="awards" class="section">
-            <h2 class="section-title">Awards & Recognition</h2>
-            <div class="awards-list">
-                <div class="award-item">
-                    <i class="fas fa-award"></i>
-                    <div>
-                        <h3>Graduated with Honors</h3>
-                        <p>XYZ University | GPA: X.XX/4.0 | Top 5% of class.</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-award"></i>
-                    <div>
-                        <h3>Digital Citizen Academy (DCA) Scholarship</h3>
-                        <p>Full scholarship for academic excellence and leadership potential.</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-award"></i>
-                    <div>
-                        <h3>World Robot Olympiad (WRO)</h3>
-                        <p>National Finalist | Ranked #X nationally in the [Year] competition.</p>
-                    </div>
-                </div>
-                <div class="award-item">
-                    <i class="fas fa-award"></i>
-                    <div>
-                        <h3>International Hackathon [Name]</h3>
-                        <p>Winner / Finalist in the "AI for Social Good" category.</p>
+                        <a href="projects.html#exoskeleton" class="btn">View Project Details</a>
+                        <a href="assets/pdf/thesis.pdf" target="_blank" class="btn">
+                            <i class="fas fa-file-pdf"></i> Thesis PDF
+                        </a>
+                        <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> Code Repository
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- ===== CONTACT SECTION ===== -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-text">I am actively seeking research collaborations and graduate study opportunities. Feel free to reach out.</p>
-            <div class="contact-links">
-                <a href="mailto:YOUR_EMAIL@gmail.com" class="contact-link">
-                    <i class="fas fa-envelope"></i> YOUR_EMAIL@gmail.com
-                </a>
-                <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="contact-link">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="https://linkedin.com/in/YOUR_LINK" target="_blank" class="contact-link">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="assets/docs/cv.pdf" target="_blank" class="contact-link">
-                    <i class="fas fa-file-pdf"></i> Download Full CV
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+    <!-- Footer -->
+    <footer class="main-footer">
         <div class="container">
-            <p>© <span id="currentYear"></span> Tala Khaddour. Built for academic and research purposes.</p>
-            <p>Portfolio inspired by academic best practices.</p>
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Simple script to update the copyright year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
