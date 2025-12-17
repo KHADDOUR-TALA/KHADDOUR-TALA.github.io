@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Tala Khaddour</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Tala Khaddour</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="section">
+        <div class="container">
+            <h1>About Me</h1>
+            
+            <div class="two-column-grid">
+                <div>
+                    <h2>Background</h2>
+                    <p>I am a Syrian robotics engineer passionate about creating technological solutions that address real‑world challenges in healthcare and rehabilitation. Growing up in a region with limited access to advanced medical care, I witnessed firsthand the impact that affordable assistive technology could have on individual lives and communities.</p>
+                    
+                    <p>My academic journey began with a fascination for mechanics and electronics, which evolved into a dedicated pursuit of mechatronics engineering. At XYZ University, I graduated with Honors, focusing my research on rehabilitation robotics—a field that perfectly combines technical challenge with humanitarian impact.</p>
+                    
+                    <h2>Research Philosophy</h2>
+                    <p>I believe that advanced robotics should not be confined to well‑funded laboratories. My work emphasizes:</p>
+                    <ul>
+                        <li><strong>Accessibility:</strong> Designing systems that are cost‑effective and maintainable in resource‑constrained settings</li>
+                        <li><strong>User‑Centric Design:</strong> Creating interfaces that are intuitive for both patients and clinicians</li>
+                        <li><strong>Robust Simplicity:</strong> Implementing reliable control strategies that don't require expert operation</li>
+                        <li><strong>Local Impact:</strong> Developing solutions that address specific regional challenges</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <div class="activity-item">
+                        <img src="assets/images/profile.jpg" alt="Tala Khaddour" style="width:100%; border-radius:var(--border-radius); margin-bottom:1rem;">
+                        <h3><i class="fas fa-info-circle"></i> Quick Facts</h3>
+                        <p><strong>Location:</strong> Damascus, Syria</p>
+                        <p><strong>Education:</strong> BSc Mechatronics Engineering</p>
+                        <p><strong>GPA:</strong> X.XX/4.0 (Honors)</p>
+                        <p><strong>Thesis Score:</strong> 98/100</p>
+                        <p><strong>Languages:</strong> Arabic (Native), English (Fluent), Turkish (Intermediate)</p>
+                        
+                        <h3><i class="fas fa-tools"></i> Technical Skills</h3>
+                        <p><strong>Hardware:</strong> CAD (SolidWorks), 3D Printing, Microcontrollers (Arduino, STM32), Sensors & Actuators</p>
+                        <p><strong>Software:</strong> MATLAB/Simulink, Python, C++, ROS, Control Systems, Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2>Academic Journey</h2>
+            <div class="two-column-grid">
+                <div class="activity-item">
+                    <h3><i class="fas fa-university"></i> University Achievements</h3>
+                    <p>• Graduated in top 5% of class<br>
+                       • DCA Scholarship recipient for academic excellence<br>
+                       • Thesis selected for department showcase<br>
+                       • Multiple course projects awarded highest grades</p>
+                </div>
+                
+                <div class="activity-item">
+                    <h3><i class="fas fa-trophy"></i> Competitions</h3>
+                    <p>• World Robot Olympiad (WRO) National Finalist<br>
+                       • International Hackathon [Name] Winner<br>
+                       • University Robotics Competition 1st Place<br>
+                       • Multiple programming challenge awards</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Tala Khaddour</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
