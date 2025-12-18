@@ -10,445 +10,475 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Styles -->
     <link rel="stylesheet" href="style.css">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    
-    <!-- Print Style -->
-    <link rel="stylesheet" href="print.css" media="print">
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
+    <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Navigation -->
-    <header class="site-header" role="banner">
+    <header class="site-header">
         <nav class="main-nav" aria-label="Main navigation">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <a href="index.html" class="brand-link" aria-current="page">
+                    <a href="index.html" class="brand-link">
                         <span class="brand-name">Tala Khaddour</span>
                     </a>
                 </div>
                 
-                <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-menu">
-                    <span class="nav-toggle-icon"></span>
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
                 </button>
                 
-                <div class="nav-menu" id="primary-menu">
-                    <ul class="nav-list" role="menubar">
-                        <li role="none"><a href="index.html" class="nav-link active" role="menuitem" aria-current="page">Home</a></li>
-                        <li role="none"><a href="projects.html" class="nav-link" role="menuitem">Projects</a></li>
-                        <li role="none"><a href="volunteering.html" class="nav-link" role="menuitem">Volunteering</a></li>
-                        <li role="none"><a href="skills.html" class="nav-link" role="menuitem">Skills & Courses</a></li>
-                        <li role="none"><a href="contact.html" class="nav-link" role="menuitem">Contact</a></li>
+                <div class="nav-menu">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
+                        <li><a href="skills.html" class="nav-link">Skills & Courses</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="main-content">
-        <div class="container hero-container">
-            <div class="hero-grid">
-                <!-- Left Column: Text Content -->
-                <div class="hero-content" aria-labelledby="hero-title">
-                    <div class="hero-text">
-                        <h1 id="hero-title" class="hero-title">
-                            Tala Khaddour
-                        </h1>
-                        <h2 class="hero-subtitle">
-                            Robotics & Intelligent Systems Engineer
-                        </h2>
-                        
-                        <div class="contact-info" aria-label="Contact information">
-                            <ul class="contact-list" role="list">
-                                <li class="contact-item">
-                                    <span class="contact-label">Location:</span>
-                                    <span class="contact-value">Latakia, Syria</span>
-                                </li>
-                                <li class="contact-item">
-                                    <span class="contact-label">Phone:</span>
-                                    <a href="tel:+963936693678" class="contact-link">+963 936 693 678</a>
-                                </li>
-                                <li class="contact-item">
-                                    <span class="contact-label">Email:</span>
-                                    <a href="mailto:khaddour.tala@gmail.com" class="contact-link">khaddour.tala@gmail.com</a>
-                                </li>
-                                <li class="contact-item">
-                                    <span class="contact-label">LinkedIn:</span>
-                                    <a href="https://linkedin.com/in/tala-khaddour" class="contact-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/tala-khaddour</a>
-                                </li>
-                                <li class="contact-item">
-                                    <span class="contact-label">GitHub:</span>
-                                    <a href="https://github.com/tala-khaddour" class="contact-link" target="_blank" rel="noopener noreferrer">github.com/tala-khaddour</a>
-                                </li>
-                                <li class="contact-item">
-                                    <span class="contact-label">CV:</span>
-                                    <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="contact-link cv-link" target="_blank">Download PDF</a>
-                                </li>
-                            </ul>
+    <!-- Hero Section with Improved Layout -->
+    <main id="main-content">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-layout">
+                    <!-- Profile Image - Now on left for better flow -->
+                    <div class="hero-image-column">
+                        <div class="profile-image-wrapper">
+                            <div class="profile-frame">
+                                <img src="/assets/images/profile.jpg" 
+                                     alt="Portrait of Tala Khaddour, Robotics Engineer" 
+                                     class="profile-photo">
+                            </div>
+                            <div class="profile-decorative-line"></div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Right Column: Profile Image -->
-                <div class="hero-image" aria-labelledby="profile-image-description">
-                    <div class="profile-container">
-                        <div class="profile-frame">
-                            <!-- Replace with your professional profile image -->
-                            <img 
-                                src="/assets/images/profile.jpg" 
-                                alt="Professional portrait of Tala Khaddour, Robotics & Intelligent Systems Engineer" 
-                                class="profile-photo"
-                                id="profile-image-description"
-                                width="300"
-                                height="300"
-                            >
-                        </div>
-                        <div class="profile-caption">
-                            <p class="caption-text">Tala Khaddour, Robotics & Intelligent Systems Engineer</p>
+                    <!-- Text Content - Now on right -->
+                    <div class="hero-content-column">
+                        <div class="hero-intro">
+                            <div class="title-wrapper">
+                                <h1 class="hero-title">
+                                    <span class="name-first">Tala</span>
+                                    <span class="name-last">Khaddour</span>
+                                </h1>
+                                <div class="title-separator"></div>
+                                <h2 class="hero-subtitle">Robotics & Intelligent Systems Engineer</h2>
+                            </div>
+
+                            <div class="academic-brief">
+                                <p class="brief-text">
+                                    Specializing in rehabilitation robotics, intelligent control systems, 
+                                    and human-robot interaction. Focused on developing assistive technologies 
+                                    for resource-limited and post-conflict environments.
+                                </p>
+                            </div>
+
+                            <!-- Contact Information - Elegant Layout -->
+                            <div class="contact-elegant">
+                                <div class="contact-row">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Location</span>
+                                        <address class="contact-value">Latakia, Syria</address>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">Phone</span>
+                                        <a href="tel:+963936693678" class="contact-value">+963 936 693 678</a>
+                                    </div>
+                                </div>
+                                <div class="contact-row">
+                                    <div class="contact-item">
+                                        <span class="contact-label">Email</span>
+                                        <a href="mailto:khaddour.tala@gmail.com" class="contact-value">khaddour.tala@gmail.com</a>
+                                    </div>
+                                    <div class="contact-item">
+                                        <span class="contact-label">CV</span>
+                                        <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="contact-value cv-download" target="_blank">
+                                            Download PDF
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="contact-row contact-links">
+                                    <a href="https://linkedin.com/in/tala-khaddour" class="social-link" target="_blank" rel="noopener">
+                                        LinkedIn
+                                    </a>
+                                    <span class="link-separator">•</span>
+                                    <a href="https://github.com/tala-khaddour" class="social-link" target="_blank" rel="noopener">
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <main class="main-content">
-        <div class="container">
-            <!-- Academic Belief Statement -->
-            <section class="belief-section" aria-labelledby="belief-heading">
-                <div class="belief-container">
-                    <h2 id="belief-heading" class="visually-hidden">Academic Philosophy</h2>
-                    <blockquote class="academic-quote" cite="#">
+        <!-- Academic Philosophy -->
+        <section class="philosophy-section">
+            <div class="container">
+                <div class="philosophy-wrapper">
+                    <div class="quote-marker">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M10 11h-4v-4h4v4z"></path>
+                            <path d="M17 11h-4v-4h4v4z"></path>
+                        </svg>
+                    </div>
+                    <blockquote class="academic-quote">
                         <p class="quote-text">
-                            “I believe in human potential without limits.<br>
-                            When the body reaches its boundaries, the mind creates a path beyond them.”
+                            I believe in human potential without limits.<br>
+                            When the body reaches its boundaries, the mind creates a path beyond them.
                         </p>
-                        <footer class="quote-footer">
-                            <cite>Tala Khaddour</cite>
-                        </footer>
+                        <footer class="quote-attribution">— Tala Khaddour</footer>
                     </blockquote>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Professional Summary -->
-            <section class="summary-section" aria-labelledby="summary-heading">
-                <div class="summary-container">
-                    <h2 id="summary-heading" class="section-heading">Professional Summary</h2>
-                    <div class="summary-content">
-                        <p class="summary-text">
-                            I am a Robotics and Intelligent Systems Engineer with focused expertise in rehabilitation robotics, intelligent control systems, and human–robot interaction. My research integrates mechanical design, control theory, and computer vision to develop assistive technologies that enhance human capability and accessibility.
-                        </p>
-                        <p class="summary-text">
-                            My engineering approach is fundamentally human-centered, addressing real-world challenges in healthcare and rehabilitation contexts. The motivation for my work is shaped by the complex needs of resource-limited environments and post-conflict recovery scenarios, where technological innovation must balance sophistication with practicality, durability, and cultural appropriateness.
-                        </p>
-                    </div>
+        <!-- Education Section - Enhanced Cards -->
+        <section class="education-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Education</h2>
+                    <p class="section-subtitle">Academic foundation and research training</p>
                 </div>
-            </section>
 
-            <!-- Education Section -->
-            <section class="education-section" aria-labelledby="education-heading">
-                <h2 id="education-heading" class="section-heading">Education</h2>
-                
-                <div class="education-grid">
-                    <!-- Card 1: Manara University -->
-                    <article class="education-card" aria-labelledby="manara-heading">
-                        <div class="card-content">
+                <div class="education-cards">
+                    <!-- Manara University Card -->
+                    <article class="education-card">
+                        <div class="card-main">
                             <header class="card-header">
-                                <h3 id="manara-heading" class="institution-name">
-                                    <a href="https://manara.edu.sy" target="_blank" rel="noopener noreferrer" class="institution-link">
-                                        Manara University
-                                    </a>
-                                </h3>
-                                <div class="program-details">
-                                    <p class="degree">Bachelor of Engineering in Robotics & Intelligent Systems</p>
-                                    <p class="details">2019–2024 | Latakia, Syria</p>
+                                <div class="institution-header">
+                                    <h3 class="institution-name">
+                                        <a href="https://manara.edu.sy" target="_blank" rel="noopener" class="institution-link">
+                                            Manara University
+                                        </a>
+                                    </h3>
+                                    <span class="institution-period">2019–2024</span>
                                 </div>
+                                <p class="degree-title">Bachelor of Engineering in Robotics & Intelligent Systems</p>
+                                <p class="institution-location">Latakia, Syria</p>
                             </header>
-                            
+
                             <div class="card-body">
-                                <div class="academic-achievements">
+                                <div class="academic-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-label">GPA</span>
+                                        <span class="highlight-value">3.92/4.0 <em class="honors">(Summa Cum Laude)</em></span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <span class="highlight-label">Rank</span>
+                                        <span class="highlight-value">1st in Robotics Engineering Cohort</span>
+                                    </div>
+                                </div>
+
+                                <div class="thesis-container">
+                                    <h4 class="thesis-title">Undergraduate Thesis</h4>
+                                    <p class="thesis-topic">
+                                        "Design and Implementation of a Low-Cost Hand Exoskeleton for Post-Stroke Rehabilitation Using Adaptive Fuzzy Control"
+                                    </p>
+                                </div>
+
+                                <div class="achievement-list">
                                     <div class="achievement-item">
-                                        <span class="achievement-label">GPA:</span>
-                                        <span class="achievement-value">3.92/4.0 <em class="honors">(Summa Cum Laude)</em></span>
+                                        <span class="achievement-badge">DCA Academic Scholarship</span>
+                                        <span class="achievement-year">2020–2025</span>
                                     </div>
                                     <div class="achievement-item">
-                                        <span class="achievement-label">Thesis:</span>
-                                        <span class="achievement-value thesis-title">
-                                            "Design and Implementation of a Low-Cost Hand Exoskeleton for Post-Stroke Rehabilitation Using Adaptive Fuzzy Control"
-                                        </span>
-                                    </div>
-                                    <div class="achievement-item">
-                                        <span class="achievement-label">Rank:</span>
-                                        <span class="achievement-value">1st in Robotics Engineering Cohort</span>
+                                        <span class="achievement-badge">Research Excellence Award</span>
+                                        <span class="achievement-year">2024</span>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <footer class="card-footer">
-                                <a href="projects.html#hand-exoskeleton" class="card-link">View thesis project details →</a>
-                            </footer>
                         </div>
-                        
+
                         <div class="card-image">
-                            <!-- Replace with graduation photo -->
-                            <figure class="education-figure">
-                                <img 
-                                    src="/assets/images/manara-graduation.jpg" 
-                                    alt="Tala Khaddour at Manara University graduation ceremony" 
-                                    class="education-photo"
-                                    data-lightbox="education"
-                                    width="280"
-                                    height="210"
-                                >
-                                <figcaption class="figure-caption">Graduation, Manara University 2024</figcaption>
-                            </figure>
+                            <div class="image-hover-container">
+                                <img src="/assets/images/manara-graduation.jpg" 
+                                     alt="Graduation ceremony at Manara University" 
+                                     class="education-photo"
+                                     data-lightbox="education">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">View Photo</span>
+                                </div>
+                            </div>
                         </div>
                     </article>
 
-                    <!-- Card 2: National Center for the Distinguished -->
-                    <article class="education-card" aria-labelledby="ncd-heading">
-                        <div class="card-content">
+                    <!-- NCD Card -->
+                    <article class="education-card">
+                        <div class="card-main">
                             <header class="card-header">
-                                <h3 id="ncd-heading" class="institution-name">
-                                    <a href="https://ncd.sy" target="_blank" rel="noopener noreferrer" class="institution-link">
-                                        National Center for the Distinguished
-                                    </a>
-                                </h3>
-                                <div class="program-details">
-                                    <p class="degree">Advanced Science & Mathematics Program</p>
-                                    <p class="details">2017–2019 | Damascus, Syria</p>
+                                <div class="institution-header">
+                                    <h3 class="institution-name">
+                                        <a href="https://ncd.sy" target="_blank" rel="noopener" class="institution-link">
+                                            National Center for the Distinguished
+                                        </a>
+                                    </h3>
+                                    <span class="institution-period">2017–2019</span>
                                 </div>
+                                <p class="degree-title">Advanced Science & Mathematics Program</p>
+                                <p class="institution-location">Damascus, Syria</p>
                             </header>
-                            
+
                             <div class="card-body">
-                                <div class="academic-achievements">
-                                    <div class="achievement-item">
-                                        <span class="achievement-label">Selection:</span>
-                                        <span class="achievement-value">Top 0.5% nationally among 2,000+ applicants</span>
+                                <div class="academic-highlights">
+                                    <div class="highlight-item">
+                                        <span class="highlight-label">Selection</span>
+                                        <span class="highlight-value">Top 0.5% nationally</span>
                                     </div>
-                                    <div class="achievement-item">
-                                        <span class="achievement-label">Focus:</span>
-                                        <span class="achievement-value">Advanced Mathematics, Physics, Computer Science</span>
+                                    <div class="highlight-item">
+                                        <span class="highlight-label">Focus Areas</span>
+                                        <span class="highlight-value">Mathematics, Physics, Computer Science</span>
                                     </div>
-                                    <div class="achievement-item">
-                                        <span class="achievement-label">Research:</span>
-                                        <span class="achievement-value thesis-title">
-                                            "Mathematical Modeling of Robotic Arm Kinematics Using Quaternion Algebra"
-                                        </span>
-                                    </div>
+                                </div>
+
+                                <div class="thesis-container">
+                                    <h4 class="thesis-title">Research Project</h4>
+                                    <p class="thesis-topic">
+                                        "Mathematical Modeling of Robotic Arm Kinematics Using Quaternion Algebra"
+                                    </p>
+                                </div>
+
+                                <div class="program-details">
+                                    <ul class="details-list">
+                                        <li>Competitive selection among 2,000+ applicants nationwide</li>
+                                        <li>Advanced curriculum in STEM disciplines</li>
+                                        <li>Research mentorship with university faculty</li>
+                                    </ul>
                                 </div>
                             </div>
-                            
-                            <footer class="card-footer">
-                                <a href="projects.html#robotic-kinematics" class="card-link">View research details →</a>
-                            </footer>
                         </div>
-                        
+
                         <div class="card-image">
-                            <!-- Replace with NCD photo -->
-                            <figure class="education-figure">
-                                <img 
-                                    src="/assets/images/ncd-campus.jpg" 
-                                    alt="National Center for the Distinguished campus building" 
-                                    class="education-photo"
-                                    data-lightbox="education"
-                                    width="280"
-                                    height="210"
-                                >
-                                <figcaption class="figure-caption">NCD Campus, Damascus</figcaption>
-                            </figure>
+                            <div class="image-hover-container">
+                                <img src="/assets/images/ncd-campus.jpg" 
+                                     alt="National Center for the Distinguished campus" 
+                                     class="education-photo"
+                                     data-lightbox="education">
+                                <div class="image-overlay">
+                                    <span class="overlay-text">View Photo</span>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Research Preview -->
-            <section class="research-section" aria-labelledby="research-heading">
-                <h2 id="research-heading" class="section-heading">Research & Selected Projects</h2>
-                
+        <!-- Research Preview - Clean Layout -->
+        <section class="research-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Research & Selected Projects</h2>
+                    <p class="section-subtitle">Human-centered engineering applications</p>
+                </div>
+
                 <div class="research-grid">
-                    <article class="research-item" aria-labelledby="exoskeleton-heading">
+                    <article class="research-card">
                         <div class="research-content">
-                            <h3 id="exoskeleton-heading" class="research-title">
-                                <a href="projects.html#hand-exoskeleton" class="research-link">
-                                    Hand Exoskeleton for Rehabilitation
-                                </a>
-                            </h3>
-                            <p class="research-description">
-                                Development of a low-cost, adaptive hand exoskeleton for post-stroke rehabilitation using fuzzy logic control and EMG signal processing. Designed specifically for resource-limited clinical settings with focus on accessibility and affordability.
-                            </p>
-                            <div class="research-tags">
-                                <span class="research-tag">Rehabilitation Robotics</span>
-                                <span class="research-tag">Fuzzy Control</span>
-                                <span class="research-tag">EMG Signal Processing</span>
+                            <div class="research-header">
+                                <h3 class="research-title">
+                                    <a href="projects.html#hand-exoskeleton">Hand Exoskeleton for Rehabilitation</a>
+                                </h3>
+                                <div class="research-tags">
+                                    <span class="research-tag">Rehabilitation Robotics</span>
+                                    <span class="research-tag">Fuzzy Control</span>
+                                    <span class="research-tag">EMG Processing</span>
+                                </div>
                             </div>
-                            <a href="projects.html#hand-exoskeleton" class="research-more">View project details →</a>
+                            
+                            <p class="research-description">
+                                Development of a low-cost, adaptive hand exoskeleton for post-stroke rehabilitation. 
+                                Integrates fuzzy logic control with EMG signal processing for natural movement assistance 
+                                in resource-limited clinical settings.
+                            </p>
+                            
+                            <div class="research-footer">
+                                <a href="projects.html#hand-exoskeleton" class="research-link">View project details →</a>
+                            </div>
                         </div>
                     </article>
-                    
-                    <article class="research-item" aria-labelledby="fuzzy-control-heading">
-                        <div class="research-content">
-                            <h3 id="fuzzy-control-heading" class="research-title">
-                                <a href="projects.html#fuzzy-control" class="research-link">
-                                    Fuzzy Logic Control of Mobile Robot
-                                </a>
-                            </h3>
-                            <p class="research-description">
-                                Implementation of an adaptive fuzzy controller for autonomous navigation in dynamic environments. Combines sensor fusion with real-time decision making for robust performance in unstructured settings.
-                            </p>
-                            <div class="research-tags">
-                                <span class="research-tag">Fuzzy Logic</span>
-                                <span class="research-tag">Autonomous Navigation</span>
-                                <span class="research-tag">Sensor Fusion</span>
-                            </div>
-                            <a href="projects.html#fuzzy-control" class="research-more">View project details →</a>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="research-cta">
-                    <a href="projects.html" class="cta-button">View All Research Projects</a>
-                </div>
-            </section>
 
-            <!-- Awards Section -->
-            <section class="awards-section" aria-labelledby="awards-heading">
-                <h2 id="awards-heading" class="section-heading">Selected Honors & Awards</h2>
-                
+                    <article class="research-card">
+                        <div class="research-content">
+                            <div class="research-header">
+                                <h3 class="research-title">
+                                    <a href="projects.html#fuzzy-control">Fuzzy Logic Control of Mobile Robot</a>
+                                </h3>
+                                <div class="research-tags">
+                                    <span class="research-tag">Autonomous Systems</span>
+                                    <span class="research-tag">Fuzzy Logic</span>
+                                    <span class="research-tag">Sensor Fusion</span>
+                                </div>
+                            </div>
+                            
+                            <p class="research-description">
+                                Implementation of adaptive fuzzy controllers for autonomous navigation in dynamic 
+                                environments. Combines sensor fusion with real-time decision making for robust 
+                                performance in unstructured settings.
+                            </p>
+                            
+                            <div class="research-footer">
+                                <a href="projects.html#fuzzy-control" class="research-link">View project details →</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-cta">
+                    <a href="projects.html" class="view-all-button">View All Research Projects</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards Section - Minimal Design -->
+        <section class="awards-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Selected Honors & Awards</h2>
+                    <p class="section-subtitle">Academic recognition and achievements</p>
+                </div>
+
                 <div class="awards-list">
-                    <article class="award-item" aria-labelledby="dca-scholarship-heading">
-                        <h3 id="dca-scholarship-heading" class="award-title">
-                            DCA Academic Scholarship
-                        </h3>
-                        <div class="award-details">
-                            <span class="award-year">2020–2025</span>
-                            <span class="award-description">Merit-based full tuition scholarship for academic excellence</span>
+                    <div class="award-item">
+                        <div class="award-content">
+                            <h3 class="award-title">DCA Academic Scholarship</h3>
+                            <div class="award-meta">
+                                <span class="award-year">2020–2025</span>
+                                <span class="award-category">Merit-based Scholarship</span>
+                            </div>
+                            <p class="award-description">Full tuition scholarship awarded for academic excellence</p>
                         </div>
-                    </article>
-                    
-                    <article class="award-item" aria-labelledby="wro-heading">
-                        <h3 id="wro-heading" class="award-title">
-                            World Robot Olympiad
-                        </h3>
-                        <div class="award-details">
-                            <span class="award-year">2022</span>
-                            <span class="award-description">5th Place, Future Engineers Category (International Competition)</span>
-                        </div>
-                    </article>
-                    
-                    <article class="award-item" aria-labelledby="fair-heading">
-                        <h3 id="fair-heading" class="award-title">
-                            Damascus International Fair
-                        </h3>
-                        <div class="award-details">
-                            <span class="award-year">2023</span>
-                            <span class="award-description">Scientific Pavilion Exhibitor – Featured rehabilitation robotics research</span>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                    </div>
 
-            <!-- Contact Section -->
-            <section class="contact-section" aria-labelledby="contact-heading">
-                <h2 id="contact-heading" class="section-heading">Contact</h2>
-                
-                <div class="contact-grid">
-                    <div class="contact-info-card">
-                        <h3 class="contact-subheading">Academic & Research Correspondence</h3>
-                        
-                        <div class="contact-details">
-                            <div class="contact-detail">
-                                <span class="contact-label">Location:</span>
-                                <address class="contact-value">Latakia, Syria</address>
+                    <div class="award-item">
+                        <div class="award-content">
+                            <h3 class="award-title">World Robot Olympiad</h3>
+                            <div class="award-meta">
+                                <span class="award-year">2022</span>
+                                <span class="award-category">International Competition</span>
                             </div>
-                            
-                            <div class="contact-detail">
-                                <span class="contact-label">Email:</span>
-                                <a href="mailto:khaddour.tala@gmail.com" class="contact-value contact-link">
-                                    khaddour.tala@gmail.com
-                                </a>
-                            </div>
-                            
-                            <div class="contact-detail">
-                                <span class="contact-label">Phone:</span>
-                                <a href="tel:+963936693678" class="contact-value contact-link">
-                                    +963 936 693 678
-                                </a>
-                            </div>
-                            
-                            <div class="contact-detail">
-                                <span class="contact-label">LinkedIn:</span>
-                                <a href="https://linkedin.com/in/tala-khaddour" class="contact-value contact-link" target="_blank" rel="noopener noreferrer">
-                                    linkedin.com/in/tala-khaddour
-                                </a>
-                            </div>
-                            
-                            <div class="contact-detail">
-                                <span class="contact-label">GitHub:</span>
-                                <a href="https://github.com/tala-khaddour" class="contact-value contact-link" target="_blank" rel="noopener noreferrer">
-                                    github.com/tala-khaddour
-                                </a>
-                            </div>
-                            
-                            <div class="contact-detail">
-                                <span class="contact-label">Curriculum Vitae:</span>
-                                <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="contact-value contact-link cv-download" target="_blank">
-                                    Download PDF (Updated December 2024)
-                                </a>
-                            </div>
+                            <p class="award-description">5th Place, Future Engineers Category among international participants</p>
                         </div>
-                        
-                        <div class="contact-note">
-                            <p>I welcome correspondence regarding research collaborations, academic opportunities, and scholarship inquiries. Response typically within 2–3 business days.</p>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-content">
+                            <h3 class="award-title">Damascus International Fair</h3>
+                            <div class="award-meta">
+                                <span class="award-year">2023</span>
+                                <span class="award-category">Research Exhibition</span>
+                            </div>
+                            <p class="award-description">Featured rehabilitation robotics research in Scientific Pavilion</p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+
+        <!-- Contact Section - Formal Layout -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Contact</h2>
+                    <p class="section-subtitle">Academic and research correspondence</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-detail-group">
+                                <h4 class="detail-group-title">Academic Correspondence</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Email</span>
+                                    <a href="mailto:khaddour.tala@gmail.com" class="detail-value">khaddour.tala@gmail.com</a>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Phone</span>
+                                    <a href="tel:+963936693678" class="detail-value">+963 936 693 678</a>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Location</span>
+                                    <address class="detail-value">Latakia, Syria</address>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-group">
+                                <h4 class="detail-group-title">Professional Profiles</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">LinkedIn</span>
+                                    <a href="https://linkedin.com/in/tala-khaddour" class="detail-value" target="_blank" rel="noopener">
+                                        linkedin.com/in/tala-khaddour
+                                    </a>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">GitHub</span>
+                                    <a href="https://github.com/tala-khaddour" class="detail-value" target="_blank" rel="noopener">
+                                        github.com/tala-khaddour
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="contact-detail-group">
+                                <h4 class="detail-group-title">Documents</h4>
+                                <div class="detail-item">
+                                    <span class="detail-label">Curriculum Vitae</span>
+                                    <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="detail-value cv-link" target="_blank">
+                                        Download PDF (Updated 2024)
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-note">
+                            <p>
+                                I welcome correspondence regarding research collaborations, academic opportunities, 
+                                and scholarship inquiries. References and additional documentation are available upon request.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer" role="contentinfo">
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-text">
-                    <p class="footer-main">
-                        © Tala Khaddour — Robotics & Intelligent Systems Engineering
-                    </p>
-                    <p class="footer-sub">
-                        Academic Portfolio | References Available Upon Request
-                    </p>
+                <div class="footer-main">
+                    <p class="footer-name">© Tala Khaddour</p>
+                    <p class="footer-title">Robotics & Intelligent Systems Engineer</p>
                 </div>
-                
-                <div class="footer-legal">
-                    <p class="legal-text">
-                        This portfolio is designed for academic and scholarship evaluation purposes. All research and project information is accurate as of December 2024.
-                    </p>
+                <div class="footer-secondary">
+                    <p class="footer-note">Academic Portfolio | References Available Upon Request</p>
+                    <p class="footer-update">Last updated: December 2024</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox-modal" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <!-- Lightbox -->
+    <div class="lightbox" id="imageLightbox" aria-hidden="true">
         <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Close lightbox">×</button>
-            <div class="lightbox-image-container">
-                <img src="" alt="" class="lightbox-image" id="lightbox-image">
+            <button class="lightbox-close" aria-label="Close">×</button>
+            <div class="lightbox-body">
+                <img src="" alt="" class="lightbox-image">
+                <div class="lightbox-caption"></div>
             </div>
-            <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="main.js" defer></script>
+    <script src="main.js"></script>
 </body>
 </html>
