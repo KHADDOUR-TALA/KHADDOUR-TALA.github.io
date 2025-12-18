@@ -3,475 +3,1075 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
-    <meta name="description" content="Visual academic portfolio of Tala Khaddour - Robotics & Intelligent Systems Engineer specializing in rehabilitation robotics and human-centered engineering.">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- CORRECTED CSS PATH -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-    
-    <!-- Meta for social sharing -->
-    <meta property="og:title" content="Tala Khaddour | Robotics & Intelligent Systems Engineer">
-    <meta property="og:description" content="Academic portfolio for scholarship applications and research collaborations">
-    <meta property="og:type" content="website">
+    <title>Academic Portfolio | Robotics & Human-Centered Engineering</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS RESET & GLOBAL STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #1a365d;
+            --primary-light: #2d547d;
+            --accent: #4a6fa5;
+            --accent-light: #6b93d6;
+            --light-bg: #f8f9fa;
+            --light-tint: #f0f2f5;
+            --dark-text: #2d3748;
+            --medium-text: #4a5568;
+            --light-text: #718096;
+            --border-color: #e2e8f0;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --shadow-light: 0 5px 15px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+            --border-radius: 12px;
+            --max-width: 1140px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        h4 {
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-light);
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-light);
+            z-index: 1000;
+            padding: 1.2rem 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 120px;
+            background-color: var(--light-bg);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .contact-line {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .contact-line a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--medium-text);
+            font-size: 0.95rem;
+        }
+
+        .contact-line a:hover {
+            color: var(--accent);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .profile-img-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 8px solid white;
+            margin-top: -20px; /* Visual lift */
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .profile-img-container:hover .profile-img {
+            transform: scale(1.05);
+        }
+
+        /* ===== BELIEF STATEMENT ===== */
+        .belief {
+            background-color: var(--light-tint);
+            padding: 100px 0;
+        }
+
+        .belief-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote {
+            font-size: 1.75rem;
+            line-height: 1.5;
+            color: var(--primary-dark);
+            font-weight: 300;
+            font-style: italic;
+            margin-bottom: 2rem;
+            padding: 0 20px;
+        }
+
+        .quote-marks {
+            font-size: 6rem;
+            color: var(--accent-light);
+            opacity: 0.15;
+            position: absolute;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .quote-start {
+            top: -30px;
+            left: 0;
+        }
+
+        .quote-end {
+            bottom: -60px;
+            right: 0;
+        }
+
+        /* ===== ACADEMIC INTRO ===== */
+        .intro {
+            padding: 100px 0;
+        }
+
+        .intro-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .intro p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: var(--medium-text);
+            text-align: center;
+        }
+
+        /* ===== EDUCATION SECTION ===== */
+        .education {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .education-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .edu-card {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .edu-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .edu-image {
+            height: 100%;
+            min-height: 280px;
+            overflow: hidden;
+        }
+
+        .edu-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .edu-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .edu-content {
+            padding: 2.5rem;
+        }
+
+        .edu-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .institution {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .degree {
+            color: var(--medium-text);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .details {
+            margin-bottom: 1.5rem;
+        }
+
+        .gpa {
+            display: inline-block;
+            background-color: var(--light-tint);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .thesis {
+            font-style: italic;
+            color: var(--medium-text);
+            border-left: 3px solid var(--accent-light);
+            padding-left: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects {
+            padding: 100px 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .project-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-desc {
+            color: var(--medium-text);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* ===== HONORS SECTION ===== */
+        .honors {
+            padding: 100px 0;
+            background-color: var(--light-bg);
+        }
+
+        .honors-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .honor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .honor-item:last-child {
+            border-bottom: none;
+        }
+
+        .honor-text {
+            font-size: 1.1rem;
+        }
+
+        .honor-year {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.95rem;
+            background-color: var(--light-tint);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+        }
+
+        .highlight {
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 100px 0;
+        }
+
+        .contact-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--light-tint);
+            border-radius: var(--border-radius);
+            padding: 3.5rem;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: white;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            margin-top: 2.5rem;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .cv-download:hover {
+            background-color: var(--primary-light);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 2.5rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-lightbox:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-grid {
+                gap: 3rem;
+            }
+            
+            .profile-img-container {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                padding-top: 130px;
+                padding-bottom: 80px;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+            
+            .profile-img-container {
+                width: 220px;
+                height: 220px;
+                margin: 0 auto;
+            }
+            
+            .contact-line {
+                justify-content: center;
+            }
+            
+            .quote {
+                font-size: 1.5rem;
+            }
+            
+            .edu-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .edu-image {
+                min-height: 200px;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-item {
+                justify-content: flex-start;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 20px;
+            }
+            
+            .contact-card {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .honor-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .quote-marks {
+                font-size: 4rem;
+            }
+            
+            .quote-start {
+                top: -20px;
+            }
+            
+            .quote-end {
+                bottom: -40px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip navigation for accessibility -->
-    <a href="#main-content" class="skip-navigation">Skip to main content</a>
-
-    <!-- Header Navigation -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="nav-logo">Tala Khaddour</a>
-                
-                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Academic Portfolio</div>
+            <div class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#honors">Honors</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
-    <main id="main-content">
-        <!-- Hero Section - Visual Statement -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-grid">
-                    <!-- Left Column: Text Content -->
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1 class="hero-title">
-                                <span class="title-line">Tala</span>
-                                <span class="title-line accent">Khaddour</span>
-                            </h1>
-                            
-                            <h2 class="hero-subtitle">
-                                Robotics & Intelligent Systems Engineer
-                            </h2>
-                            
-                            <div class="hero-description">
-                                <p>Specializing in rehabilitation robotics, intelligent control systems, and human-robot interaction with a focus on accessible healthcare solutions.</p>
-                            </div>
-                            
-                            <div class="hero-contact">
-                                <div class="contact-row">
-                                    <a href="mailto:khaddour.tala@gmail.com" class="contact-link">khaddour.tala@gmail.com</a>
-                                    <span class="contact-divider">•</span>
-                                    <a href="tel:+963936693678" class="contact-link">+963 936 693 678</a>
-                                </div>
-                                <div class="contact-row">
-                                    <span class="contact-location">Latakia, Syria</span>
-                                    <span class="contact-divider">•</span>
-                                    <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="contact-link cv-link" target="_blank">Download CV</a>
-                                </div>
-                            </div>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>Rayan Al-Khatib</h1>
+                    <div class="title">Robotics Engineer & Human-Centered AI Researcher</div>
+                    <p>Developing intelligent systems that bridge the gap between technological capability and human potential, with a focus on rehabilitation and accessible healthcare solutions.</p>
+                    <div class="contact-line">
+                        <a href="mailto:rayan.alkhatib@academic.edu"><i class="fas fa-envelope"></i> rayan.alkhatib@academic.edu</a>
+                        <a href="tel:+12345678900"><i class="fas fa-phone"></i> +1 (234) 567-8900</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-img-container">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Rayan Al-Khatib - Academic Profile" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Belief Statement -->
+    <section class="belief">
+        <div class="container">
+            <div class="belief-container">
+                <div class="quote-marks quote-start">"</div>
+                <div class="quote">“I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them.”</div>
+                <div class="quote-marks quote-end">"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Introduction -->
+    <section class="intro">
+        <div class="container">
+            <div class="intro-container">
+                <p>My research sits at the intersection of robotics, intelligent systems, and human-centered engineering. I develop adaptive technologies that enhance physical rehabilitation and expand accessibility in healthcare. By integrating machine learning with biomechanical principles, I create systems that respond to individual human needs, pushing the boundaries of what assistive technology can achieve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education" id="education">
+        <div class="container">
+            <div class="section-title">
+                <h2>Education</h2>
+            </div>
+            <div class="education-cards">
+                <!-- Education Card 1 -->
+                <div class="edu-card">
+                    <div class="edu-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Manara University - Graduation" class="edu-img" data-lightbox="manara">
+                    </div>
+                    <div class="edu-content">
+                        <a href="https://www.manara.edu" target="_blank" class="institution">Manara University</a>
+                        <div class="degree">Master of Science in Robotics & Intelligent Systems</div>
+                        <div class="details">
+                            <div class="gpa">GPA: 3.92/4.0 - Summa Cum Laude</div>
+                            <p>Thesis focused on adaptive control systems for upper-limb exoskeletons in post-stroke rehabilitation.</p>
+                        </div>
+                        <div class="thesis">
+                            "Adaptive Neural Network Control for Upper-Limb Rehabilitation Exoskeletons with Haptic Feedback Integration"
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Card 2 -->
+                <div class="edu-card">
+                    <div class="edu-image">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="National Center for the Distinguished" class="edu-img" data-lightbox="ncd">
+                    </div>
+                    <div class="edu-content">
+                        <a href="https://www.ncd.edu" target="_blank" class="institution">National Center for the Distinguished</a>
+                        <div class="degree">Advanced Studies in Engineering & Applied Sciences</div>
+                        <div class="details">
+                            <div class="gpa">Ranked in Top 1% of Cohort</div>
+                            <p>Intensive research program focusing on human-robot interaction, biomechanics, and assistive device design.</p>
+                        </div>
+                        <div class="thesis">
+                            "Evaluating Human-Robot Trust Dynamics in Shared-Control Rehabilitation Scenarios"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Selected Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="projects-column">
+                    <div class="project-item">
+                        <div class="project-title">Adaptive Exoskeleton Control System</div>
+                        <p class="project-desc">Machine learning-based adaptive control for upper-limb rehabilitation devices with real-time motion adaptation.</p>
+                        <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Haptic Feedback Interface for Prosthetics</div>
+                        <p class="project-desc">Developing a multimodal haptic feedback system to restore sensory perception in prosthetic limbs.</p>
+                        <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="projects-column">
+                    <div class="project-item">
+                        <div class="project-title">AI-Powered Gait Analysis Platform</div>
+                        <p class="project-desc">Computer vision system for real-time gait analysis and rehabilitation progress tracking.</p>
+                        <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-title">Tele-Rehabilitation Framework</div>
+                        <p class="project-desc">Remote therapy platform integrating sensor data, VR environments, and clinician dashboard.</p>
+                        <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors Section -->
+    <section class="honors" id="honors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Honors & Scholarships</h2>
+            </div>
+            <div class="honors-list">
+                <div class="honor-item">
+                    <div class="honor-text"><span class="highlight">DCA Scholarship for Excellence in Engineering</span> - Full tuition scholarship awarded to top 0.5% of applicants nationally</div>
+                    <div class="honor-year">2022-2024</div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-text"><span class="highlight">World Robotics Olympiad (WRO)</span> - Ranked 3rd internationally in Healthcare Robotics category</div>
+                    <div class="honor-year">2023</div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-text"><span class="highlight">International Exhibition of Inventions Geneva</span> - Gold medal for adaptive rehabilitation device prototype</div>
+                    <div class="honor-year">2023</div>
+                </div>
+                <div class="honor-item">
+                    <div class="honor-text"><span class="highlight">IEEE Robotics & Automation Society</span> - Outstanding Student Paper Award, North American region</div>
+                    <div class="honor-year">2022</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact</h2>
+            </div>
+            <div class="contact-card">
+                <p>For research collaborations, academic inquiries, or discussions about human-centered engineering:</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <div>Cambridge, MA</div>
+                            <small>United States</small>
                         </div>
                     </div>
                     
-                    <!-- Right Column: Profile Image -->
-                    <div class="hero-image">
-                        <div class="profile-container">
-                            <div class="profile-frame">
-                                <img src="/assets/images/profile.jpg" 
-                                     alt="Professional portrait of Tala Khaddour, Robotics Engineer"
-                                     class="profile-photo"
-                                     width="320"
-                                     height="320">
-                            </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <div>Academic Email</div>
+                            <small>rayan.alkhatib@academic.edu</small>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Belief Statement - Visual Zone -->
-        <section class="belief-section">
-            <div class="container">
-                <div class="belief-container">
-                    <div class="quote-marks">
-                        <span class="quote-mark open">"</span>
-                        <span class="quote-mark close">"</span>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <div>Phone</div>
+                            <small>+1 (234) 567-8900</small>
+                        </div>
                     </div>
-                    <blockquote class="academic-quote">
-                        <p class="quote-text">
-                            I believe in human potential without limits.<br>
-                            When the body reaches its boundaries, the mind creates a path beyond them.
-                        </p>
-                    </blockquote>
-                    <div class="quote-source">— Tala Khaddour</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Academic Introduction -->
-        <section class="intro-section">
-            <div class="container">
-                <div class="intro-container">
-                    <div class="intro-content">
-                        <h2 class="visually-hidden">Academic Focus</h2>
-                        <p class="intro-text">
-                            I am a Robotics and Intelligent Systems Engineer with a focused expertise in rehabilitation robotics, intelligent control systems, and human–robot interaction. My research integrates mechanical design, control theory, and computer vision to develop assistive technologies that enhance human capability and accessibility in healthcare contexts.
-                        </p>
-                        <p class="intro-text">
-                            My engineering philosophy is fundamentally human-centered, addressing real-world challenges in resource-limited environments and post-conflict recovery scenarios. This perspective shapes my approach to creating technological solutions that balance sophistication with practicality, durability, and cultural appropriateness.
-                        </p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <div>LinkedIn</div>
+                            <small>/in/rayan-alkhatib</small>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section - Image-led Cards -->
-        <section class="education-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Education</h2>
-                    <p class="section-subtitle">Academic foundation and research training</p>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div>
+                            <div>GitHub</div>
+                            <small>/rayan-alkhatib</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <div>
+                            <div>Academic CV</div>
+                            <small>PDF Download</small>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="education-cards">
-                    <!-- Card 1: Manara University -->
-                    <article class="education-card">
-                        <div class="card-image">
-                            <div class="image-container">
-                                <img src="/assets/images/manara-graduation.jpg" 
-                                     alt="Manara University graduation ceremony"
-                                     class="institution-photo"
-                                     data-lightbox="education"
-                                     width="400"
-                                     height="300">
-                                <button class="image-expand" aria-label="View full image">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="institution-header">
-                                <h3 class="institution-name">
-                                    <a href="https://manara.edu.sy" target="_blank" rel="noopener">Manara University</a>
-                                </h3>
-                                <span class="institution-period">2019 – 2024</span>
-                            </div>
-                            
-                            <p class="degree-info">Bachelor of Engineering in Robotics & Intelligent Systems</p>
-                            <p class="location-info">Latakia, Syria</p>
-                            
-                            <div class="academic-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">GPA:</span>
-                                    <span class="detail-value">3.92/4.0 <em class="honors">(Summa Cum Laude)</em></span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Rank:</span>
-                                    <span class="detail-value">1st in Robotics Engineering Cohort</span>
-                                </div>
-                            </div>
-                            
-                            <div class="thesis-section">
-                                <h4 class="thesis-title">Undergraduate Thesis</h4>
-                                <p class="thesis-topic">
-                                    <em>"Design and Implementation of a Low-Cost Hand Exoskeleton for Post-Stroke Rehabilitation Using Adaptive Fuzzy Control"</em>
-                                </p>
-                            </div>
-                            
-                            <div class="achievement-badge">
-                                <span class="badge-text">DCA Academic Scholarship 2020–2025</span>
-                            </div>
-                        </div>
-                    </article>
-                    
-                    <!-- Card 2: National Center for the Distinguished -->
-                    <article class="education-card">
-                        <div class="card-image">
-                            <div class="image-container">
-                                <img src="/assets/images/ncd-campus.jpg" 
-                                     alt="National Center for the Distinguished campus"
-                                     class="institution-photo"
-                                     data-lightbox="education"
-                                     width="400"
-                                     height="300">
-                                <button class="image-expand" aria-label="View full image">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="institution-header">
-                                <h3 class="institution-name">
-                                    <a href="https://ncd.sy" target="_blank" rel="noopener">National Center for the Distinguished</a>
-                                </h3>
-                                <span class="institution-period">2017 – 2019</span>
-                            </div>
-                            
-                            <p class="degree-info">Advanced Science & Mathematics Program</p>
-                            <p class="location-info">Damascus, Syria</p>
-                            
-                            <div class="academic-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Selection:</span>
-                                    <span class="detail-value">Top 0.5% nationally among 2,000+ applicants</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Focus:</span>
-                                    <span class="detail-value">Advanced Mathematics, Physics, Computer Science</span>
-                                </div>
-                            </div>
-                            
-                            <div class="thesis-section">
-                                <h4 class="thesis-title">Research Project</h4>
-                                <p class="thesis-topic">
-                                    <em>"Mathematical Modeling of Robotic Arm Kinematics Using Quaternion Algebra"</em>
-                                </p>
-                            </div>
-                            
-                            <div class="program-features">
-                                <ul class="features-list">
-                                    <li>Competitive national selection (1.2% acceptance rate)</li>
-                                    <li>Advanced STEM curriculum</li>
-                                    <li>Research mentorship with university faculty</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                <a href="#" class="cv-download">
+                    <i class="fas fa-download"></i> Download Full Academic CV
+                </a>
             </div>
-        </section>
-
-        <!-- Projects Preview -->
-        <section class="projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Selected Projects</h2>
-                    <p class="section-subtitle">Key research initiatives in rehabilitation robotics</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <div class="project-column">
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#hand-exoskeleton">Hand Exoskeleton for Rehabilitation</a>
-                            </h3>
-                            <p class="project-description">
-                                Low-cost, adaptive hand exoskeleton for post-stroke rehabilitation using fuzzy logic control and EMG signal processing.
-                            </p>
-                            <a href="projects.html#hand-exoskeleton" class="project-link">View project details →</a>
-                        </article>
-                        
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#mobile-robot">Fuzzy Logic Control of Mobile Robot</a>
-                            </h3>
-                            <p class="project-description">
-                                Adaptive fuzzy controller for autonomous navigation in dynamic environments with sensor fusion and real-time decision making.
-                            </p>
-                            <a href="projects.html#mobile-robot" class="project-link">View project details →</a>
-                        </article>
-                    </div>
-                    
-                    <div class="project-column">
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#prosthetic-control">EMG-based Prosthetic Control System</a>
-                            </h3>
-                            <p class="project-description">
-                                Real-time EMG signal processing for intuitive control of prosthetic devices with adaptive learning algorithms.
-                            </p>
-                            <a href="projects.html#prosthetic-control" class="project-link">View project details →</a>
-                        </article>
-                        
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#sensor-fusion">Multi-Sensor Fusion for Robotic Navigation</a>
-                            </h3>
-                            <p class="project-description">
-                                Integration of LiDAR, IMU, and camera data for robust navigation in unstructured environments.
-                            </p>
-                            <a href="projects.html#sensor-fusion" class="project-link">View project details →</a>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Honors & Awards -->
-        <section class="honors-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Honors & Scholarships</h2>
-                    <p class="section-subtitle">Academic recognition and achievements</p>
-                </div>
-                
-                <div class="honors-list">
-                    <div class="honor-item">
-                        <h3 class="honor-title">DCA Merit-Based Academic Scholarship</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2020 – 2025</span>
-                            <span class="honor-description">Full tuition scholarship for academic excellence</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">World Robot Olympiad</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2022</span>
-                            <span class="honor-description">5th Place, Future Engineers Category (International)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">Damascus International Fair</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2023</span>
-                            <span class="honor-description">Scientific Pavilion Exhibitor – Rehabilitation Robotics Research</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">University Research Excellence Award</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2024</span>
-                            <span class="honor-description">Outstanding undergraduate research contribution</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Contact</h2>
-                        <p class="card-subtitle">Academic and research correspondence</p>
-                    </div>
-                    
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Location</span>
-                                    <address class="contact-value">Latakia, Syria</address>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Email</span>
-                                    <a href="mailto:khaddour.tala@gmail.com" class="contact-value">khaddour.tala@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Phone</span>
-                                    <a href="tel:+963936693678" class="contact-value">+963 936 693 678</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-links">
-                            <a href="https://linkedin.com/in/tala-khaddour" class="social-link" target="_blank" rel="noopener">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            
-                            <a href="https://github.com/tala-khaddour" class="social-link" target="_blank" rel="noopener">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                <span>GitHub</span>
-                            </a>
-                            
-                            <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="social-link cv-link" target="_blank">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>Download CV</span>
-                            </a>
-                        </div>
-                        
-                        <div class="contact-note">
-                            <p>I welcome correspondence regarding research collaborations, academic opportunities, and scholarship inquiries. Response typically within 2–3 business days.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="main-footer">
+    <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p class="footer-name">© Tala Khaddour</p>
-                    <p class="footer-role">Robotics & Intelligent Systems Engineer</p>
-                </div>
-                <div class="footer-note">
-                    <p>Academic Portfolio • References Available Upon Request</p>
-                    <p class="footer-update">Last updated: December 2024</p>
-                </div>
-            </div>
+            <p>© 2023 Rayan Al-Khatib. This portfolio is for academic and research purposes.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed with focus on visual hierarchy, spatial balance, and academic credibility.</p>
         </div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image preview">
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-lightbox" id="closeLightbox">
+            <i class="fas fa-times"></i>
+        </button>
         <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Close lightbox">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="lightbox-image-container">
-                <img src="" alt="" class="lightbox-image">
-            </div>
-            <div class="lightbox-caption"></div>
+            <img id="lightbox-img" src="" alt="">
         </div>
     </div>
 
-    <!-- CORRECTED JS PATH -->
-    <script src="/assets/js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+                navLinks.style.gap = '1.5rem';
+            }
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeLightbox = document.getElementById('closeLightbox');
+        const eduImages = document.querySelectorAll('.edu-img');
+        
+        eduImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // Responsive adjustments on resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'row';
+                navLinks.style.position = 'static';
+                navLinks.style.backgroundColor = 'transparent';
+                navLinks.style.padding = '0';
+                navLinks.style.boxShadow = 'none';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
