@@ -7,151 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <style>
-        /* Add these styles for the hero layout with profile picture */
-        .hero-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            padding: var(--spacing-xl) 0;
-        }
-
-        @media (min-width: 768px) {
-            .hero-container {
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                text-align: left;
-                gap: 3rem;
-            }
-            
-            .hero-content {
-                flex: 1;
-            }
-            
-            .hero-image {
-                flex: 0 0 auto;
-            }
-        }
-
-        .profile-frame {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid white;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .profile-frame:hover .profile-img {
-            transform: scale(1.05);
-        }
-
-        .hero-title {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 3.2rem;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-subtitle::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent);
-        }
-
-        .hero-tagline {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 600px;
-            margin: 1.5rem 0;
-            color: var(--text-secondary);
-            padding-left: 1rem;
-            border-left: 3px solid var(--accent-light);
-        }
-
-        .hero-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .hero-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background-color: white;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            color: var(--accent);
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .hero-links a:hover {
-            background-color: var(--accent);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.2);
-        }
-
-        .hero-links a i {
-            font-size: 1.1rem;
-        }
-
-        /* Location badge */
-        .location-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.4rem 1rem;
-            background-color: var(--bg-light);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin-top: 0.5rem;
-        }
-
-        .location-badge i {
-            color: var(--accent);
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -169,52 +24,30 @@
         </div>
     </nav>
 
-    <!-- Updated Hero Section with Profile Picture -->
-    <header class="hero" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+    <!-- Hero Section -->
+    <header class="hero">
         <div class="container">
-            <div class="hero-container">
-                <!-- Profile Picture on Left (or top on mobile) -->
-                <div class="hero-image">
-                    <div class="profile-frame">
-                        <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-img">
-                    </div>
-                </div>
-                
-                <!-- Text Content on Right -->
-                <div class="hero-content">
-                    <h1 class="hero-title">Tala Khaddour</h1>
-                    <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
-                    
-                    <div class="location-badge">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Damascus, Syria</span>
-                    </div>
-                    
-                    <p class="hero-tagline">
-                        Designing accessible robotic solutions for healthcare and rehabilitation in resource‑constrained environments. 
-                        Passionate about creating technology that bridges the gap between advanced research and real‑world impact.
-                    </p>
-                    
-                    <div class="hero-links">
-                        <a href="mailto:your.email@example.com">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                        <a href="https://github.com/KHADDOUR-TALA" target="_blank">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="assets/pdf/cv.pdf" target="_blank">
-                            <i class="fas fa-file-pdf"></i> Download CV
-                        </a>
-                    </div>
-                </div>
+            <h1>Tala Khaddour</h1>
+            <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
+            <p class="hero-tagline">Designing accessible robotic solutions for healthcare and rehabilitation in resource‑constrained environments.</p>
+            <div class="hero-links">
+                <a href="mailto:tala@example.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/KHADDOUR-TALA" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/tala-khaddour" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="assets/pdf/cv.pdf" target="_blank">
+                    <i class="fas fa-file-pdf"></i> CV
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Rest of your content remains the same -->
+    <!-- Quick Intro -->
     <section class="section">
         <div class="container">
             <h2>Overview</h2>
