@@ -1,5 +1,6 @@
 /**
  * Visual Academic Portfolio - JavaScript
+ * Location: /assets/js/main.js
  * Clean, minimal functionality for image-driven portfolio
  */
 
@@ -245,39 +246,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-    
-    // ==========================================================================
-    // Active Navigation Highlight
-    // ==========================================================================
-    
-    function highlightCurrentSection() {
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        let currentSection = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            const scrollPosition = window.scrollY + 100;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                currentSection = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    // Only run if we have section-based navigation
-    const hasSectionNav = document.querySelectorAll('nav a[href^="#"]').length > 0;
-    if (hasSectionNav) {
-        window.addEventListener('scroll', highlightCurrentSection);
-        highlightCurrentSection(); // Initial call
-    }
 });
