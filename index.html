@@ -4,451 +4,305 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tala Khaddour | Robotics Engineer</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <style>
-        /* RESET & BASE */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-color: #2e7d32;
-            --primary-light: #4caf50;
-            --text-dark: #1a1a1a;
-            --text-medium: #4a4a4a;
-            --text-light: #757575;
-            --bg-white: #ffffff;
-            --bg-light: #f8f9fa;
-            --border: #e0e0e0;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-white);
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* NAVIGATION */
-        nav {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            color: var(--text-medium);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* HERO WITH PROFILE PICTURE */
-        .hero-section {
+        /* Add these styles for the hero layout with profile picture */
+        .hero-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 3rem;
-            padding: 3rem 0;
-            margin: 2rem 0;
+            gap: 2rem;
+            padding: var(--spacing-xl) 0;
         }
-        
+
         @media (min-width: 768px) {
-            .hero-section {
+            .hero-container {
                 flex-direction: row;
                 align-items: center;
                 justify-content: center;
                 text-align: left;
-                min-height: 80vh;
+                gap: 3rem;
+            }
+            
+            .hero-content {
+                flex: 1;
+            }
+            
+            .hero-image {
+                flex: 0 0 auto;
             }
         }
-        
-        .profile-container {
-            flex-shrink: 0;
-        }
-        
-        .profile-circle {
-            width: 280px;
-            height: 280px;
+
+        .profile-frame {
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             overflow: hidden;
-            border: 6px solid white;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(45deg, var(--primary-color), var(--primary-light));
+            border: 5px solid white;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        
+
         .profile-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-        
-        .profile-img:hover {
-            transform: scale(1.03);
+
+        .profile-frame:hover .profile-img {
+            transform: scale(1.05);
         }
-        
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
-        
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
+
         .hero-title {
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            font-weight: 600;
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #2e7d32, #4caf50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.2rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+            font-weight: 500;
             margin-bottom: 1rem;
+            position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid var(--primary-light);
         }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--text-medium);
+
+        .hero-subtitle::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
             line-height: 1.7;
+            max-width: 600px;
             margin: 1.5rem 0;
+            color: var(--text-secondary);
             padding-left: 1rem;
-            border-left: 4px solid var(--primary-light);
+            border-left: 3px solid var(--accent-light);
         }
-        
-        .location {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: var(--bg-light);
-            border-radius: 20px;
-            color: var(--text-light);
-            margin: 1rem 0;
-        }
-        
-        .location i {
-            color: var(--primary-color);
-        }
-        
+
         .hero-links {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             margin-top: 2rem;
         }
-        
-        .hero-btn {
+
+        .hero-links a {
             display: inline-flex;
             align-items: center;
-            gap: 0.7rem;
-            padding: 0.9rem 1.8rem;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: white;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            color: var(--accent);
+            font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--primary-color);
-        }
-        
-        .hero-btn:hover {
-            background: white;
-            color: var(--primary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(46, 125, 50, 0.2);
-        }
-        
-        .hero-btn.outline {
-            background: white;
-            color: var(--primary-color);
-        }
-        
-        .hero-btn.outline:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        /* SECTIONS */
-        .section {
-            padding: 4rem 0;
-            border-top: 1px solid var(--border);
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--text-dark);
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-        }
-        
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .card {
-            padding: 2rem;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: var(--bg-light);
-        }
-        
-        .card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-        
-        /* FOOTER */
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-            margin: 1.5rem 0;
-        }
-        
-        .footer-links a {
-            color: var(--text-medium);
             text-decoration: none;
         }
-        
-        .footer-links a:hover {
-            color: var(--primary-color);
+
+        .hero-links a:hover {
+            background-color: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.2);
         }
-        
-        /* DEBUG MESSAGE - Remove after image loads */
-        .debug-message {
-            background: #fff3cd;
-            border: 1px solid #ffc107;
-            border-radius: 5px;
-            padding: 1rem;
-            margin: 1rem 0;
-            font-family: monospace;
-            display: none; /* Hidden by default */
+
+        .hero-links a i {
+            font-size: 1.1rem;
+        }
+
+        /* Location badge */
+        .location-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            background-color: var(--bg-light);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .location-badge i {
+            color: var(--accent);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Tala Khaddour</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
                 <li><a href="volunteering.html">Volunteering</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section with Profile Picture -->
-    <section class="hero-section">
-        <!-- Profile Picture - RIGHT SIDE -->
-        <div class="profile-container">
-            <div class="profile-circle">
-                <!-- IMPORTANT: Try both paths -->
-                <img src="assets/images/profile.jpg" 
-                     alt="Tala Khaddour" 
-                     class="profile-img"
-                     id="profileImage"
-                     onerror="showDebugMessage()">
+    <!-- Updated Hero Section with Profile Picture -->
+    <header class="hero" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+        <div class="container">
+            <div class="hero-container">
+                <!-- Profile Picture on Left (or top on mobile) -->
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                    </div>
+                </div>
+                
+                <!-- Text Content on Right -->
+                <div class="hero-content">
+                    <h1 class="hero-title">Tala Khaddour</h1>
+                    <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
+                    
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Damascus, Syria</span>
+                    </div>
+                    
+                    <p class="hero-tagline">
+                        Designing accessible robotic solutions for healthcare and rehabilitation in resource‑constrained environments. 
+                        Passionate about creating technology that bridges the gap between advanced research and real‑world impact.
+                    </p>
+                    
+                    <div class="hero-links">
+                        <a href="mailto:your.email@example.com">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                        <a href="https://github.com/KHADDOUR-TALA" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="assets/pdf/cv.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Download CV
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Text Content - LEFT SIDE -->
-        <div class="hero-content">
-            <h1>Tala Khaddour</h1>
-            <div class="hero-title">Robotics & Intelligent Systems Engineer</div>
-            
-            <div class="location">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>Damascus, Syria</span>
-            </div>
-            
-            <p class="hero-description">
-                Designing intelligent, affordable robotic systems for healthcare and 
-                rehabilitation in post‑conflict environments. Combining technical 
-                expertise with humanitarian vision to create accessible technology 
-                solutions.
-            </p>
-            
-            <div class="hero-links">
-                <a href="mailto:tala@example.com" class="hero-btn">
-                    <i class="fas fa-envelope"></i> Email Me
-                </a>
-                <a href="https://github.com/KHADDOUR-TALA" target="_blank" class="hero-btn outline">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
-                <a href="assets/pdf/cv.pdf" target="_blank" class="hero-btn outline">
-                    <i class="fas fa-file-pdf"></i> Download CV
-                </a>
+    </header>
+
+    <!-- Rest of your content remains the same -->
+    <section class="section">
+        <div class="container">
+            <h2>Overview</h2>
+            <div class="two-column-grid">
+                <div class="activity-item">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <p><strong>BSc in Mechatronics Engineering</strong><br>
+                    XYZ University<br>
+                    Graduated with Honors (GPA: X.XX/4.0)<br>
+                    <em>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation"</em></p>
+                </div>
+                
+                <div class="activity-item">
+                    <h3><i class="fas fa-crosshairs"></i> Research Focus</h3>
+                    <p>• Rehabilitation Robotics<br>
+                       • Affordable Assistive Devices<br>
+                       • Human‑Robot Interaction<br>
+                       • Control Systems<br>
+                       • AI for Healthcare Applications</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Debug Message (will show if image fails) -->
-    <div class="debug-message" id="debugMessage">
-        <strong>Image Debug Info:</strong><br>
-        Trying to load from: <span id="imagePath"></span><br>
-        Status: <span id="imageStatus">Loading...</span><br>
-        <br>
-        <strong>Quick Fixes:</strong><br>
-        1. Check file exists at: <code>assets/images/profile.jpg</code><br>
-        2. Verify filename: <code>ls -la assets/images/</code><br>
-        3. Case sensitive: <code>Profile.jpg</code> vs <code>profile.jpg</code><br>
-        4. Try: <code>./assets/images/profile.jpg</code>
-    </div>
-
-    <!-- Overview Section -->
-    <section class="section">
+    <!-- Featured Project -->
+    <section class="section" style="background-color: var(--bg-light);">
         <div class="container">
-            <h2 class="section-title">Overview</h2>
-            
-            <div class="two-column">
-                <div class="card">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <p><strong>BSc in Mechatronics Engineering</strong></p>
-                    <p>XYZ University</p>
-                    <p>Graduated with Honors (GPA: X.XX/4.0)</p>
-                    <p><em>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation"</em></p>
+            <h2 class="text-center">Featured Project</h2>
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">Hand Exoskeleton for Rehabilitation</h3>
+                    <div class="project-meta">Final Year Thesis | 2023</div>
+                    <p class="project-tagline">A lightweight, self‑aligning robotic exoskeleton for hand rehabilitation with high‑precision tracking.</p>
                 </div>
                 
-                <div class="card">
-                    <h3><i class="fas fa-crosshairs"></i> Research Focus</h3>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li>✓ Rehabilitation Robotics</li>
-                        <li>✓ Affordable Assistive Devices</li>
-                        <li>✓ Human‑Robot Interaction</li>
-                        <li>✓ Control Systems</li>
-                        <li>✓ AI for Healthcare</li>
-                    </ul>
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-cad.jpg" alt="CAD Design">
+                        <div class="gallery-caption">CAD Design</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-prototype.jpg" alt="Prototype">
+                        <div class="gallery-caption">Working Prototype</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/projects/exo-graph.jpg" alt="Results">
+                        <div class="gallery-caption">Tracking Performance</div>
+                    </div>
+                </div>
+                
+                <div class="project-body">
+                    <h4>Key Achievements</h4>
+                    <p>• Achieved &lt;0.5° tracking error in finger flexion/extension<br>
+                       • Developed self‑alignment mechanism for user comfort<br>
+                       • Implemented cascade PID control for smooth motion<br>
+                       • Reduced production cost by 60% compared to commercial alternatives</p>
+                    
+                    <div class="project-links">
+                        <a href="projects.html#exoskeleton" class="btn">View Project Details</a>
+                        <a href="assets/pdf/thesis.pdf" target="_blank" class="btn">
+                            <i class="fas fa-file-pdf"></i> Thesis PDF
+                        </a>
+                        <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> Code Repository
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="main-footer">
         <div class="container">
-            <p>&copy; <span id="currentYear"></span> Tala Khaddour</p>
-            <ul class="footer-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
-            </ul>
+            <div class="footer-content">
+                <p>&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Update year
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Debug function
-        function showDebugMessage() {
-            const img = document.getElementById('profileImage');
-            const debug = document.getElementById('debugMessage');
-            const pathSpan = document.getElementById('imagePath');
-            const statusSpan = document.getElementById('imageStatus');
-            
-            pathSpan.textContent = img.src;
-            statusSpan.textContent = 'Failed to load';
-            statusSpan.style.color = 'red';
-            
-            debug.style.display = 'block';
-            
-            // Try alternative path
-            console.log('Image failed to load from:', img.src);
-            console.log('Trying alternative path...');
-            
-            // Try with ./ prefix
-            setTimeout(() => {
-                img.src = './assets/images/profile.jpg';
-                console.log('Now trying:', img.src);
-            }, 2000);
-        }
-        
-        // Check image loading on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const img = document.getElementById('profileImage');
-            
-            img.onload = function() {
-                console.log('✅ Image loaded successfully from:', this.src);
-                document.getElementById('debugMessage').style.display = 'none';
-            };
-            
-            // If image doesn't load in 3 seconds, show debug
-            setTimeout(() => {
-                if (!img.complete || img.naturalHeight === 0) {
-                    showDebugMessage();
-                }
-            }, 3000);
-        });
     </script>
 </body>
 </html>
