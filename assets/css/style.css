@@ -1,6 +1,6 @@
-/* ===== تصميم احترافي أكاديمي ===== */
+/* ===== Professional Academic Portfolio ===== */
 :root {
-    /* ألوان احترافية */
+    /* Professional Colors */
     --cream-bg: #FAF8F5;
     --cream-card: #FFFDFA;
     --cream-dark: #F5F2ED;
@@ -10,7 +10,7 @@
     --accent-gold: #C5A880;
     --accent-copper: #A67C52;
     
-    /* متغيرات UI */
+    /* UI Variables */
     --border-radius: 12px;
     --card-shadow: 0 8px 30px rgba(62, 44, 28, 0.08);
     --hover-shadow: 0 15px 40px rgba(62, 44, 28, 0.12);
@@ -18,7 +18,7 @@
     --section-spacing: 100px;
 }
 
-/* ===== إعادة الضبط ===== */
+/* ===== Reset ===== */
 * {
     margin: 0;
     padding: 0;
@@ -44,7 +44,7 @@ body {
     padding: 0 32px;
 }
 
-/* ===== الطباعة ===== */
+/* ===== Typography ===== */
 h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', 'Cormorant Garamond', serif;
     font-weight: 600;
@@ -88,7 +88,7 @@ p {
     line-height: 1.8;
 }
 
-/* ===== التنقل الاحترافي ===== */
+/* ===== Professional Navigation ===== */
 .main-nav {
     position: fixed;
     top: 0;
@@ -219,7 +219,7 @@ p {
     cursor: pointer;
 }
 
-/* ===== قسم البطل مع الصورة الدائرية الكبيرة ===== */
+/* ===== Hero Section with Large Circular Image ===== */
 .hero-section {
     padding-top: 140px;
     padding-bottom: var(--section-spacing);
@@ -276,7 +276,7 @@ p {
     max-width: 550px;
 }
 
-/* ===== الصورة الدائرية الكبيرة ===== */
+/* ===== Large Circular Profile Image ===== */
 .profile-visual {
     position: relative;
     display: flex;
@@ -345,7 +345,7 @@ p {
     to { transform: rotate(0deg); }
 }
 
-/* ===== قسم الإلهام ===== */
+/* ===== Inspiration Section ===== */
 .inspiration-section {
     padding: var(--section-spacing) 0;
     background: var(--cream-dark);
@@ -385,7 +385,7 @@ p {
     font-weight: 500;
 }
 
-/* ===== التعليم مع الصور ===== */
+/* ===== Education with Images ===== */
 .education-section {
     padding: var(--section-spacing) 0;
 }
@@ -481,7 +481,7 @@ p {
     border-left: 3px solid var(--accent-copper);
 }
 
-/* ===== معرض الصور ===== */
+/* ===== Image Gallery ===== */
 .education-gallery {
     padding: 0 2.5rem 2.5rem;
 }
@@ -541,7 +541,7 @@ p {
     font-size: 1.5rem;
 }
 
-/* ===== التواصل الاحترافي ===== */
+/* ===== Professional Contact Section ===== */
 .contact-section {
     padding: var(--section-spacing) 0;
     background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream-bg) 100%);
@@ -687,7 +687,7 @@ p {
     color: var(--brown-medium);
 }
 
-/* ===== الفوتر ===== */
+/* ===== Footer ===== */
 .main-footer {
     padding: 4rem 0 2rem;
     background: var(--brown-dark);
@@ -769,7 +769,7 @@ p {
     font-size: 0.9rem;
 }
 
-/* ===== المودال للصور ===== */
+/* ===== Image Modal ===== */
 .image-modal {
     position: fixed;
     top: 0;
@@ -813,7 +813,7 @@ p {
     transform: rotate(90deg);
 }
 
-/* ===== تصميم متجاوب ===== */
+/* ===== Responsive Design ===== */
 @media (max-width: 1200px) {
     .hero-container {
         grid-template-columns: 1fr;
@@ -898,7 +898,7 @@ p {
     }
 }
 
-/* ===== التحريك ===== */
+/* ===== Animations ===== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
