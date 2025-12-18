@@ -1,475 +1,283 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
-    <meta name="description" content="Visual academic portfolio of Tala Khaddour - Robotics & Intelligent Systems Engineer specializing in rehabilitation robotics and human-centered engineering.">
+/**
+ * Visual Academic Portfolio - JavaScript
+ * Clean, minimal functionality for image-driven portfolio
+ */
+
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
     
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    // ==========================================================================
+    // Mobile Navigation
+    // ==========================================================================
     
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
     
-    <!-- Meta for social sharing -->
-    <meta property="og:title" content="Tala Khaddour | Robotics & Intelligent Systems Engineer">
-    <meta property="og:description" content="Academic portfolio for scholarship applications and research collaborations">
-    <meta property="og:type" content="website">
-</head>
-<body>
-    <!-- Skip navigation for accessibility -->
-    <a href="#main-content" class="skip-navigation">Skip to main content</a>
-
-    <!-- Header Navigation -->
-    <header class="main-header">
-        <div class="container">
-            <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="nav-logo">Tala Khaddour</a>
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            
+            // Toggle navigation
+            this.setAttribute('aria-expanded', !isExpanded);
+            navMenu.classList.toggle('active');
+            
+            // Toggle body scroll
+            document.body.style.overflow = isExpanded ? '' : 'hidden';
+            
+            // Update hamburger animation
+            if (isExpanded) {
+                this.classList.remove('active');
+            } else {
+                this.classList.add('active');
+            }
+        });
+        
+        // Close menu when clicking on links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (navMenu.classList.contains('active') &&
+                !navToggle.contains(event.target) &&
+                !navMenu.contains(event.target)) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                navToggle.focus();
+            }
+        });
+    }
+    
+    // ==========================================================================
+    // Image Lightbox
+    // ==========================================================================
+    
+    const lightbox = document.getElementById('imageLightbox');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    
+    // Open lightbox on image click
+    const lightboxImages = document.querySelectorAll('[data-lightbox]');
+    const expandButtons = document.querySelectorAll('.image-expand');
+    
+    function openLightbox(src, alt) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        lightboxCaption.textContent = alt;
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Focus close button for accessibility
+        setTimeout(() => lightboxClose.focus(), 100);
+    }
+    
+    function closeLightbox() {
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        
+        // Return focus to the clicked element
+        const activeElement = document.querySelector('[data-lightbox]:focus, .image-expand:focus');
+        if (activeElement) {
+            activeElement.focus();
+        }
+    }
+    
+    // Setup image click handlers
+    lightboxImages.forEach(img => {
+        img.addEventListener('click', () => openLightbox(img.src, img.alt));
+        
+        // Make images keyboard accessible
+        img.setAttribute('tabindex', '0');
+        img.setAttribute('role', 'button');
+        img.setAttribute('aria-label', 'Click to view larger image');
+        
+        img.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                openLightbox(img.src, img.alt);
+            }
+        });
+    });
+    
+    // Setup expand button handlers
+    expandButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const img = button.closest('.image-container').querySelector('img');
+            openLightbox(img.src, img.alt);
+        });
+        
+        button.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                event.stopPropagation();
+                const img = button.closest('.image-container').querySelector('img');
+                openLightbox(img.src, img.alt);
+            }
+        });
+    });
+    
+    // Lightbox close handlers
+    lightboxClose.addEventListener('click', closeLightbox);
+    
+    lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
+            closeLightbox();
+        }
+    });
+    
+    // ==========================================================================
+    // Accessibility Enhancements
+    // ==========================================================================
+    
+    // Add screen reader text to external links
+    const externalLinks = document.querySelectorAll('a[target="_blank"]');
+    externalLinks.forEach(link => {
+        if (!link.querySelector('.sr-only')) {
+            const srText = document.createElement('span');
+            srText.className = 'sr-only';
+            srText.textContent = ' (opens in new window)';
+            link.appendChild(srText);
+        }
+        
+        // Ensure security attributes
+        if (!link.getAttribute('rel')) {
+            link.setAttribute('rel', 'noopener noreferrer');
+        }
+    });
+    
+    // ==========================================================================
+    // Smooth Scrolling
+    // ==========================================================================
+    
+    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    anchorLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            const href = this.getAttribute('href');
+            
+            if (href !== '#') {
+                event.preventDefault();
                 
-                <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-                
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
-                    <li><a href="education.html" class="nav-link">Education</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <main id="main-content">
-        <!-- Hero Section - Visual Statement -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-grid">
-                    <!-- Left Column: Text Content -->
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1 class="hero-title">
-                                <span class="title-line">Tala</span>
-                                <span class="title-line accent">Khaddour</span>
-                            </h1>
-                            
-                            <h2 class="hero-subtitle">
-                                Robotics & Intelligent Systems Engineer
-                            </h2>
-                            
-                            <div class="hero-description">
-                                <p>Specializing in rehabilitation robotics, intelligent control systems, and human-robot interaction with a focus on accessible healthcare solutions.</p>
-                            </div>
-                            
-                            <div class="hero-contact">
-                                <div class="contact-row">
-                                    <a href="mailto:khaddour.tala@gmail.com" class="contact-link">khaddour.tala@gmail.com</a>
-                                    <span class="contact-divider">•</span>
-                                    <a href="tel:+963936693678" class="contact-link">+963 936 693 678</a>
-                                </div>
-                                <div class="contact-row">
-                                    <span class="contact-location">Latakia, Syria</span>
-                                    <span class="contact-divider">•</span>
-                                    <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="contact-link cv-link" target="_blank">Download CV</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.main-header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     
-                    <!-- Right Column: Profile Image -->
-                    <div class="hero-image">
-                        <div class="profile-container">
-                            <div class="profile-frame">
-                                <img src="/assets/images/profile.jpg" 
-                                     alt="Professional portrait of Tala Khaddour, Robotics Engineer"
-                                     class="profile-photo"
-                                     width="320"
-                                     height="320">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Belief Statement - Visual Zone -->
-        <section class="belief-section">
-            <div class="container">
-                <div class="belief-container">
-                    <div class="quote-marks">
-                        <span class="quote-mark open">"</span>
-                        <span class="quote-mark close">"</span>
-                    </div>
-                    <blockquote class="academic-quote">
-                        <p class="quote-text">
-                            I believe in human potential without limits.<br>
-                            When the body reaches its boundaries, the mind creates a path beyond them.
-                        </p>
-                    </blockquote>
-                    <div class="quote-source">— Tala Khaddour</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Academic Introduction -->
-        <section class="intro-section">
-            <div class="container">
-                <div class="intro-container">
-                    <div class="intro-content">
-                        <h2 class="visually-hidden">Academic Focus</h2>
-                        <p class="intro-text">
-                            I am a Robotics and Intelligent Systems Engineer with a focused expertise in rehabilitation robotics, intelligent control systems, and human–robot interaction. My research integrates mechanical design, control theory, and computer vision to develop assistive technologies that enhance human capability and accessibility in healthcare contexts.
-                        </p>
-                        <p class="intro-text">
-                            My engineering philosophy is fundamentally human-centered, addressing real-world challenges in resource-limited environments and post-conflict recovery scenarios. This perspective shapes my approach to creating technological solutions that balance sophistication with practicality, durability, and cultural appropriateness.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section - Image-led Cards -->
-        <section class="education-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Education</h2>
-                    <p class="section-subtitle">Academic foundation and research training</p>
-                </div>
-                
-                <div class="education-cards">
-                    <!-- Card 1: Manara University -->
-                    <article class="education-card">
-                        <div class="card-image">
-                            <div class="image-container">
-                                <img src="/assets/images/manara-graduation.jpg" 
-                                     alt="Manara University graduation ceremony"
-                                     class="institution-photo"
-                                     data-lightbox="education"
-                                     width="400"
-                                     height="300">
-                                <button class="image-expand" aria-label="View full image">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="institution-header">
-                                <h3 class="institution-name">
-                                    <a href="https://manara.edu.sy" target="_blank" rel="noopener">Manara University</a>
-                                </h3>
-                                <span class="institution-period">2019 – 2024</span>
-                            </div>
-                            
-                            <p class="degree-info">Bachelor of Engineering in Robotics & Intelligent Systems</p>
-                            <p class="location-info">Latakia, Syria</p>
-                            
-                            <div class="academic-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">GPA:</span>
-                                    <span class="detail-value">3.92/4.0 <em class="honors">(Summa Cum Laude)</em></span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Rank:</span>
-                                    <span class="detail-value">1st in Robotics Engineering Cohort</span>
-                                </div>
-                            </div>
-                            
-                            <div class="thesis-section">
-                                <h4 class="thesis-title">Undergraduate Thesis</h4>
-                                <p class="thesis-topic">
-                                    <em>"Design and Implementation of a Low-Cost Hand Exoskeleton for Post-Stroke Rehabilitation Using Adaptive Fuzzy Control"</em>
-                                </p>
-                            </div>
-                            
-                            <div class="achievement-badge">
-                                <span class="badge-text">DCA Academic Scholarship 2020–2025</span>
-                            </div>
-                        </div>
-                    </article>
+                    window.scrollTo({
+                        top: targetPosition - headerHeight - 20,
+                        behavior: 'smooth'
+                    });
                     
-                    <!-- Card 2: National Center for the Distinguished -->
-                    <article class="education-card">
-                        <div class="card-image">
-                            <div class="image-container">
-                                <img src="/assets/images/ncd-campus.jpg" 
-                                     alt="National Center for the Distinguished campus"
-                                     class="institution-photo"
-                                     data-lightbox="education"
-                                     width="400"
-                                     height="300">
-                                <button class="image-expand" aria-label="View full image">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M15 3h6v6M14 10l6-6M9 21H3v-6M10 14l-6 6"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div class="institution-header">
-                                <h3 class="institution-name">
-                                    <a href="https://ncd.sy" target="_blank" rel="noopener">National Center for the Distinguished</a>
-                                </h3>
-                                <span class="institution-period">2017 – 2019</span>
-                            </div>
-                            
-                            <p class="degree-info">Advanced Science & Mathematics Program</p>
-                            <p class="location-info">Damascus, Syria</p>
-                            
-                            <div class="academic-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Selection:</span>
-                                    <span class="detail-value">Top 0.5% nationally among 2,000+ applicants</span>
-                                </div>
-                                <div class="detail-row">
-                                    <span class="detail-label">Focus:</span>
-                                    <span class="detail-value">Advanced Mathematics, Physics, Computer Science</span>
-                                </div>
-                            </div>
-                            
-                            <div class="thesis-section">
-                                <h4 class="thesis-title">Research Project</h4>
-                                <p class="thesis-topic">
-                                    <em>"Mathematical Modeling of Robotic Arm Kinematics Using Quaternion Algebra"</em>
-                                </p>
-                            </div>
-                            
-                            <div class="program-features">
-                                <ul class="features-list">
-                                    <li>Competitive national selection (1.2% acceptance rate)</li>
-                                    <li>Advanced STEM curriculum</li>
-                                    <li>Research mentorship with university faculty</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Preview -->
-        <section class="projects-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Selected Projects</h2>
-                    <p class="section-subtitle">Key research initiatives in rehabilitation robotics</p>
-                </div>
-                
-                <div class="projects-grid">
-                    <div class="project-column">
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#hand-exoskeleton">Hand Exoskeleton for Rehabilitation</a>
-                            </h3>
-                            <p class="project-description">
-                                Low-cost, adaptive hand exoskeleton for post-stroke rehabilitation using fuzzy logic control and EMG signal processing.
-                            </p>
-                            <a href="projects.html#hand-exoskeleton" class="project-link">View project details →</a>
-                        </article>
-                        
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#mobile-robot">Fuzzy Logic Control of Mobile Robot</a>
-                            </h3>
-                            <p class="project-description">
-                                Adaptive fuzzy controller for autonomous navigation in dynamic environments with sensor fusion and real-time decision making.
-                            </p>
-                            <a href="projects.html#mobile-robot" class="project-link">View project details →</a>
-                        </article>
-                    </div>
-                    
-                    <div class="project-column">
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#prosthetic-control">EMG-based Prosthetic Control System</a>
-                            </h3>
-                            <p class="project-description">
-                                Real-time EMG signal processing for intuitive control of prosthetic devices with adaptive learning algorithms.
-                            </p>
-                            <a href="projects.html#prosthetic-control" class="project-link">View project details →</a>
-                        </article>
-                        
-                        <article class="project-item">
-                            <h3 class="project-title">
-                                <a href="projects.html#sensor-fusion">Multi-Sensor Fusion for Robotic Navigation</a>
-                            </h3>
-                            <p class="project-description">
-                                Integration of LiDAR, IMU, and camera data for robust navigation in unstructured environments.
-                            </p>
-                            <a href="projects.html#sensor-fusion" class="project-link">View project details →</a>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Honors & Awards -->
-        <section class="honors-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Honors & Scholarships</h2>
-                    <p class="section-subtitle">Academic recognition and achievements</p>
-                </div>
-                
-                <div class="honors-list">
-                    <div class="honor-item">
-                        <h3 class="honor-title">DCA Merit-Based Academic Scholarship</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2020 – 2025</span>
-                            <span class="honor-description">Full tuition scholarship for academic excellence</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">World Robot Olympiad</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2022</span>
-                            <span class="honor-description">5th Place, Future Engineers Category (International)</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">Damascus International Fair</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2023</span>
-                            <span class="honor-description">Scientific Pavilion Exhibitor – Rehabilitation Robotics Research</span>
-                        </div>
-                    </div>
-                    
-                    <div class="honor-item">
-                        <h3 class="honor-title">University Research Excellence Award</h3>
-                        <div class="honor-details">
-                            <span class="honor-year">2024</span>
-                            <span class="honor-description">Outstanding undergraduate research contribution</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="contact-section">
-            <div class="container">
-                <div class="contact-card">
-                    <div class="card-header">
-                        <h2 class="card-title">Contact</h2>
-                        <p class="card-subtitle">Academic and research correspondence</p>
-                    </div>
-                    
-                    <div class="contact-content">
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Location</span>
-                                    <address class="contact-value">Latakia, Syria</address>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Email</span>
-                                    <a href="mailto:khaddour.tala@gmail.com" class="contact-value">khaddour.tala@gmail.com</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <svg class="contact-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                                <div class="contact-detail">
-                                    <span class="contact-label">Phone</span>
-                                    <a href="tel:+963936693678" class="contact-value">+963 936 693 678</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-links">
-                            <a href="https://linkedin.com/in/tala-khaddour" class="social-link" target="_blank" rel="noopener">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                    <rect x="2" y="9" width="4" height="12"></rect>
-                                    <circle cx="4" cy="4" r="2"></circle>
-                                </svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            
-                            <a href="https://github.com/tala-khaddour" class="social-link" target="_blank" rel="noopener">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                                </svg>
-                                <span>GitHub</span>
-                            </a>
-                            
-                            <a href="/assets/docs/Tala_Khaddour_CV.pdf" class="social-link cv-link" target="_blank">
-                                <svg class="social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                    <polyline points="14 2 14 8 20 8"></polyline>
-                                    <line x1="16" y1="13" x2="8" y2="13"></line>
-                                    <line x1="16" y1="17" x2="8" y2="17"></line>
-                                    <polyline points="10 9 9 9 8 9"></polyline>
-                                </svg>
-                                <span>Download CV</span>
-                            </a>
-                        </div>
-                        
-                        <div class="contact-note">
-                            <p>I welcome correspondence regarding research collaborations, academic opportunities, and scholarship inquiries. Response typically within 2–3 business days.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-text">
-                    <p class="footer-name">© Tala Khaddour</p>
-                    <p class="footer-role">Robotics & Intelligent Systems Engineer</p>
-                </div>
-                <div class="footer-note">
-                    <p>Academic Portfolio • References Available Upon Request</p>
-                    <p class="footer-update">Last updated: December 2024</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image preview">
-        <div class="lightbox-content">
-            <button class="lightbox-close" aria-label="Close lightbox">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            <div class="lightbox-image-container">
-                <img src="" alt="" class="lightbox-image">
-            </div>
-            <div class="lightbox-caption"></div>
-        </div>
-    </div>
-
-    <script src="main.js"></script>
-</body>
-</html>
+                    // Update URL
+                    history.pushState(null, null, href);
+                }
+            }
+        });
+    });
+    
+    // ==========================================================================
+    // Print Optimization
+    // ==========================================================================
+    
+    window.addEventListener('beforeprint', function() {
+        document.body.classList.add('printing');
+        
+        // Add URLs to external links for print
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            const urlSpan = document.createElement('span');
+            urlSpan.className = 'print-url';
+            urlSpan.textContent = ' (' + link.href + ')';
+            urlSpan.style.fontSize = '0.9em';
+            urlSpan.style.opacity = '0.7';
+            link.appendChild(urlSpan);
+        });
+    });
+    
+    window.addEventListener('afterprint', function() {
+        document.body.classList.remove('printing');
+        document.querySelectorAll('.print-url').forEach(span => span.remove());
+    });
+    
+    // ==========================================================================
+    // Image Loading Enhancement
+    // ==========================================================================
+    
+    // Add loading animation for images
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+            
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            
+            img.addEventListener('error', function() {
+                this.style.opacity = '1';
+                this.alt = 'Image not available';
+            });
+        }
+    });
+    
+    // ==========================================================================
+    // Active Navigation Highlight
+    // ==========================================================================
+    
+    function highlightCurrentSection() {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        let currentSection = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            const scrollPosition = window.scrollY + 100;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    // Only run if we have section-based navigation
+    const hasSectionNav = document.querySelectorAll('nav a[href^="#"]').length > 0;
+    if (hasSectionNav) {
+        window.addEventListener('scroll', highlightCurrentSection);
+        highlightCurrentSection(); // Initial call
+    }
+});
