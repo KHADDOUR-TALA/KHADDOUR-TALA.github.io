@@ -1,0 +1,123 @@
+:root {
+  --primary-blue: #005ea2;
+  --secondary-blue: #003f73;
+  --light-blue: #f0f4f8;
+  --white: #ffffff;
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--primary-blue); /* Entire background blue */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login box container */
+.login-box {
+  background: var(--white);
+  padding: 2.5em 3em;
+  border-radius: 20px;
+  width: 450px;
+  box-shadow: 0 10px 30px rgba(0, 94, 162, 0.3);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-box h2 {
+  margin-bottom: 1.5em;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: var(--primary-blue);
+}
+
+/* Input groups */
+.input-group {
+  margin-bottom: 1.5em;
+  position: relative;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: var(--secondary-blue);
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.55em 1em 0.55em 2.8em;
+  border: 2px solid var(--light-blue);
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--primary-blue);
+}
+
+/* Icons inside input */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 38px;
+  color: var(--secondary-blue);
+  font-size: 1.2em;
+  pointer-events: none;
+}
+
+/* Forgot password link */
+.forgot-password {
+  margin-top: 0.4em;
+  text-align: right;
+}
+
+.forgot-password a {
+  font-size: 0.9em;
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.forgot-password a:hover,
+.forgot-password a:focus {
+  color: var(--secondary-blue);
+  outline: none;
+}
+
+/* Submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.75em;
+  background: var(--primary-blue);
+  border: none;
+  border-radius: 12px;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+  background-color: var(--secondary-blue);
+  outline: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 2em;
+  font-size: 0.9em;
+  color: var(--white);
+  user-select: none;
+}
