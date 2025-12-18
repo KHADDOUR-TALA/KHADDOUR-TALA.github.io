@@ -1,11 +1,6 @@
 /**
- * Academic Portfolio - Minimal JavaScript
- * Tala Khaddour - Robotics & Intelligent Systems Engineer
- * 
- * Functions:
- * 1. Mobile navigation toggle
- * 2. Image lightbox for education photos
- * 3. Accessibility enhancements
+ * Enhanced Academic Portfolio JavaScript
+ * Clean, minimal functionality for scholarship portfolio
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,41 +14,36 @@ document.addEventListener('DOMContentLoaded', function() {
         navToggle.addEventListener('click', function() {
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
-            // Toggle aria-expanded attribute
+            // Toggle navigation
             this.setAttribute('aria-expanded', !isExpanded);
-            
-            // Toggle menu visibility
-            navMenu.setAttribute('aria-hidden', isExpanded);
-            navMenu.classList.toggle('active');
-            
-            // Update toggle button state
             this.classList.toggle('active');
+            navMenu.classList.toggle('active');
             
             // Toggle body scroll
             document.body.style.overflow = isExpanded ? '' : 'hidden';
         });
         
-        // Close menu when clicking on a link
+        // Close menu on link click
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                navToggle.setAttribute('aria-expanded', 'false');
-                navMenu.setAttribute('aria-hidden', 'true');
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                document.body.style.overflow = '';
+                if (navMenu.classList.contains('active')) {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
             });
         });
         
-        // Close menu when clicking outside
+        // Close menu on outside click
         document.addEventListener('click', function(event) {
-            const isClickInsideNav = navToggle.contains(event.target) || navMenu.contains(event.target);
-            
-            if (!isClickInsideNav && navMenu.classList.contains('active')) {
+            if (navMenu.classList.contains('active') &&
+                !navToggle.contains(event.target) &&
+                !navMenu.contains(event.target)) {
                 navToggle.setAttribute('aria-expanded', 'false');
-                navMenu.setAttribute('aria-hidden', 'true');
-                navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
                 document.body.style.overflow = '';
             }
         });
@@ -62,9 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && navMenu.classList.contains('active')) {
                 navToggle.setAttribute('aria-expanded', 'false');
-                navMenu.setAttribute('aria-hidden', 'true');
-                navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
                 document.body.style.overflow = '';
                 navToggle.focus();
             }
@@ -73,43 +62,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Image Lightbox
     const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const lightboxClose = document.querySelector('.lightbox-close');
+    const lightboxImage = lightbox.querySelector('.lightbox-image');
+    const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
     
-    if (lightbox && lightboxImage && lightboxCaption && lightboxClose) {
+    if (lightbox && lightboxImage) {
         const educationImages = document.querySelectorAll('[data-lightbox]');
         
         educationImages.forEach(img => {
-            img.addEventListener('click', function(event) {
-                event.preventDefault();
-                
-                // Set lightbox content
-                lightboxImage.src = this.src;
-                lightboxImage.alt = this.alt;
-                lightboxCaption.textContent = this.alt;
-                
-                // Show lightbox
-                lightbox.setAttribute('aria-hidden', 'false');
-                document.body.style.overflow = 'hidden';
-                
-                // Focus the close button for accessibility
-                setTimeout(() => lightboxClose.focus(), 100);
-            });
-            
             // Make images keyboard accessible
             img.setAttribute('tabindex', '0');
             img.setAttribute('role', 'button');
+            img.setAttribute('aria-label', 'Open image in lightbox');
+            
+            img.addEventListener('click', function() {
+                openLightbox(this.src, this.alt);
+            });
             
             img.addEventListener('keydown', function(event) {
                 if (event.key === 'Enter' || event.key === ' ') {
                     event.preventDefault();
-                    this.click();
+                    openLightbox(this.src, this.alt);
                 }
             });
         });
         
-        // Close lightbox function
+        function openLightbox(src, alt) {
+            lightboxImage.src = src;
+            lightboxImage.alt = alt;
+            lightboxCaption.textContent = alt;
+            lightbox.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            
+            // Focus close button for accessibility
+            setTimeout(() => lightboxClose.focus(), 100);
+        }
+        
         function closeLightbox() {
             lightbox.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
@@ -121,17 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Close lightbox on button click
         lightboxClose.addEventListener('click', closeLightbox);
         
-        // Close lightbox on background click
         lightbox.addEventListener('click', function(event) {
             if (event.target === lightbox) {
                 closeLightbox();
             }
         });
         
-        // Close lightbox with Escape key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') {
                 closeLightbox();
@@ -139,87 +124,76 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // External link indicators (adds visually hidden text for screen readers)
+    // Add external link indicators for screen readers
     const externalLinks = document.querySelectorAll('a[target="_blank"]');
     externalLinks.forEach(link => {
         if (!link.querySelector('.sr-only')) {
-            const srText = document.createElement('span');
-            srText.className = 'sr-only';
-            srText.textContent = ' (opens in new window)';
-            link.appendChild(srText);
+            const indicator = document.createElement('span');
+            indicator.className = 'sr-only';
+            indicator.textContent = ' (opens in new window)';
+            link.appendChild(indicator);
         }
         
-        // Add noreferrer and noopener for security
+        // Ensure security attributes
         link.setAttribute('rel', 'noopener noreferrer');
     });
     
-    // Print-friendly optimizations
-    window.addEventListener('beforeprint', function() {
-        // Add print-specific class for styling
-        document.body.classList.add('printing');
-        
-        // Make sure all links show URLs
-        const links = document.querySelectorAll('a[href]');
-        links.forEach(link => {
-            if (!link.getAttribute('href').startsWith('#')) {
-                const url = document.createElement('span');
-                url.className = 'print-url';
-                url.textContent = ' (' + link.href + ')';
-                link.appendChild(url);
-            }
-        });
-    });
-    
-    window.addEventListener('afterprint', function() {
-        document.body.classList.remove('printing');
-        
-        // Remove added URL spans
-        const printUrls = document.querySelectorAll('.print-url');
-        printUrls.forEach(url => url.remove());
-    });
-    
-    // Smooth scrolling for anchor links (optional enhancement)
+    // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             const href = this.getAttribute('href');
             
-            if (href !== '#' && href !== '#main-content') {
+            if (href !== '#') {
                 event.preventDefault();
                 
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
-                    const headerOffset = 80;
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    const headerHeight = document.querySelector('.site-header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
                     
                     window.scrollTo({
-                        top: offsetPosition,
+                        top: targetPosition - headerHeight - 20,
                         behavior: 'smooth'
                     });
                     
-                    // Update URL without jumping
+                    // Update URL
                     history.pushState(null, null, href);
                 }
             }
         });
     });
     
-    // Lazy loading for images (optional enhancement)
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.add('loaded');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
+    // Print optimization
+    window.addEventListener('beforeprint', function() {
+        document.body.classList.add('print-mode');
         
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
+        // Show URLs for external links
+        document.querySelectorAll('a[href^="http"]').forEach(link => {
+            const urlSpan = document.createElement('span');
+            urlSpan.className = 'print-url';
+            urlSpan.textContent = ' (' + link.href + ')';
+            urlSpan.style.fontSize = '0.9em';
+            urlSpan.style.opacity = '0.7';
+            link.appendChild(urlSpan);
         });
-    }
+    });
+    
+    window.addEventListener('afterprint', function() {
+        document.body.classList.remove('print-mode');
+        document.querySelectorAll('.print-url').forEach(span => span.remove());
+    });
+    
+    // Add loading animation for images (optional enhancement)
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        if (!img.complete) {
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+            
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+        }
+    });
 });
