@@ -3,197 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteering | Tala Khaddour</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
+    <title>Volunteering & Participation | Robotics Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Tala Khaddour</a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Robotics Portfolio</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="volunteer.html" class="active">Volunteering</a>
+                <a href="skills.html">Skills & Certificates</a>
+                <a href="about.html">About Me</a>
+                <a href="index.html#contact" class="contact-btn">Contact</a>
+            </div>
+            <button class="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="volunteer.html">Volunteering</a></li>
-                <li><a href="skills.html">Skills & Me</a></li>
-            </ul>
-            
-            <div class="nav-social">
-                <a href="https://linkedin.com/in/talakhaddour" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/KHADDOUR-TALA" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:tala.khaddour@example.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="assets/docs/cv.pdf" target="_blank" class="cv-btn">
-                    <i class="fas fa-file-pdf"></i> CV
-                </a>
-            </div>
         </div>
     </nav>
 
-    <!-- Volunteer Hero -->
-    <section class="volunteer-hero">
+    <section class="page-hero">
         <div class="container">
-            <h1>Volunteering & Participation</h1>
-            <p class="hero-subtitle">Contributing to community growth through science, education, and humanitarian efforts</p>
+            <h1>Volunteering & Community Participation</h1>
+            <p>Giving back through technology, education, and humanitarian efforts</p>
         </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="section">
+    <!-- Volunteer Activities -->
+    <section class="volunteer-activities">
         <div class="container">
-            <h2 class="section-title">Activities Timeline</h2>
+            <h2 class="section-title">Community Engagement & Leadership</h2>
             
-            <div class="timeline">
-                <!-- Syrian Earthquake Relief -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Feb 2023</span>
-                        <h3>Syrian Earthquake Relief - Jableh</h3>
-                        <p>Organized and participated in relief efforts following the devastating earthquake. Coordinated supply distribution and provided technical assistance for damaged infrastructure assessment.</p>
-                        
-                        <div class="event-images">
-                            <img src="assets/images/volunteer/earthquake1.jpg" alt="Relief Work" class="event-image">
-                            <img src="assets/images/volunteer/earthquake2.jpg" alt="Community Support" class="event-image">
-                        </div>
-                        
-                        <div class="certificate-container">
-                            <img src="assets/images/certificates/earthquake.jpg" alt="Relief Certificate" class="certificate-img">
-                            <div>
-                                <h4>Humanitarian Service Certificate</h4>
-                                <p>Awarded for outstanding contribution to earthquake relief efforts in affected communities.</p>
-                            </div>
-                        </div>
+            <div class="activities-grid">
+                <!-- WRO -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="World Robot Olympiad">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-robot"></i> World Robot Olympiad (WRO)</h3>
+                        <p class="activity-role">Team Leader & Technical Mentor</p>
+                        <p>Led a team of 5 students in designing and programming competition robots. Provided technical guidance and strategy development for national competitions.</p>
+                        <a href="assets/certificates/wro.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- World Robot Olympiad -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Nov 2022</span>
-                        <h3>World Robot Olympiad (WRO)</h3>
-                        <p>Coached and mentored student teams for national competitions. Developed training curriculum focused on problem-solving, programming, and mechanical design.</p>
-                        
-                        <div class="event-images">
-                            <img src="assets/images/volunteer/wro1.jpg" alt="WRO Training" class="event-image">
-                            <img src="assets/images/volunteer/wro2.jpg" alt="Competition Day" class="event-image">
-                        </div>
+                <!-- Girls in AI -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Girls in AI Hackathon">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-code"></i> Girls in AI Hackathon</h3>
+                        <p class="activity-role">Workshop Facilitator & Judge</p>
+                        <p>Conducted AI workshops for 50+ female high school students. Mentored teams in developing machine learning solutions for social impact challenges.</p>
+                        <a href="assets/certificates/girls-ai.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- Girls in AI Hackathon -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Aug 2022</span>
-                        <h3>Girls in AI Hackathon</h3>
-                        <p>Technical mentor for all-female teams developing AI solutions for social challenges. Guided participants through machine learning concepts and project implementation.</p>
-                        
-                        <div class="certificate-container">
-                            <img src="assets/images/certificates/girls-ai.jpg" alt="Hackathon Certificate" class="certificate-img">
-                            <div>
-                                <h4>Mentorship Recognition</h4>
-                                <p>Recognized for exceptional guidance in empowering young women in technology.</p>
-                            </div>
-                        </div>
+                <!-- Damascus Fair -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Damascus International Fair">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-university"></i> Damascus International Fair</h3>
+                        <p class="activity-role">Exhibition Presenter</p>
+                        <p>Presented innovative robotics projects to international visitors and industry professionals. Demonstrated practical applications of intelligent systems.</p>
+                        <a href="assets/certificates/damascus-fair.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- Damascus International Fair -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Sep 2021</span>
-                        <h3>Damascus International Fair</h3>
-                        <p>Exhibited robotics projects and demonstrated Syrian technological innovation to international visitors. Presented research to government officials and industry representatives.</p>
-                        
-                        <div class="event-images">
-                            <img src="assets/images/volunteer/fair1.jpg" alt="Exhibition Setup" class="event-image">
-                            <img src="assets/images/volunteer/fair2.jpg" alt="Presentation" class="event-image">
-                        </div>
+                <!-- University Fair -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="University Project Fair">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-graduation-cap"></i> Manara University Project Fair</h3>
+                        <p class="activity-role">Project Lead & Presenter</p>
+                        <p>Showcased undergraduate research projects to university community and industry partners. Received "Most Innovative Project" award.</p>
+                        <a href="assets/certificates/university-fair.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- Manara University Exhibition -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Jun 2021</span>
-                        <h3>Manara University Innovation Exhibition</h3>
-                        <p>Showcased the hand exoskeleton project to university community and industry partners. Received feedback from medical professionals for practical applications.</p>
+                <!-- InnoSync Conference -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="InnoSync Conference">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-users"></i> InnoSync Conference (JCI)</h3>
+                        <p class="activity-role">Speaker & Panelist</p>
+                        <p>Presented research on "Human-Centered Robotics" and participated in discussions about innovation in developing countries.</p>
+                        <a href="assets/certificates/innosync.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- InnoSync JCI -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">Apr 2021</span>
-                        <h3>InnoSync - Junior Chamber International</h3>
-                        <p>Participated in innovation workshops focusing on entrepreneurship and technological solutions for community development.</p>
-                        
-                        <div class="certificate-container">
-                            <img src="assets/images/certificates/innosync.jpg" alt="InnoSync Certificate" class="certificate-img">
-                            <div>
-                                <h4>Innovation Workshop Completion</h4>
-                                <p>Certified in entrepreneurial thinking and community-driven innovation.</p>
-                            </div>
-                        </div>
+                <!-- DCA Event -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DCA Event">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-star"></i> Distinction & Creativity Agency</h3>
+                        <p class="activity-role">Event Organizer & Coordinator</p>
+                        <p>Organized national STEM competition for distinguished students. Managed logistics, judging panels, and award ceremonies.</p>
+                        <a href="assets/certificates/dca.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- Syrian Science Olympiad -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">2018-2020</span>
-                        <h3>Syrian Science Olympiad</h3>
-                        <p>Trained and coached high school students in physics and mathematics for national olympiad competitions. Developed specialized curriculum for advanced problem-solving.</p>
+                <!-- Science Olympiad -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Science Olympiad">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-atom"></i> Syrian Science Olympiad</h3>
+                        <p class="activity-role">Support Coach & Mentor</p>
+                        <p>Provided training and mentorship to olympiad participants in robotics and AI categories. Developed practice materials and mock competitions.</p>
+                        <a href="assets/certificates/olympiad.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
 
-                <!-- Robotics Coaching -->
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <span class="event-date">2019-Present</span>
-                        <h3>Robotics Coaching & Workshops</h3>
-                        <p>Regularly conduct robotics workshops for students aged 12-18. Cover topics from basic electronics to advanced programming and mechanical design.</p>
-                        
-                        <div class="event-images">
-                            <img src="assets/images/volunteer/workshop1.jpg" alt="Workshop Teaching" class="event-image">
-                            <img src="assets/images/volunteer/workshop2.jpg" alt="Student Projects" class="event-image">
-                        </div>
+                <!-- Robotics Coach -->
+                <div class="activity-card fade-in">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Robotics Coaching">
+                    </div>
+                    <div class="activity-content">
+                        <h3><i class="fas fa-chalkboard-teacher"></i> Robotics Coach</h3>
+                        <p class="activity-role">Syrian Computer Society</p>
+                        <p>Conducted weekly robotics workshops for high school students. Developed curriculum covering basics to advanced robotics concepts.</p>
+                        <a href="assets/certificates/robotics-coach.pdf" class="certificate-link" target="_blank">
+                            <i class="fas fa-certificate"></i> View Certificate
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="main-footer">
+    <!-- Humanitarian Work -->
+    <section class="humanitarian-section">
+        <div class="container">
+            <h2 class="section-title">Humanitarian Work</h2>
+            <div class="humanitarian-content fade-in">
+                <div class="humanitarian-image">
+                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Humanitarian Aid">
+                </div>
+                <div class="humanitarian-text">
+                    <h3><i class="fas fa-hands-helping"></i> Syrian Earthquake Relief - Jableh</h3>
+                    <p class="humanitarian-subtitle">February 2023 - Community Support Volunteer</p>
+                    <p>In the aftermath of the devastating earthquake, I joined relief efforts in Jableh to assist displaced families. My work focused on:</p>
+                    <ul class="humanitarian-list">
+                        <li><i class="fas fa-home"></i> Coordinating shelter and basic needs distribution</li>
+                        <li><i class="fas fa-heart"></i> Providing emotional support to affected families</li>
+                        <li><i class="fas fa-users"></i> Organizing community activities for children</li>
+                        <li><i class="fas fa-hand-holding-medical"></i> Assisting in medical aid distribution</li>
+                    </ul>
+                    <p class="humanitarian-reflection">This experience reinforced my belief in the resilience of the human spirit and the importance of community. It strengthened my commitment to developing technology that serves humanity in times of need.</p>
+                    <div class="humanitarian-gallery">
+                        <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w-400&q=80" alt="Relief work 1">
+                        <img src="https://images.unsplash.com/photo-1583339793403-3d9b001b6008?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Relief work 2">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>Tala Khaddour</p>
-                <p>Robotics & Intelligent Systems Engineer</p>
-                
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="volunteer.html">Volunteering</a></li>
-                    <li><a href="skills.html">Skills & Me</a></li>
-                </ul>
-                
-                <p class="copyright">&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                <div class="footer-logo">
+                    <h3>Community Engagement</h3>
+                    <p>Technology Serving Humanity</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="volunteer.html">Volunteering</a>
+                    <a href="skills.html">Skills</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://linkedin.com/in/khaddour-tala" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/khaddour-tala" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:khaddour.tala@example.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Robotics Portfolio. Documenting service and impact.</p>
             </div>
         </div>
     </footer>
 
-    <script src="assets/js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
