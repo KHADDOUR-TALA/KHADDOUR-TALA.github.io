@@ -3,235 +3,1476 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Robotics Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tala Khaddour | Robotics & Intelligent Systems Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL RESET & DESIGN SYSTEM ===== */
+        :root {
+            --primary-blue: #89CFF0;
+            --accent-blue: #5D8AA8;
+            --soft-cream: #F9F7F2;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --navy: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.03);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        section {
+            padding: 80px 24px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-4px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--navy);
+            padding: 12px 28px;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(93, 138, 168, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(to bottom, var(--soft-cream) 0%, var(--white) 100%);
+        }
+
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-name {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .hero-title {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-philosophy {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary-blue);
+            line-height: 1.5;
+        }
+
+        .hero-bio {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            margin-bottom: 2rem;
+        }
+
+        .profile-image-container {
+            flex-shrink: 0;
+        }
+
+        .profile-img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-blue);
+            box-shadow: var(--shadow);
+            background-color: var(--light-gray);
+            display: block;
+        }
+
+        /* ===== QUOTES SECTION ===== */
+        .quotes {
+            background-color: var(--light-gray);
+        }
+
+        .quotes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .quote-card {
+            padding: 1.5rem;
+            border-top: 4px solid var(--primary-blue);
+            position: relative;
+        }
+
+        .quote-card i {
+            color: var(--primary-blue);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .quote-author {
+            font-weight: 600;
+            color: var(--navy);
+            text-align: right;
+        }
+
+        /* ===== EDUCATION SECTION ===== */
+        .education-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .edu-card {
+            padding: 2.5rem;
+        }
+
+        .edu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .edu-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-period {
+            color: var(--accent-blue);
+            font-weight: 600;
+            background-color: var(--soft-cream);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+        }
+
+        .edu-details {
+            list-style: none;
+        }
+
+        .edu-details li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .edu-details i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+
+        .edu-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .edu-link:hover {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            text-align: center;
+            background-color: var(--white);
+            font-weight: 500;
+            color: var(--navy);
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects {
+            background-color: var(--light-gray);
+        }
+
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .project-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .project-item:nth-child(even) .project-content {
+            direction: ltr;
+        }
+
+        .project-content {
+            padding: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+        }
+
+        .project-subtitle {
+            color: var(--accent-blue);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .project-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-features li {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .project-features i {
+            color: var(--primary-blue);
+            margin-right: 10px;
+            margin-top: 4px;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .project-img-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-img:hover {
+            transform: scale(1.05);
+        }
+
+        .project-img-caption {
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        /* ===== LAB WORK SECTION ===== */
+        .lab-work {
+            background-color: var(--white);
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .lab-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .lab-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .lab-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .lab-description {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== SKILLS SECTION ===== */
+        .skills {
+            background-color: var(--light-gray);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .skill-icon {
+            font-size: 1.8rem;
+            color: var(--primary-blue);
+            margin-right: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .skill-name {
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: var(--medium-gray);
+            border-radius: 4px;
+            flex-grow: 1;
+            margin: 0 1rem;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        .skill-percent {
+            font-weight: 600;
+            color: var(--accent-blue);
+            min-width: 40px;
+            text-align: right;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            background-color: var(--light-gray);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            color: var(--accent-blue);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 24px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .copyright {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-philosophy {
+                padding-left: 0;
+                border-left: none;
+                border-top: 3px solid var(--primary-blue);
+                padding-top: 1rem;
+            }
+            
+            .profile-img {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .project-item {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .project-item:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-name {
+                font-size: 2.8rem;
+            }
+            
+            .hero-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .edu-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .project-images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 16px;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero-name {
+                font-size: 2.3rem;
+            }
+            
+            .hero-title {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .edu-card {
+                padding: 1.5rem;
+            }
+            
+            .profile-img {
+                width: 240px;
+                height: 240px;
+            }
+            
+            .skill-category {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Robotics Portfolio</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html" class="active">Projects</a>
-                <a href="volunteer.html">Volunteering</a>
-                <a href="skills.html">Skills & Certificates</a>
-                <a href="about.html">About Me</a>
-                <a href="index.html#contact" class="contact-btn">Contact</a>
-            </div>
-            <button class="mobile-menu-btn">
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">Tala Khaddour</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#lab">Lab Work</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn">Download CV</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section class="page-hero">
-        <div class="container">
-            <h1>Research Projects</h1>
-            <p>Exploring the intersection of robotics, AI, and human rehabilitation</p>
+    <!-- ===== HERO SECTION ===== -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-text fade-in">
+                <h1 class="hero-name">Tala Khaddour</h1>
+                <p class="hero-title">Robotics & Intelligent Systems Engineer</p>
+                <blockquote class="hero-philosophy">
+                    "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond."
+                </blockquote>
+                <p class="hero-bio">
+                    A dedicated engineer specializing in rehabilitation robotics, adaptive control systems, and human-centered AI. 
+                    My research focuses on creating intelligent systems that augment human capability, particularly for individuals with mobility challenges. 
+                    Born from adversity in a conflict-affected region, I channel resilience into technological innovation that bridges gaps between human limitation and possibility.
+                </p>
+                <a href="#contact" class="btn">Connect for Research Collaboration</a>
+            </div>
+            <div class="profile-image-container fade-in delay-1">
+                <img src="/assets/images/profile.jpg" alt="Tala Khaddour - Robotics Engineer" class="profile-img">
+            </div>
         </div>
     </section>
 
-    <!-- Main Project -->
-    <section class="main-project">
+    <!-- ===== QUOTES SECTION ===== -->
+    <section class="quotes">
         <div class="container">
-            <div class="project-header">
-                <span class="project-tag">Featured Project</span>
-                <h2>Hand Exoskeleton for Rehabilitation</h2>
-                <p class="project-subtitle">Advanced robotic system for post-stroke hand rehabilitation</p>
-            </div>
-
-            <div class="project-content">
-                <!-- Overview -->
-                <div class="project-section fade-in">
-                    <h3><i class="fas fa-eye"></i> Project Overview</h3>
-                    <p>Development of a soft robotic exoskeleton system for hand rehabilitation, focusing on post-stroke patients with hand impairment. The system integrates advanced control algorithms with ergonomic design to provide adaptive assistance.</p>
+            <div class="quotes-grid">
+                <div class="card quote-card fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"We can only see a short distance ahead, but we can see plenty there that needs to be done."</p>
+                    <p class="quote-author">— Alan Turing</p>
                 </div>
-
-                <!-- Motivation -->
-                <div class="project-section fade-in">
-                    <h3><i class="fas fa-heart"></i> Research Motivation</h3>
-                    <p>Stroke affects millions worldwide, often resulting in hand mobility issues. Traditional therapy is labor-intensive and limited by therapist availability. This project aims to create an accessible, personalized rehabilitation solution that can be used in clinical and home settings.</p>
+                <div class="card quote-card fade-in delay-1">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"The best material model of a cat is another, or preferably the same, cat."</p>
+                    <p class="quote-author">— Norbert Wiener</p>
                 </div>
-
-                <!-- Technical Contributions -->
-                <div class="project-section fade-in">
-                    <h3><i class="fas fa-cogs"></i> Technical Contributions</h3>
-                    <div class="contributions-grid">
-                        <div class="contribution">
-                            <h4>Dynamic Modeling</h4>
-                            <p>Developed accurate biomechanical models of hand kinematics for precise control</p>
-                        </div>
-                        <div class="contribution">
-                            <h4>Nonlinear Control Strategies</h4>
-                            <p>Implemented adaptive control algorithms for smooth and natural movement assistance</p>
-                        </div>
-                        <div class="contribution">
-                            <h4>Precision Tracking</h4>
-                            <p>Achieved &lt;0.5° tracking error for fine motor control rehabilitation</p>
-                        </div>
-                        <div class="contribution">
-                            <h4>Stereo Vision Integration</h4>
-                            <p>Developed hand pose mirroring system using stereo vision for real-time feedback</p>
-                        </div>
-                    </div>
+                <div class="card quote-card fade-in delay-2">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"The key to artificial intelligence has always been the representation."</p>
+                    <p class="quote-author">— Rodney Brooks</p>
                 </div>
-
-                <!-- Results -->
-                <div class="project-section fade-in">
-                    <h3><i class="fas fa-chart-line"></i> Results & Impact</h3>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-number">72%</div>
-                            <p>Reduction in joint position error</p>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">&lt;15ms</div>
-                            <p>System latency for real-time control</p>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-number">94%</div>
-                            <p>User satisfaction in clinical trials</p>
-                        </div>
-                    </div>
+                <div class="card quote-card fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"The saddest aspect of life right now is that science gathers knowledge faster than society gathers wisdom."</p>
+                    <p class="quote-author">— Isaac Asimov</p>
                 </div>
-
-                <!-- Media Gallery -->
-                <div class="project-section fade-in">
-                    <h3><i class="fas fa-images"></i> Project Media</h3>
-                    <div class="gallery-grid">
-                        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-                            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="CAD Design">
-                            <div class="gallery-overlay">CAD Design</div>
-                        </div>
-                        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="3D Printed Parts">
-                            <div class="gallery-overlay">3D Printed Parts</div>
-                        </div>
-                        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-                            <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Assembly Process">
-                            <div class="gallery-overlay">Assembly Process</div>
-                        </div>
-                        <div class="gallery-item" data-src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80">
-                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Testing Setup">
-                            <div class="gallery-overlay">Testing Setup</div>
-                        </div>
-                    </div>
+                <div class="card quote-card fade-in delay-1">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"AI is not magic; it's mathematics and engineering that can improve human lives."</p>
+                    <p class="quote-author">— Fei-Fei Li</p>
                 </div>
-
-                <!-- Project Links -->
-                <div class="project-links fade-in">
-                    <a href="assets/documents/thesis.pdf" class="btn btn-primary" download>
-                        <i class="fas fa-file-pdf"></i> Download Thesis (PDF)
-                    </a>
-                    <a href="https://github.com/khaddour-tala/hand-exoskeleton" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-github"></i> View GitHub Repository
-                    </a>
-                    <a href="https://youtube.com/watch?v=demo" class="btn btn-accent" target="_blank">
-                        <i class="fab fa-youtube"></i> Watch Demo Video
-                    </a>
+                <div class="card quote-card fade-in delay-2">
+                    <i class="fas fa-quote-left"></i>
+                    <p class="quote-text">"When something is important enough, you do it even if the odds are not in your favor."</p>
+                    <p class="quote-author">— Elon Musk</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Other Projects -->
-    <section class="other-projects">
+    <!-- ===== EDUCATION SECTION ===== -->
+    <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Other Research Projects</h2>
+            <h2 class="section-title">Education & Academic Excellence</h2>
             
-            <!-- ROS Project -->
-            <div class="project-card fade-in">
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ROS Project">
+            <div class="education-cards">
+                <div class="card edu-card fade-in">
+                    <div class="edu-header">
+                        <div>
+                            <h3 class="edu-title"><a href="https://www.manara.edu.sy" target="_blank" class="edu-link">Manara University</a></h3>
+                            <p>Bachelor of Science – Robotics & Intelligent Systems Engineering</p>
+                        </div>
+                        <div class="edu-period">2020 – 2025</div>
+                    </div>
+                    <ul class="edu-details">
+                        <li><i class="fas fa-star"></i> Distinguished Student Program – Top 5% of Faculty</li>
+                        <li><i class="fas fa-chart-line"></i> GPA: 3.28 / 4.0 (Cum Laude Standing)</li>
+                        <li><i class="fas fa-graduation-cap"></i> Thesis Score: 96 / 100 (Highest Honors)</li>
+                        <li><i class="fas fa-file-alt"></i> <strong>Thesis:</strong> "Adaptive Control System for Lower-Limb Rehabilitation Exoskeleton Using EMG Signal Fusion"</li>
+                        <li><i class="fas fa-award"></i> University Innovation Grant Recipient (2024)</li>
+                    </ul>
                 </div>
-                <div class="project-info">
-                    <h3>Autonomous Navigation with ROS</h3>
-                    <p class="project-tools"><i class="fas fa-tools"></i> ROS, Python, Gazebo, SLAM</p>
-                    <p>Developed an autonomous navigation system for mobile robots using ROS (Robot Operating System). Implemented SLAM for environment mapping and path planning algorithms for obstacle avoidance.</p>
-                    <ul class="project-features">
-                        <li><i class="fas fa-check"></i> Real-time obstacle detection</li>
-                        <li><i class="fas fa-check"></i> Optimal path planning</li>
-                        <li><i class="fas fa-check"></i> Gazebo simulation environment</li>
+                
+                <div class="card edu-card fade-in delay-1">
+                    <div class="edu-header">
+                        <div>
+                            <h3 class="edu-title"><a href="https://www.ncd.sy" target="_blank" class="edu-link">National Center for the Distinguished (NCD)</a></h3>
+                            <p>Scientific Stream – Elite National Program</p>
+                        </div>
+                        <div class="edu-period">2017 – 2020</div>
+                    </div>
+                    <ul class="edu-details">
+                        <li><i class="fas fa-trophy"></i> Rank: 3 / 75 Nationwide (Top 4%)</li>
+                        <li><i class="fas fa-percentage"></i> Final Grade: 92.3% (Distinction with Honors)</li>
+                        <li><i class="fas fa-users"></i> Selected among 5,000+ applicants nationwide</li>
+                        <li><i class="fas fa-flask"></i> Advanced curriculum in Physics, Mathematics, and Computer Science</li>
+                        <li><i class="fas fa-medal"></i> National Robotics Competition Finalist (2019)</li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Fuzzy Logic Project -->
-            <div class="project-card fade-in">
-                <div class="project-info">
-                    <h3>Fuzzy Logic Control System</h3>
-                    <p class="project-tools"><i class="fas fa-tools"></i> MATLAB, Simulink, Fuzzy Logic Toolbox</p>
-                    <p>Comparative study of fuzzy logic controllers (FLC) versus traditional PID controllers for nonlinear systems. Designed and implemented various FLC architectures including P-like, PI-like, PD-like, and PID-like controllers.</p>
-                    <div class="comparison-table">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Controller Type</th>
-                                    <th>Rise Time</th>
-                                    <th>Overshoot</th>
-                                    <th>Steady-state Error</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>PID-like FLC</td>
-                                    <td>0.85s</td>
-                                    <td>2.1%</td>
-                                    <td>0.02%</td>
-                                </tr>
-                                <tr>
-                                    <td>Traditional PID</td>
-                                    <td>1.12s</td>
-                                    <td>4.8%</td>
-                                    <td>0.15%</td>
-                                </tr>
-                                <tr>
-                                    <td>PI-like FLC</td>
-                                    <td>0.92s</td>
-                                    <td>1.8%</td>
-                                    <td>0.05%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: var(--navy);">Academic Journey</h3>
+            <div class="gallery">
+                <div class="gallery-item fade-in">
+                    <img src="/assets/images/graduation1.jpg" alt="University Graduation Ceremony" class="gallery-img">
+                    <div class="gallery-caption">Manara University Graduation</div>
                 </div>
-                <div class="project-image">
-                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fuzzy Logic Results">
+                <div class="gallery-item fade-in delay-1">
+                    <img src="/assets/images/graduation2.jpg" alt="NCD Campus" class="gallery-img">
+                    <div class="gallery-caption">NCD Campus</div>
+                </div>
+                <div class="gallery-item fade-in delay-2">
+                    <img src="/assets/images/graduation3.jpg" alt="Thesis Defense Presentation" class="gallery-img">
+                    <div class="gallery-caption">Thesis Defense (96/100)</div>
+                </div>
+                <div class="gallery-item fade-in delay-1">
+                    <img src="/assets/images/graduation4.jpg" alt="Robotics Lab Work" class="gallery-img">
+                    <div class="gallery-caption">Rehabilitation Robotics Lab</div>
+                </div>
+                <div class="gallery-item fade-in delay-2">
+                    <img src="/assets/images/graduation5.jpg" alt="Award Ceremony" class="gallery-img">
+                    <div class="gallery-caption">Distinguished Student Award</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- ===== PROJECTS SECTION ===== -->
+    <section id="projects" class="projects">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Research Portfolio</h3>
-                    <p>Advancing Robotics & AI for Human Good</p>
+            <h2 class="section-title">Research Projects & Innovation</h2>
+            
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-item fade-in">
+                    <div class="project-content">
+                        <h3 class="project-title">Hand Exoskeleton for Rehabilitation</h3>
+                        <p class="project-subtitle"><i class="fas fa-hand-paper"></i> Rehabilitation Robotics • Human-Machine Interface • Biomedical Engineering</p>
+                        <p class="project-description">
+                            A lightweight, 3D-printed hand exoskeleton designed for post-stroke rehabilitation. 
+                            The system uses soft actuators and EMG signal processing to provide adaptive assistance 
+                            for grasping and fine motor skill recovery.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> Adaptive control based on patient's EMG signals</li>
+                            <li><i class="fas fa-check-circle"></i> 3D-printed modular design for cost-effectiveness</li>
+                            <li><i class="fas fa-check-circle"></i> Real-time progress tracking via mobile application</li>
+                            <li><i class="fas fa-check-circle"></i> Weight: 280g | Actuation: Pneumatic soft actuators</li>
+                        </ul>
+                        <a href="#" class="btn">View Research Paper</a>
+                    </div>
+                    <div class="project-images">
+                        <div class="project-img-container">
+                            <img src="/assets/images/project1-1.jpg" alt="Hand exoskeleton CAD design" class="project-img">
+                            <div class="project-img-caption">CAD Design & Assembly</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project1-2.jpg" alt="Exoskeleton testing with patient" class="project-img">
+                            <div class="project-img-caption">Clinical Testing Phase</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project1-3.jpg" alt="EMG signal processing interface" class="project-img">
+                            <div class="project-img-caption">EMG Signal Interface</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project1-4.jpg" alt="3D printing process" class="project-img">
+                            <div class="project-img-caption">3D Printing Process</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="volunteer.html">Volunteering</a>
-                    <a href="skills.html">Skills</a>
-                    <a href="about.html">About</a>
+
+                <!-- Project 2 -->
+                <div class="project-item fade-in delay-1">
+                    <div class="project-content">
+                        <h3 class="project-title">Autonomous Navigation for Indoor Robotics</h3>
+                        <p class="project-subtitle"><i class="fas fa-robot"></i> SLAM • Computer Vision • Path Planning</p>
+                        <p class="project-description">
+                            Development of an autonomous navigation system using ROS and LIDAR for indoor environments. 
+                            Implements real-time SLAM with obstacle avoidance and optimal path planning for service robots.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> Custom SLAM implementation with 2cm accuracy</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-sensor fusion (LIDAR, IMU, RGB-D camera)</li>
+                            <li><i class="fas fa-check-circle"></i> Dynamic obstacle detection and avoidance</li>
+                            <li><i class="fas fa-check-circle"></i> Real-time processing at 15 FPS on NVIDIA Jetson</li>
+                        </ul>
+                        <a href="#" class="btn">View GitHub Repository</a>
+                    </div>
+                    <div class="project-images">
+                        <div class="project-img-container">
+                            <img src="/assets/images/project2-1.jpg" alt="Robot platform with sensors" class="project-img">
+                            <div class="project-img-caption">Custom Robot Platform</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project2-2.jpg" alt="SLAM mapping visualization" class="project-img">
+                            <div class="project-img-caption">Real-time SLAM Mapping</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project2-3.jpg" alt="Path planning algorithm" class="project-img">
+                            <div class="project-img-caption">Optimal Path Planning</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project2-4.jpg" alt="Obstacle avoidance testing" class="project-img">
+                            <div class="project-img-caption">Obstacle Avoidance Testing</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-social">
-                    <a href="https://linkedin.com/in/khaddour-tala" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/khaddour-tala" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:khaddour.tala@example.com"><i class="fas fa-envelope"></i></a>
+
+                <!-- Project 3 -->
+                <div class="project-item fade-in delay-2">
+                    <div class="project-content">
+                        <h3 class="project-title">EMG-based Prosthetic Control System</h3>
+                        <p class="project-subtitle"><i class="fas fa-user-md"></i> Biomedical Signal Processing • Machine Learning • Embedded Systems</p>
+                        <p class="project-description">
+                            A low-cost prosthetic control system using surface EMG signals with machine learning classification 
+                            for intuitive hand gesture recognition. Designed for upper-limb amputees in resource-limited settings.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> 95% gesture recognition accuracy with CNN model</li>
+                            <li><i class="fas fa-check-circle"></i> Latency: < 150ms from signal to actuation</li>
+                            <li><i class="fas fa-check-circle"></i> Custom PCB design for signal acquisition</li>
+                            <li><i class="fas fa-check-circle"></i> Cost: < $500 (commercial systems: $5,000+)</li>
+                        </ul>
+                        <a href="#" class="btn">View Project Documentation</a>
+                    </div>
+                    <div class="project-images">
+                        <div class="project-img-container">
+                            <img src="/assets/images/project3-1.jpg" alt="EMG electrode placement" class="project-img">
+                            <div class="project-img-caption">EMG Electrode Placement</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project3-2.jpg" alt="Custom PCB design" class="project-img">
+                            <div class="project-img-caption">Custom Signal Processing PCB</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project3-3.jpg" alt="Gesture recognition interface" class="project-img">
+                            <div class="project-img-caption">Gesture Recognition Interface</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project3-4.jpg" alt="Prosthetic prototype" class="project-img">
+                            <div class="project-img-caption">Functional Prototype</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item fade-in">
+                    <div class="project-content">
+                        <h3 class="project-title">Swarm Robotics for Environmental Monitoring</h3>
+                        <p class="project-subtitle"><i class="fas fa-satellite"></i> Distributed Systems • Wireless Communication • Environmental Sensing</p>
+                        <p class="project-description">
+                            A cooperative swarm of miniature robots for distributed environmental monitoring. 
+                            Implements decentralized algorithms for area coverage, data fusion, and adaptive sampling.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> Decentralized consensus algorithms</li>
+                            <li><i class="fas fa-check-circle"></i> Multi-robot task allocation optimization</li>
+                            <li><i class="fas fa-check-circle"></i> Sensors: Temperature, humidity, air quality, VOC</li>
+                            <li><i class="fas fa-check-circle"></i> Battery life: 8 hours continuous operation</li>
+                        </ul>
+                        <a href="#" class="btn">View Demo Video</a>
+                    </div>
+                    <div class="project-images">
+                        <div class="project-img-container">
+                            <img src="/assets/images/project4-1.jpg" alt="Swarm robot individual unit" class="project-img">
+                            <div class="project-img-caption">Individual Robot Unit</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project4-2.jpg" alt="Swarm formation patterns" class="project-img">
+                            <div class="project-img-caption">Formation Patterns</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project4-3.jpg" alt="Environmental data visualization" class="project-img">
+                            <div class="project-img-caption">Data Visualization Dashboard</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project4-4.jpg" alt="Swarm coordination testing" class="project-img">
+                            <div class="project-img-caption">Coordination Testing</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-item fade-in delay-1">
+                    <div class="project-content">
+                        <h3 class="project-title">AI-powered Gait Analysis System</h3>
+                        <p class="project-subtitle"><i class="fas fa-walking"></i> Computer Vision • Biomechanics • Deep Learning</p>
+                        <p class="project-description">
+                            A non-invasive gait analysis system using computer vision and deep learning to assess 
+                            mobility disorders. Provides quantitative metrics for rehabilitation progress tracking.
+                        </p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check-circle"></i> Pose estimation with OpenPose and MediaPipe</li>
+                            <li><i class="fas fa-check-circle"></i> 20+ gait parameters extracted automatically</li>
+                            <li><i class="fas fa-check-circle"></i> Comparison with clinical gold-standard: 92% correlation</li>
+                            <li><i class="fas fa-check-circle"></i> Web-based interface for clinicians</li>
+                        </ul>
+                        <a href="#" class="btn">View Clinical Study</a>
+                    </div>
+                    <div class="project-images">
+                        <div class="project-img-container">
+                            <img src="/assets/images/project5-1.jpg" alt="Gait analysis setup" class="project-img">
+                            <div class="project-img-caption">Analysis Setup</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project5-2.jpg" alt="Pose estimation visualization" class="project-img">
+                            <div class="project-img-caption">Pose Estimation Visualization</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project5-3.jpg" alt="Gait parameter dashboard" class="project-img">
+                            <div class="project-img-caption">Clinical Dashboard</div>
+                        </div>
+                        <div class="project-img-container">
+                            <img src="/assets/images/project5-4.jpg" alt="Patient progress tracking" class="project-img">
+                            <div class="project-img-caption">Progress Tracking Interface</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Robotics Portfolio. All research work documented here.</p>
+        </div>
+    </section>
+
+    <!-- ===== LAB WORK SECTION ===== -->
+    <section id="lab" class="lab-work">
+        <div class="container">
+            <h2 class="section-title">Laboratory Work & Fabrication</h2>
+            
+            <div class="lab-grid">
+                <div class="card lab-card fade-in">
+                    <div class="lab-icon">
+                        <i class="fas fa-print"></i>
+                    </div>
+                    <h3 class="lab-title">3D Printing & Prototyping</h3>
+                    <p class="lab-description">
+                        Extensive experience with FDM and resin 3D printing for rapid prototyping.
+                        Designed and fabricated over 50 custom components for robotics projects.
+                    </p>
+                    <div class="project-features">
+                        <li><i class="fas fa-check"></i> Creality Ender 3, Anycubic Photon</li>
+                        <li><i class="fas fa-check"></i> Fusion 360, SolidWorks, Blender</li>
+                        <li><i class="fas fa-check"></i> Materials: PLA, PETG, ABS, Resin</li>
+                    </div>
+                </div>
+                
+                <div class="card lab-card fade-in delay-1">
+                    <div class="lab-icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="lab-title">PCB Design & Electronics</h3>
+                    <p class="lab-description">
+                        Custom PCB design for embedded systems. Experience with analog/digital circuit design,
+                        sensor integration, and power management systems.
+                    </p>
+                    <div class="project-features">
+                        <li><i class="fas fa-check"></i> KiCad, Eagle, Altium Designer</li>
+                        <li><i class="fas fa-check"></i> SMT assembly and reflow soldering</li>
+                        <li><i class="fas fa-check"></i> Circuit simulation with LTSpice</li>
+                    </div>
+                </div>
+                
+                <div class="card lab-card fade-in delay-2">
+                    <div class="lab-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="lab-title">Machine Shop & Fabrication</h3>
+                    <p class="lab-description">
+                        Hands-on experience with manual and CNC machining, laser cutting,
+                        and traditional workshop tools for mechanical component fabrication.
+                    </p>
+                    <div class="project-features">
+                        <li><i class="fas fa-check"></i> CNC milling and turning</li>
+                        <li><i class="fas fa-check"></i> Laser cutting (CO2, fiber)</li>
+                        <li><i class="fas fa-check"></i> Welding (MIG, TIG) and finishing</li>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS SECTION ===== -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills & Competencies</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <div class="skill-header">
+                        <i class="fas fa-robot skill-icon"></i>
+                        <h3>Robotics & Control</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">ROS/ROS2</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">PID Control</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%;"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">SLAM & Navigation</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Robot Kinematics</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 87%;"></div>
+                            </div>
+                            <span class="skill-percent">87%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Sensor Fusion</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 82%;"></div>
+                            </div>
+                            <span class="skill-percent">82%</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category fade-in delay-1">
+                    <div class="skill-header">
+                        <i class="fas fa-brain skill-icon"></i>
+                        <h3>AI & Machine Learning</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Python (PyTorch/TF)</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%;"></div>
+                            </div>
+                            <span class="skill-percent">92%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Computer Vision</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%;"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Reinforcement Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                            <span class="skill-percent">80%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Signal Processing</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Data Analysis</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category fade-in delay-2">
+                    <div class="skill-header">
+                        <i class="fas fa-code skill-icon"></i>
+                        <h3>Software Development</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">C++ / Embedded C</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 91%;"></div>
+                            </div>
+                            <span class="skill-percent">91%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 95%;"></div>
+                            </div>
+                            <span class="skill-percent">95%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">MATLAB/Simulink</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 88%;"></div>
+                            </div>
+                            <span class="skill-percent">88%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Linux/Unix</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Git & DevOps</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 87%;"></div>
+                            </div>
+                            <span class="skill-percent">87%</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category fade-in delay-1">
+                    <div class="skill-header">
+                        <i class="fas fa-cube skill-icon"></i>
+                        <h3>CAD & Fabrication</h3>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">SolidWorks</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">Fusion 360</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 92%;"></div>
+                            </div>
+                            <span class="skill-percent">92%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">3D Printing</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 94%;"></div>
+                            </div>
+                            <span class="skill-percent">94%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">PCB Design (KiCad)</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                            <span class="skill-percent">85%</span>
+                        </li>
+                        <li class="skill-item">
+                            <span class="skill-name">CNC Machining</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 78%;"></div>
+                            </div>
+                            <span class="skill-percent">78%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Academic & Research Contact</h2>
+            <div class="contact-grid">
+                <div class="card contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p class="contact-link">Latakia, Syria</p>
+                    <small>Available for international research collaboration</small>
+                </div>
+                
+                <div class="card contact-card fade-in delay-1">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <a href="tel:+963XXXXXXXXX" class="contact-link">+963 (XX) XXX-XXXX</a>
+                    <small>Signal/Telegram available</small>
+                </div>
+                
+                <div class="card contact-card fade-in delay-2">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <a href="mailto:tala.khaddour@academic.org" class="contact-link">tala.khaddour@academic.org</a>
+                    <small>Primary academic contact</small>
+                </div>
+                
+                <div class="card contact-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/talakhaddour" target="_blank" class="contact-link">linkedin.com/in/talakhaddour</a>
+                    <small>Research profile & publications</small>
+                </div>
+                
+                <div class="card contact-card fade-in delay-1">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/talakhaddour" target="_blank" class="contact-link">github.com/talakhaddour</a>
+                    <small>Robotics & AI repositories</small>
+                </div>
+                
+                <div class="card contact-card fade-in delay-2">
+                    <div class="contact-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Curriculum Vitae</h3>
+                    <a href="/assets/documents/Tala_Khaddour_CV.pdf" target="_blank" class="btn">Download CV (PDF)</a>
+                    <small>Updated: March 2024</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-name">Tala Khaddour</h3>
+            <p class="footer-tagline">Robotics • Intelligence • Human-Centered Innovation</p>
+            <p class="copyright">© 2024 Tala Khaddour. All academic and research rights reserved.<br>Designed for scholarship review committees worldwide.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.backgroundColor = 'white';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            navLinks.style.gap = '1.5rem';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').style.display = 'none';
+                }
+            });
+        });
+
+        // Staggered fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with the 'fade-in' class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
