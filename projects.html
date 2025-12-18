@@ -4,184 +4,187 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Tala Khaddour</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Tala Khaddour</a>
-            <ul class="nav-links">
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="volunteer.html">Volunteering</a></li>
+                <li><a href="skills.html">Skills & Me</a></li>
             </ul>
+            
+            <div class="nav-social">
+                <a href="https://linkedin.com/in/talakhaddour" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/KHADDOUR-TALA" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:tala.khaddour@example.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="assets/docs/cv.pdf" target="_blank" class="cv-btn">
+                    <i class="fas fa-file-pdf"></i> CV
+                </a>
+            </div>
         </div>
     </nav>
 
-    <main class="section">
+    <!-- Projects Hero -->
+    <section class="projects-hero">
         <div class="container">
-            <h1>Projects</h1>
-            <p class="hero-tagline">Hands‑on engineering work from concept to prototype</p>
+            <h1>Projects & Research</h1>
+            <p class="hero-subtitle">From concept to prototype: Engineering solutions for real-world challenges</p>
+        </div>
+    </section>
+
+    <!-- Featured Project -->
+    <section class="featured-project">
+        <div class="container">
+            <div class="project-header">
+                <h2>Hand Exoskeleton for Rehabilitation</h2>
+                <p class="project-timeline">Final Year Thesis | 2023</p>
+                <p class="project-tagline">A lightweight, self‑aligning robotic exoskeleton for hand rehabilitation with high‑precision tracking</p>
+            </div>
             
-            <!-- Project 1 -->
-            <div class="project-card" id="exoskeleton">
-                <div class="project-header">
-                    <h2 class="project-title">Hand Exoskeleton for Rehabilitation</h2>
-                    <div class="project-meta">Final Year Thesis | Jan 2023 - Jun 2023</div>
-                    <p class="project-tagline">A lightweight, self‑aligning robotic exoskeleton for post‑stroke hand rehabilitation with high‑precision motion tracking.</p>
-                </div>
+            <div class="project-description">
+                <p>This project addresses the need for affordable, accessible rehabilitation devices for post‑stroke patients. The system combines mechanical design, control theory, and computer vision to create an intuitive rehabilitation tool.</p>
                 
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/exo-cad.jpg" alt="CAD Design">
-                        <div class="gallery-caption">Full CAD Assembly</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/exo-printed.jpg" alt="3D Printed Parts">
-                        <div class="gallery-caption">3D Printed Components</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/exo-assembly.jpg" alt="Assembly">
-                        <div class="gallery-caption">Mechanical Assembly</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/exo-testing.jpg" alt="Testing">
-                        <div class="gallery-caption">Experimental Setup</div>
-                    </div>
+                <h3>Key Contributions:</h3>
+                <ul>
+                    <li><strong>Modeling:</strong> Developed kinematic and dynamic models of human hand motion</li>
+                    <li><strong>Control Strategies:</strong> Implemented cascade PID control with gravity compensation</li>
+                    <li><strong>Vision‑Based Mirroring:</strong> Created camera‑based hand tracking for movement replication</li>
+                    <li><strong>Quantitative Results:</strong> Achieved &lt;0.5° tracking error with 20% faster settling time</li>
+                </ul>
+            </div>
+            
+            <div class="tech-stack">
+                <span class="tech-badge">SolidWorks</span>
+                <span class="tech-badge">MATLAB/Simulink</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">OpenCV</span>
+                <span class="tech-badge">STM32</span>
+                <span class="tech-badge">3D Printing</span>
+            </div>
+            
+            <div class="project-gallery">
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-cad.jpg" alt="CAD Design">
+                    <div class="gallery-overlay">CAD Assembly</div>
                 </div>
-                
-                <div class="project-body">
-                    <div class="two-column-grid">
-                        <div>
-                            <h3>Technical Details</h3>
-                            <h4>Mechanical Design</h4>
-                            <ul>
-                                <li>Self‑alignment mechanism for anatomical variations</li>
-                                <li>Under‑actuated linkage system for natural motion</li>
-                                <li>Carbon‑fiber reinforced 3D‑printed structure</li>
-                                <li>Total weight: 280g (excluding control unit)</li>
-                            </ul>
-                            
-                            <h4>Control System</h4>
-                            <ul>
-                                <li>Cascade PID control (position → torque)</li>
-                                <li>Real‑time tracking via flex sensors and IMU</li>
-                                <li>MATLAB/Simulink for simulation and tuning</li>
-                                <li>STM32‑based embedded controller</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3>Results & Impact</h3>
-                            <h4>Quantitative Results</h4>
-                            <ul>
-                                <li>Steady‑state tracking error: &lt;0.5°</li>
-                                <li>Settling time: 1.2s (20% faster than baseline)</li>
-                                <li>Force control resolution: 0.1N</li>
-                                <li>Battery life: 4 hours continuous operation</li>
-                            </ul>
-                            
-                            <h4>Innovation</h4>
-                            <ul>
-                                <li>Cost reduction: 60% vs commercial systems</li>
-                                <li>Novel self‑alignment for user comfort</li>
-                                <li>Open‑source control framework</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="project-links">
-                        <a href="assets/pdf/thesis.pdf" target="_blank" class="btn">
-                            <i class="fas fa-file-pdf"></i> Full Thesis (PDF)
-                        </a>
-                        <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton" target="_blank" class="btn">
-                            <i class="fab fa-github"></i> GitHub Repository
-                        </a>
-                        <a href="https://youtu.be/DEMO" target="_blank" class="btn">
-                            <i class="fab fa-youtube"></i> Demonstration Video
-                        </a>
-                    </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-3dprint.jpg" alt="3D Printed Parts">
+                    <div class="gallery-overlay">3D Printed Components</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-assembly.jpg" alt="Assembly Process">
+                    <div class="gallery-overlay">Mechanical Assembly</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-tracking.jpg" alt="Hand Tracking">
+                    <div class="gallery-overlay">Vision-Based Tracking</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-prototype.jpg" alt="Final Prototype">
+                    <div class="gallery-overlay">Working Prototype</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/projects/exo-results.jpg" alt="Performance Results">
+                    <div class="gallery-overlay">Quantitative Results</div>
                 </div>
             </div>
             
-            <!-- Project 2 -->
-            <div class="project-card" id="fire-robot">
-                <div class="project-header">
-                    <h2 class="project-title">Autonomous Fire‑Fighting Robot</h2>
-                    <div class="project-meta">Team Project | Sep 2022 - Dec 2022</div>
-                    <p class="project-tagline">A vision‑based autonomous robot for early indoor fire detection and suppression.</p>
-                </div>
-                
-                <div class="gallery">
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/fire-robot1.jpg" alt="Robot Platform">
-                        <div class="gallery-caption">Mobile Platform</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/fire-robot2.jpg" alt="Vision System">
-                        <div class="gallery-caption">Vision & Sensor Suite</div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="assets/images/projects/fire-robot3.jpg" alt="Testing">
-                        <div class="gallery-caption">Field Testing</div>
-                    </div>
-                </div>
-                
-                <div class="project-body">
-                    <div class="two-column-grid">
-                        <div>
-                            <h3>System Architecture</h3>
-                            <ul>
-                                <li><strong>Perception:</strong> RGB‑D camera + thermal sensor for fire detection</li>
-                                <li><strong>Navigation:</strong> SLAM‑based autonomous navigation</li>
-                                <li><strong>Actuation:</strong> Water pump with precision nozzle control</li>
-                                <li><strong>Control:</strong> ROS‑based distributed system</li>
-                            </ul>
-                        </div>
-                        
-                        <div>
-                            <h3>Achievements</h3>
-                            <ul>
-                                <li>Fire detection accuracy: 95% at 5m distance</li>
-                                <li>Response time: &lt;30s from detection to suppression</li>
-                                <li>1st place in university robotics competition</li>
-                                <li>Featured in local news coverage</li>
-                            </ul>
-                        </div>
+            <div class="project-actions">
+                <a href="assets/docs/thesis.pdf" target="_blank" class="action-btn">
+                    <i class="fas fa-file-pdf"></i> Download Thesis
+                </a>
+                <a href="https://github.com/KHADDOUR-TALA/Hand-Exoskeleton" target="_blank" class="action-btn">
+                    <i class="fab fa-github"></i> GitHub Repository
+                </a>
+                <a href="https://youtube.com/your-demo" target="_blank" class="action-btn secondary">
+                    <i class="fab fa-youtube"></i> Demo Video
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Projects -->
+    <section class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Other Projects</h2>
+            
+            <div class="project-grid">
+                <div class="education-card">
+                    <h3>ROS-Based Autonomous Navigation</h3>
+                    <p class="project-timeline">2022 | Team Project</p>
+                    <p>Developed an autonomous mobile robot using ROS (Robot Operating System) for indoor navigation and object detection.</p>
+                    
+                    <div class="tech-stack" style="justify-content: flex-start; margin: 1rem 0;">
+                        <span class="tech-badge">ROS</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">SLAM</span>
+                        <span class="tech-badge">OpenCV</span>
                     </div>
                     
-                    <div class="project-links">
-                        <a href="https://github.com/KHADDOUR-TALA/Fire-Robot" target="_blank" class="btn">
-                            <i class="fab fa-github"></i> Code & Documentation
-                        </a>
-                        <a href="assets/pdf/fire-robot-report.pdf" target="_blank" class="btn">
-                            <i class="fas fa-file-pdf"></i> Project Report
-                        </a>
+                    <div class="education-gallery">
+                        <img src="assets/images/projects/ros-robot.jpg" alt="ROS Robot" class="education-image">
+                        <img src="assets/images/projects/ros-map.jpg" alt="Navigation Map" class="education-image">
+                    </div>
+                </div>
+                
+                <div class="education-card">
+                    <h3>Fuzzy Logic Temperature Control</h3>
+                    <p class="project-timeline">2021 | Control Systems Project</p>
+                    <p>Designed and implemented a fuzzy logic controller for precise temperature regulation in industrial processes.</p>
+                    
+                    <div class="tech-stack" style="justify-content: flex-start; margin: 1rem 0;">
+                        <span class="tech-badge">MATLAB</span>
+                        <span class="tech-badge">Fuzzy Logic</span>
+                        <span class="tech-badge">Arduino</span>
+                        <span class="tech-badge">Sensors</span>
+                    </div>
+                    
+                    <div class="education-gallery">
+                        <img src="assets/images/projects/fuzzy-diagram.jpg" alt="Fuzzy Logic Diagram" class="education-image">
+                        <img src="assets/images/projects/fuzzy-results.jpg" alt="Control Results" class="education-image">
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
+    <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; <span id="currentYear"></span> Tala Khaddour</p>
+                <p>Tala Khaddour</p>
+                <p>Robotics & Intelligent Systems Engineer</p>
+                
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="volunteer.html">Volunteering</a></li>
+                    <li><a href="skills.html">Skills & Me</a></li>
                 </ul>
+                
+                <p class="copyright">&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
