@@ -6,20 +6,17 @@
     <title>Tala Khaddour | Robotics Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="main-nav" id="mainNav">
+    <nav class="main-nav">
         <div class="container">
             <div class="nav-container">
-                <a href="index.html" class="nav-logo">
-                    Tala Khaddour
-                    <span class="nav-logo-dot"></span>
-                </a>
+                <a href="index.html" class="nav-logo">Tala Khaddour</a>
                 
                 <button class="mobile-menu-btn" id="mobileMenuBtn">
                     <i class="fas fa-bars"></i>
@@ -33,16 +30,13 @@
                 </ul>
                 
                 <div class="nav-social">
-                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" title="LinkedIn">
+                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon-nav" target="_blank">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" title="GitHub">
+                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon-nav" target="_blank">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="mailto:tala.khaddour@example.com" class="social-icon-small" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="assets/docs/cv.pdf" class="cv-button" target="_blank">
+                    <a href="assets/docs/cv.pdf" class="cv-btn" target="_blank">
                         <i class="fas fa-download"></i> CV
                     </a>
                 </div>
@@ -55,46 +49,37 @@
         <div class="container">
             <div class="hero-container">
                 <div class="hero-content fade-in">
-                    <div class="hero-title-container">
-                        <h1>Tala Khaddour</h1>
-                        <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
-                    </div>
+                    <h1 class="hero-title">Tala Khaddour</h1>
+                    <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
                     
-                    <blockquote class="quote-large fade-in delay-1">
-                        "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them."
-                    </blockquote>
+                    <p class="hero-quote">"I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them."</p>
                     
-                    <div class="hero-description fade-in delay-2">
-                        <p>A Syrian engineer passionate about creating accessible robotic solutions for healthcare and rehabilitation. My work focuses on bridging advanced technology with real-world impact in resource-constrained environments, combining rigorous engineering with humanitarian vision.</p>
-                        <p>Every project begins with empathy, every innovation serves a purpose, and every technical solution aims to restore dignity and independence.</p>
+                    <div class="hero-description">
+                        <p>A Syrian engineer passionate about creating accessible robotic solutions for healthcare and rehabilitation. My work focuses on bridging advanced technology with real-world impact, combining rigorous engineering with humanitarian vision.</p>
+                        <p>Every innovation begins with empathy, every design serves a purpose, and every technical solution aims to restore dignity and independence.</p>
                     </div>
                 </div>
                 
-                <div class="profile-visual fade-in delay-3">
-                    <div class="geometric-decoration"></div>
-                    <div class="geometric-decoration"></div>
-                    <div class="geometric-container">
-                        <div class="profile-hexagon">
-                            <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-image" id="profileImage">
-                        </div>
+                <div class="profile-container fade-in delay-1">
+                    <div class="profile-circle">
+                        <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-img">
+                        <div class="profile-line"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Section -->
-    <section class="quote-section">
-        <div class="quote-decoration"></div>
-        <div class="quote-decoration"></div>
+    <!-- Inspiration Section -->
+    <section class="inspiration-section">
         <div class="container">
-            <div class="quote-container">
-                <div class="quote-card-single fade-in">
-                    <div class="quote-icon-large">
+            <div class="inspiration-box fade-in">
+                <div class="inspiration-card">
+                    <div class="inspiration-icon">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <p class="quote-text-large">"The real problem is not whether machines think, but whether men do. The mystery which surrounds a thinking machine already surrounds a thinking man."</p>
-                    <p class="quote-author">B.F. Skinner, Psychologist & Innovator</p>
+                    <p class="inspiration-text">"The real problem is not whether machines think, but whether men do. The mystery which surrounds a thinking machine already surrounds a thinking man."</p>
+                    <p class="inspiration-author">— B.F. Skinner, Psychologist & Innovator</p>
                 </div>
             </div>
         </div>
@@ -103,74 +88,31 @@
     <!-- Education Section -->
     <section class="education-section">
         <div class="container">
-            <div class="section-intro fade-in">
-                <h2>Education & Research</h2>
-                <p>Academic journey focused on robotics, control systems, and creating accessible technology solutions.</p>
-            </div>
+            <h2 class="fade-in">Education</h2>
             
             <div class="education-grid">
-                <!-- Manara University -->
-                <div class="education-card-innovative fade-in delay-1">
-                    <div class="university-header">
-                        <a href="https://manara.edu.sy" target="_blank" class="university-name">
+                <div class="education-card fade-in delay-1">
+                    <div class="edu-header">
+                        <div class="edu-title">
                             <i class="fas fa-university"></i> Manara University
-                        </a>
+                        </div>
                         <span class="gpa-badge">GPA: 3.8/4.0</span>
                     </div>
-                    
                     <h3>B.Sc. in Mechatronics Engineering</h3>
-                    
-                    <div class="education-meta">
-                        <span class="meta-item">
-                            <i class="fas fa-calendar"></i> 2019 - 2023
-                        </span>
-                        <span class="meta-item">
-                            <i class="fas fa-graduation-cap"></i> Graduated with Honors
-                        </span>
-                        <span class="meta-item">
-                            <i class="fas fa-file-alt"></i> Thesis: 98/100
-                        </span>
-                    </div>
-                    
-                    <p>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation" - Focused on creating affordable rehabilitation devices using advanced control systems and computer vision.</p>
-                    
-                    <div class="education-gallery">
-                        <div class="gallery-item-hover">
-                            <img src="assets/images/graduation/1.jpg" alt="Graduation">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                        <div class="gallery-item-hover">
-                            <img src="assets/images/graduation/2.jpg" alt="Research">
-                            <div class="gallery-overlay">
-                                <i class="fas fa-search-plus"></i>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="edu-details">Graduated with Honors | 2019 - 2023</p>
+                    <p>Thesis: <em>"Design and Control of a Hand Exoskeleton for Rehabilitation"</em> - Score: 98/100</p>
                 </div>
                 
-                <!-- National Center for the Distinguished -->
-                <div class="education-card-innovative fade-in delay-2">
-                    <div class="university-header">
-                        <a href="https://ncd.gov.sy" target="_blank" class="university-name">
+                <div class="education-card fade-in delay-2">
+                    <div class="edu-header">
+                        <div class="edu-title">
                             <i class="fas fa-award"></i> National Center for the Distinguished
-                        </a>
+                        </div>
                         <span class="gpa-badge">Top 1%</span>
                     </div>
-                    
                     <h3>Physics & Mathematics Program</h3>
-                    
-                    <div class="education-meta">
-                        <span class="meta-item">
-                            <i class="fas fa-calendar"></i> 2016 - 2018
-                        </span>
-                        <span class="meta-item">
-                            <i class="fas fa-trophy"></i> National Distinction
-                        </span>
-                    </div>
-                    
-                    <p>Selected among top students nationwide for intensive training in physics, mathematics, and scientific methodology. Developed strong analytical thinking and problem-solving skills through olympiad preparation.</p>
+                    <p class="edu-details">National Distinction | 2016 - 2018</p>
+                    <p>Selected among top students nationwide for intensive training in physics, mathematics, and scientific methodology.</p>
                 </div>
             </div>
         </div>
@@ -181,54 +123,100 @@
         <div class="container">
             <h2 class="fade-in">Get In Touch</h2>
             
-            <div class="contact-grid-innovative">
-                <div class="contact-item-minimal fade-in delay-1">
-                    <div class="contact-icon-minimal">
+            <div class="contact-grid fade-in delay-1">
+                <!-- Location -->
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <span class="contact-label">Location</span>
                     <span class="contact-value">Latakia, Syria</span>
                 </div>
                 
-                <div class="contact-item-minimal fade-in delay-2">
-                    <div class="contact-icon-minimal">
+                <!-- Phone -->
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <span class="contact-label">Phone</span>
-                    <a href="tel:+963XXXXXXXXX" class="contact-value">+963 XXX XXX XXX</a>
+                    <span class="contact-value">
+                        <a href="tel:+963XXXXXXXXX">+963 XXX XXX XXX</a>
+                    </span>
                 </div>
                 
-                <div class="contact-item-minimal fade-in delay-3">
-                    <div class="contact-icon-minimal">
+                <!-- Email -->
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <span class="contact-label">Email</span>
-                    <a href="mailto:tala.khaddour@example.com" class="contact-value">tala.khaddour@example.com</a>
+                    <span class="contact-value">
+                        <a href="mailto:tala.khaddour@example.com">tala.khaddour@example.com</a>
+                    </span>
                 </div>
                 
-                <div class="contact-item-minimal fade-in delay-4">
-                    <div class="contact-icon-minimal">
+                <!-- LinkedIn -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">
+                        <a href="https://linkedin.com/in/talakhaddour" target="_blank">linkedin.com/in/talakhaddour</a>
+                    </span>
+                </div>
+                
+                <!-- GitHub -->
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">
+                        <a href="https://github.com/KHADDOUR-TALA" target="_blank">github.com/KHADDOUR-TALA</a>
+                    </span>
+                </div>
+                
+                <!-- CV -->
+                <div class="contact-card">
+                    <div class="contact-icon">
                         <i class="fas fa-file-pdf"></i>
                     </div>
-                    <span class="contact-label">Curriculum Vitae</span>
-                    <a href="assets/docs/cv.pdf" class="cv-button" style="margin-top: 1rem; display: inline-block;" target="_blank">
-                        Download CV
-                    </a>
+                    <span class="contact-label">CV</span>
+                    <span class="contact-value">
+                        <a href="assets/docs/cv.pdf" target="_blank">Download PDF</a>
+                    </span>
                 </div>
             </div>
             
-            <div class="contact-social-row fade-in delay-3">
-                <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
+            <!-- Social Media Row -->
+            <div class="social-row fade-in delay-2">
+                <a href="https://linkedin.com/in/talakhaddour" class="social-item" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <span class="social-label">LinkedIn</span>
                 </a>
-                <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" title="GitHub">
-                    <i class="fab fa-github"></i>
+                
+                <a href="https://github.com/KHADDOUR-TALA" class="social-item" target="_blank">
+                    <div class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <span class="social-label">GitHub</span>
                 </a>
-                <a href="https://scholar.google.com" class="social-icon-small" target="_blank" title="Google Scholar">
-                    <i class="fas fa-graduation-cap"></i>
+                
+                <a href="mailto:tala.khaddour@example.com" class="social-item">
+                    <div class="social-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="social-label">Email</span>
                 </a>
-                <a href="https://orcid.org" class="social-icon-small" target="_blank" title="ORCID">
-                    <i class="fab fa-orcid"></i>
+                
+                <a href="https://scholar.google.com" class="social-item" target="_blank">
+                    <div class="social-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <span class="social-label">Scholar</span>
                 </a>
             </div>
         </div>
@@ -237,48 +225,21 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="container">
-            <div class="footer-container">
-                <a href="index.html" class="footer-logo">
-                    TK
-                    <span class="nav-logo-dot"></span>
-                </a>
-                
-                <p style="color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">
-                    Robotics & Intelligent Systems Engineer | Creating Accessible Technology for Healthcare & Rehabilitation
-                </p>
-                
-                <ul class="footer-links">
-                    <li><a href="index.html" class="footer-link">Home</a></li>
-                    <li><a href="projects.html" class="footer-link">Projects</a></li>
-                    <li><a href="volunteer.html" class="footer-link">Volunteering</a></li>
-                    <li><a href="skills.html" class="footer-link">Skills & Me</a></li>
-                </ul>
-                
-                <div class="footer-social">
-                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" style="background: rgba(255, 255, 255, 0.1); color: white;">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" style="background: rgba(255, 255, 255, 0.1); color: white;">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:tala.khaddour@example.com" class="social-icon-small" style="background: rgba(255, 255, 255, 0.1); color: white;">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-                
-                <div class="footer-bottom">
-                    <p>&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
-                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed for academic and research purposes</p>
-                </div>
-            </div>
+            <h3 style="color: white; margin-bottom: 1rem;">Tala Khaddour</h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">Robotics & Intelligent Systems Engineer</p>
+            
+            <ul class="footer-links">
+                <li><a href="index.html" class="footer-link">Home</a></li>
+                <li><a href="projects.html" class="footer-link">Projects</a></li>
+                <li><a href="volunteer.html" class="footer-link">Volunteering</a></li>
+                <li><a href="skills.html" class="footer-link">Skills & Me</a></li>
+            </ul>
+            
+            <p class="copyright">
+                &copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.
+            </p>
         </div>
     </footer>
-
-    <!-- Modal -->
-    <div class="image-modal" id="imageModal" style="display: none;">
-        <button class="modal-close" id="modalClose">&times;</button>
-        <img src="" alt="" class="modal-image" id="modalImage">
-    </div>
 
     <script src="assets/js/main.js"></script>
 </body>
