@@ -4,474 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tala Khaddour | Robotics Engineer</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
-    <style>
-        /* Hero Section with Profile Picture */
-        .hero {
-            padding: 5rem 0 3rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-        }
-        
-        .hero-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-container {
-                flex-direction: row;
-                align-items: center;
-            }
-        }
-        
-        .hero-content {
-            flex: 1;
-        }
-        
-        .profile-container {
-            flex-shrink: 0;
-            text-align: center;
-        }
-        
-        .profile-frame {
-            width: 240px;
-            height: 240px;
-            margin: 0 auto;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid white;
-            box-shadow: 0 8px 32px rgba(30, 64, 175, 0.15);
-            background: #f1f5f9;
-            position: relative;
-        }
-        
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .profile-frame:hover .profile-img {
-            transform: scale(1.05);
-        }
-        
-        .hero-title {
-            font-size: 2.8rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: #3b82f6;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero-subtitle::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: #3b82f6;
-        }
-        
-        .intro-text {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #475569;
-            max-width: 600px;
-            margin-bottom: 2rem;
-        }
-        
-        .intro-text strong {
-            color: #1e40af;
-            font-weight: 600;
-        }
-        
-        /* Quote Section */
-        .quote-section {
-            padding: 3rem 0;
-            border-top: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-            margin: 2rem 0;
-            background: #f8fafc;
-        }
-        
-        .quote-box {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 2.5rem;
-            position: relative;
-        }
-        
-        .quote-box::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: -10px;
-            font-size: 6rem;
-            color: rgba(59, 130, 246, 0.1);
-            font-family: Georgia, serif;
-            font-weight: bold;
-        }
-        
-        .quote-text {
-            font-size: 1.4rem;
-            line-height: 1.6;
-            color: #334155;
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .quote-author {
-            text-align: center;
-            color: #64748b;
-            font-size: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .quote-author::before {
-            content: '— ';
-        }
-        
-        /* Overview Cards */
-        .overview-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .overview-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .overview-card {
-            padding: 2rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            background: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .overview-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-        
-        .overview-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: #1e40af;
-            margin-bottom: 1.2rem;
-            font-size: 1.2rem;
-        }
-        
-        .overview-card h3 i {
-            font-size: 1.4rem;
-        }
-        
-        .overview-card ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .overview-card li {
-            padding: 0.4rem 0;
-            color: #475569;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .overview-card li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #3b82f6;
-            font-weight: bold;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-radius: 15px;
-            margin: 4rem 0;
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        @media (min-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .contact-info h2 {
-            color: #1e40af;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        
-        .contact-details {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .contact-details li {
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            color: #475569;
-        }
-        
-        .contact-details i {
-            width: 40px;
-            height: 40px;
-            background: #3b82f6;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #334155;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.9rem;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #3b82f6;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-        
-        .submit-btn {
-            background: #3b82f6;
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
-        }
-        
-        .submit-btn:hover {
-            background: #2563eb;
-        }
-    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">Tala Khaddour</a>
-            <ul class="nav-links">
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="volunteering.html">Volunteering</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="volunteer.html">Volunteering</a></li>
+                <li><a href="skills.html">Skills & Me</a></li>
             </ul>
+            
+            <div class="nav-social">
+                <a href="https://linkedin.com/in/talakhaddour" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/KHADDOUR-TALA" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="mailto:tala.khaddour@example.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="assets/docs/cv.pdf" target="_blank" class="cv-btn">
+                    <i class="fas fa-file-pdf"></i> CV
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section with Profile Picture -->
-    <header class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
             <div class="hero-container">
-                <!-- Text Content -->
                 <div class="hero-content">
-                    <h1 class="hero-title">Tala Khaddour</h1>
+                    <h1>Tala Khaddour</h1>
                     <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
                     
-                    <p class="intro-text">
-                        A Syrian engineer passionate about creating <strong>accessible robotic solutions</strong> for healthcare and rehabilitation. 
-                        My work focuses on bridging <strong>advanced technology</strong> with <strong>real-world impact</strong> in resource-constrained environments, 
-                        combining rigorous engineering with humanitarian vision to design systems that empower communities.
-                    </p>
-                </div>
-                
-                <!-- Profile Picture -->
-                <div class="profile-container">
-                    <div class="profile-frame">
-                        <!-- Try multiple image sources -->
-                        <img src="https://raw.githubusercontent.com/KHADDOUR-TALA/KHADDOUR-TALA.github.io/main/assets/images/profile.jpg" 
-                             alt="Tala Khaddour" 
-                             class="profile-img"
-                             onerror="this.onerror=null; this.src='assets/images/profile.jpg';"
-                             id="profileImage">
+                    <blockquote class="main-quote">
+                        "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them."
+                    </blockquote>
+                    
+                    <div class="hero-description">
+                        <p>Passionate about robotics and artificial intelligence, I believe technology should serve humanity. My work focuses on rehabilitation and healthcare robotics, where every innovation aims to restore dignity and independence.</p>
+                        <p>Motivated by real-world challenges, I design systems that bridge advanced engineering with practical solutions. My journey in robotics is driven by a simple belief: technology should empower, not complicate.</p>
                     </div>
-                    <p style="margin-top: 1rem; color: #64748b; font-size: 0.9rem;">
-                        <i class="fas fa-map-marker-alt"></i> Damascus, Syria
-                    </p>
                 </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Robotics Quote -->
-    <section class="quote-section">
-        <div class="container">
-            <div class="quote-box">
-                <p class="quote-text">
-                    The real problem is not whether machines think, but whether men do. 
-                    The mystery which surrounds a thinking machine already surrounds a thinking man.
-                </p>
-                <p class="quote-author">B.F. Skinner, Psychologist & Innovator</p>
+                
+                <div class="hero-image">
+                    <div class="profile-frame">
+                        <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-img" id="profileImage">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Overview Section -->
-    <section class="section">
+    <!-- Quotes Section -->
+    <section class="quotes-section">
         <div class="container">
-            <h2 class="section-title">Core Expertise</h2>
+            <h2 class="section-title">Inspiration</h2>
+            <div class="quotes-grid">
+                <div class="quote-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <p class="quote-text">Any sufficiently advanced technology is indistinguishable from magic.</p>
+                    <p class="quote-author">Arthur C. Clarke</p>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <p class="quote-text">The science of today is the technology of tomorrow.</p>
+                    <p class="quote-author">Edward Teller</p>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <p class="quote-text">Innovation distinguishes between a leader and a follower.</p>
+                    <p class="quote-author">Steve Jobs</p>
+                </div>
+                
+                <div class="quote-card">
+                    <div class="quote-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <p class="quote-text">The best way to predict the future is to invent it.</p>
+                    <p class="quote-author">Alan Kay</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
             
-            <div class="overview-cards">
-                <div class="overview-card">
-                    <h3><i class="fas fa-brain"></i> Research Focus</h3>
-                    <ul>
-                        <li>Rehabilitation Robotics</li>
-                        <li>Affordable Assistive Devices</li>
-                        <li>Human-Robot Interaction</li>
-                        <li>Control Systems Design</li>
-                        <li>AI for Healthcare</li>
-                    </ul>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-header">
+                        <a href="https://manara.edu.sy" target="_blank" class="university-link">
+                            <i class="fas fa-university"></i> Manara University
+                        </a>
+                        <span class="gpa-badge">GPA: 3.8/4.0</span>
+                    </div>
+                    
+                    <h3>B.Sc. in Mechatronics Engineering</h3>
+                    <p class="thesis-title">Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation" - Score: 98/100</p>
+                    
+                    <p>Specialized in robotics, control systems, and artificial intelligence. Graduated with honors, focusing on accessible healthcare technology.</p>
+                    
+                    <div class="education-gallery">
+                        <img src="assets/images/graduation/1.jpg" alt="Graduation Ceremony" class="education-image">
+                        <img src="assets/images/graduation/2.jpg" alt="Thesis Defense" class="education-image">
+                    </div>
                 </div>
                 
-                <div class="overview-card">
-                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                    <p><strong>BSc in Mechatronics Engineering</strong></p>
-                    <p>XYZ University</p>
-                    <p>Graduated with Honors (GPA: X.XX/4.0)</p>
-                    <p><em>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation"</em></p>
-                </div>
-                
-                <div class="overview-card">
-                    <h3><i class="fas fa-tools"></i> Technical Skills</h3>
-                    <ul>
-                        <li>CAD & 3D Printing</li>
-                        <li>Embedded Systems (Arduino, STM32)</li>
-                        <li>MATLAB/Simulink</li>
-                        <li>Python & C++</li>
-                        <li>Control Theory</li>
-                        <li>Machine Learning</li>
-                    </ul>
+                <div class="education-card">
+                    <div class="education-header">
+                        <a href="https://ncd.gov.sy" target="_blank" class="university-link">
+                            <i class="fas fa-award"></i> National Center for the Distinguished
+                        </a>
+                        <span class="gpa-badge">Top 1%</span>
+                    </div>
+                    
+                    <h3>Physics & Mathematics Program</h3>
+                    <p>Achieved national distinction in science olympiads, developing strong foundations in analytical thinking and problem-solving.</p>
+                    
+                    <div class="education-gallery">
+                        <img src="assets/images/ncd/1.jpg" alt="Olympiad Training" class="education-image">
+                        <img src="assets/images/ncd/2.jpg" alt="Science Fair" class="education-image">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section at the End -->
+    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
+            <h2 class="section-title">Contact</h2>
+            
             <div class="contact-grid">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>I'm always interested in discussing research collaborations, graduate opportunities, or innovative projects.</p>
-                    
-                    <ul class="contact-details">
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <strong>Email</strong><br>
-                                tala.yourname@example.com
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fab fa-github"></i>
-                            <div>
-                                <strong>GitHub</strong><br>
-                                github.com/KHADDOUR-TALA
-                            </div>
-                        </li>
-                        <li>
-                            <i class="fab fa-linkedin"></i>
-                            <div>
-                                <strong>LinkedIn</strong><br>
-                                linkedin.com/in/yourprofile
-                            </div>
-                        </li>
-                    </ul>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Latakia, Syria</span>
                 </div>
                 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+963XXXXXXXXX" class="contact-value">+963 XXX XXX XXX</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:tala.khaddour@example.com" class="contact-value">tala.khaddour@example.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <span class="contact-label">Curriculum Vitae</span>
+                    <a href="assets/docs/cv.pdf" target="_blank" class="pdf-download">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
                 </div>
             </div>
         </div>
@@ -481,59 +202,39 @@
     <footer class="main-footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                <p>Tala Khaddour</p>
+                <p>Robotics & Intelligent Systems Engineer</p>
+                
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="projects.html">Projects</a></li>
-                    <li><a href="assets/pdf/cv.pdf" target="_blank">CV</a></li>
+                    <li><a href="volunteer.html">Volunteering</a></li>
+                    <li><a href="skills.html">Skills & Me</a></li>
                 </ul>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/talakhaddour" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/KHADDOUR-TALA" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:tala.khaddour@example.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <p class="copyright">&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Update year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will respond soon.');
-            this.reset();
-        });
-        
-        // Image loading fallback system
-        document.addEventListener('DOMContentLoaded', function() {
-            const profileImg = document.getElementById('profileImage');
-            
-            // Try multiple image sources sequentially
-            const imageSources = [
-                'assets/images/profile.jpg',
-                'assets/images/profile.jpeg', 
-                'assets/images/profile.png',
-                'assets/images/Profile.jpg',
-                'https://raw.githubusercontent.com/KHADDOUR-TALA/KHADDOUR-TALA.github.io/main/assets/images/profile.jpg'
-            ];
-            
-            let currentSourceIndex = 0;
-            
-            profileImg.onerror = function() {
-                if (currentSourceIndex < imageSources.length - 1) {
-                    currentSourceIndex++;
-                    console.log('Trying image source:', imageSources[currentSourceIndex]);
-                    this.src = imageSources[currentSourceIndex];
-                } else {
-                    // Last resort: placeholder
-                    this.src = 'https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80';
-                    console.log('Using placeholder image');
-                }
-            };
-            
-            // Check if image loaded successfully
-            if (profileImg.complete && profileImg.naturalHeight === 0) {
-                profileImg.onerror();
-            }
-        });
-    </script>
+    <!-- Modal for Images -->
+    <div class="modal" id="imageModal">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="" class="modal-content" id="modalImage">
+    </div>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
