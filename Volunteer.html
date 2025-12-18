@@ -3,221 +3,1092 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteering & Participation | Robotics Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Tala Khaddour | Volunteering & Humanitarian Engagement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL RESET & DESIGN SYSTEM ===== */
+        :root {
+            --primary-blue: #89CFF0;
+            --accent-blue: #5D8AA8;
+            --soft-cream: #F9F7F2;
+            --light-gray: #F5F5F5;
+            --medium-gray: #E0E0E0;
+            --dark-gray: #333333;
+            --navy: #2C3E50;
+            --white: #FFFFFF;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-soft: 0 2px 8px rgba(0, 0, 0, 0.03);
+            --border-radius: 12px;
+            --border-radius-sm: 8px;
+            --transition: all 0.3s ease;
+            --max-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        section {
+            padding: 80px 24px;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-blue);
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            transition: var(--transition);
+            border: 1px solid var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-4px);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--navy);
+            padding: 12px 28px;
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid rgba(93, 138, 168, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .volunteer-hero {
+            padding-top: 140px;
+            padding-bottom: 80px;
+            background: linear-gradient(to bottom, var(--soft-cream) 0%, var(--white) 100%);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy);
+        }
+
+        .hero-subtitle {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .hero-divider {
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            margin: 2rem auto;
+        }
+
+        /* ===== TIMELINE LAYOUT ===== */
+        .timeline-container {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary-blue);
+            opacity: 0.3;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -46px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--primary-blue);
+            z-index: 2;
+        }
+
+        /* ===== VOLUNTEERING CARDS ===== */
+        .volunteer-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        .volunteer-content {
+            padding-right: 1rem;
+        }
+
+        .volunteer-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .volunteer-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .volunteer-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        .meta-item i {
+            color: var(--primary-blue);
+        }
+
+        .role-badge {
+            display: inline-block;
+            background-color: var(--soft-cream);
+            color: var(--accent-blue);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .volunteer-description {
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .volunteer-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .image-container {
+            border-radius: var(--border-radius-sm);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+        }
+
+        .image-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .volunteer-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .img-caption {
+            padding: 0.8rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            background-color: var(--white);
+        }
+
+        .certificate-section {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .certificate-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            background-color: var(--soft-cream);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .certificate-icon {
+            font-size: 2rem;
+            color: var(--primary-blue);
+        }
+
+        .certificate-info h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== PERSONAL STATEMENT SECTION ===== */
+        .statement-section {
+            background-color: var(--light-gray);
+            text-align: center;
+            padding: 100px 24px;
+        }
+
+        .statement-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .statement-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--navy);
+        }
+
+        .statement-quote {
+            font-style: italic;
+            font-size: 1.8rem;
+            color: var(--accent-blue);
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border-left: 4px solid var(--primary-blue);
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .statement-paragraph {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .statement-signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-top: 3rem;
+            font-style: italic;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 3rem 24px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .footer-name {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-tagline {
+            color: var(--primary-blue);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .copyright {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 992px) {
+            .volunteer-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .volunteer-content {
+                padding-right: 0;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .volunteer-images {
+                grid-template-columns: 1fr;
+            }
+            
+            .volunteer-meta {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            
+            .timeline-container {
+                padding-left: 30px;
+            }
+            
+            .timeline-container::before {
+                left: 15px;
+            }
+            
+            .timeline-dot {
+                left: -36px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            section {
+                padding: 60px 16px;
+            }
+            
+            .volunteer-hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .volunteer-title {
+                font-size: 1.5rem;
+            }
+            
+            .statement-title {
+                font-size: 2rem;
+            }
+            
+            .statement-quote {
+                font-size: 1.4rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Robotics Portfolio</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="volunteer.html" class="active">Volunteering</a>
-                <a href="skills.html">Skills & Certificates</a>
-                <a href="about.html">About Me</a>
-                <a href="index.html#contact" class="contact-btn">Contact</a>
-            </div>
-            <button class="mobile-menu-btn">
+    <!-- ===== NAVIGATION BAR ===== -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Tala Khaddour</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#education">Education</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#lab">Lab Work</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="volunteering.html">Volunteering</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#contact" class="btn">Download CV</a></li>
+            </ul>
         </div>
     </nav>
 
-    <section class="page-hero">
+    <!-- ===== HERO SECTION ===== -->
+    <section class="volunteer-hero">
         <div class="container">
-            <h1>Volunteering & Community Participation</h1>
-            <p>Giving back through technology, education, and humanitarian efforts</p>
+            <h1 class="hero-title fade-in">Volunteering & Humanitarian Engagement</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle fade-in delay-1">
+                Engineering is not only about machines — it is about people, dignity, and impact.
+            </p>
         </div>
     </section>
 
-    <!-- Volunteer Activities -->
-    <section class="volunteer-activities">
+    <!-- ===== HUMANITARIAN RESPONSE SECTION ===== -->
+    <section class="humanitarian">
         <div class="container">
-            <h2 class="section-title">Community Engagement & Leadership</h2>
+            <h2 class="section-title fade-in">Humanitarian Response & Crisis Support</h2>
             
-            <div class="activities-grid">
-                <!-- WRO -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="World Robot Olympiad">
+            <div class="timeline-container">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="card volunteer-card">
+                        <div class="volunteer-content">
+                            <div class="volunteer-header">
+                                <h3 class="volunteer-title">Emergency Humanitarian Response – Syrian Earthquake</h3>
+                                <div class="volunteer-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>Jableh, Syria</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2023</span>
+                                    </div>
+                                </div>
+                                <div class="role-badge">Volunteer – Community Support & Relief</div>
+                            </div>
+                            
+                            <div class="volunteer-description">
+                                <p>In the aftermath of the devastating earthquake in February 2023, I joined immediate relief efforts in Jableh, providing direct support to families who lost homes and livelihoods. Working under extreme conditions with limited resources, our team focused on:</p>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Distribution of emergency supplies: food, water, blankets, and medical aid</li>
+                                    <li style="margin-bottom: 0.5rem;">Logistics coordination for aid delivery to hardest-hit neighborhoods</li>
+                                    <li style="margin-bottom: 0.5rem;">Emotional and psychological support for traumatized families</li>
+                                    <li style="margin-bottom: 0.5rem;">Damage assessment and prioritization of urgent needs</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">This experience reinforced my belief that engineering must serve humanity in its moments of greatest need. The resilience I witnessed in my community became a profound source of inspiration for my work in rehabilitation robotics.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="volunteer-media">
+                            <div class="volunteer-images">
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer1-1.jpg" alt="Earthquake relief distribution" class="volunteer-img">
+                                    <div class="img-caption">Aid Distribution Center</div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer1-2.jpg" alt="Community support team" class="volunteer-img">
+                                    <div class="img-caption">Community Support Team</div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer1-3.jpg" alt="Emergency shelter setup" class="volunteer-img">
+                                    <div class="img-caption">Emergency Shelter Setup</div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer1-4.jpg" alt="Logistics coordination" class="volunteer-img">
+                                    <div class="img-caption">Logistics Coordination</div>
+                                </div>
+                            </div>
+                            
+                            <div class="certificate-section">
+                                <div class="certificate-card">
+                                    <div class="certificate-icon">
+                                        <i class="fas fa-award"></i>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4>Certificate of Humanitarian Service</h4>
+                                        <p>Awarded for exceptional service during the 2023 Syrian Earthquake Relief Efforts</p>
+                                        <a href="#" style="color: var(--accent-blue); text-decoration: none; font-weight: 500; margin-top: 0.5rem; display: inline-block;">
+                                            View Certificate <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-robot"></i> World Robot Olympiad (WRO)</h3>
-                        <p class="activity-role">Team Leader & Technical Mentor</p>
-                        <p>Led a team of 5 students in designing and programming competition robots. Provided technical guidance and strategy development for national competitions.</p>
-                        <a href="assets/certificates/wro.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== INTERNATIONAL & NATIONAL COMPETITIONS SECTION ===== -->
+    <section class="competitions" style="background-color: var(--light-gray);">
+        <div class="container">
+            <h2 class="section-title fade-in">International & National Competitions</h2>
+            
+            <div class="timeline-container">
+                <!-- WRO -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="card volunteer-card">
+                        <div class="volunteer-content">
+                            <div class="volunteer-header">
+                                <h3 class="volunteer-title">World Robot Olympiad – Future Engineers Category</h3>
+                                <div class="volunteer-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-trophy"></i>
+                                        <span>5th Place Nationwide</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2022</span>
+                                    </div>
+                                </div>
+                                <div class="role-badge">Participant & Team Leader</div>
+                            </div>
+                            
+                            <div class="volunteer-description">
+                                <p>Competed in the national round of World Robot Olympiad, focusing on autonomous robotics solutions for sustainable development goals. Our team developed a waste-sorting robot using computer vision and machine learning, demonstrating:</p>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Engineering teamwork under time constraints</li>
+                                    <li style="margin-bottom: 0.5rem;">Innovative problem-solving with limited resources</li>
+                                    <li style="margin-bottom: 0.5rem;">Effective documentation and presentation skills</li>
+                                    <li style="margin-bottom: 0.5rem;">Technical communication to diverse audiences</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">This experience taught me the importance of collaborative engineering and how robotics can address pressing global challenges.</p>
+                            </div>
+                            
+                            <div class="certificate-section">
+                                <div class="certificate-card">
+                                    <div class="certificate-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4>WRO National Round Certificate</h4>
+                                        <p>Awarded for achieving 5th place in the national competition</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="volunteer-media">
+                            <div class="volunteer-images">
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer2-1.jpg" alt="WRO competition setup" class="volunteer-img">
+                                    <div class="img-caption">Competition Setup</div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer2-2.jpg" alt="Robot testing" class="volunteer-img">
+                                    <div class="img-caption">Robot Testing Phase</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Girls in AI -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Girls in AI Hackathon">
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="card volunteer-card">
+                        <div class="volunteer-content">
+                            <div class="volunteer-header">
+                                <h3 class="volunteer-title">Girls in AI – Ada Lovelace Hackathon</h3>
+                                <div class="volunteer-meta">
+                                    <div class="meta-item">
+                                        <i class="fas fa-users"></i>
+                                        <span>Teens in AI (International Program)</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <span>2021</span>
+                                    </div>
+                                </div>
+                                <div class="role-badge">Participant</div>
+                            </div>
+                            
+                            <div class="volunteer-description">
+                                <p>Participated in an international AI hackathon focused on empowering women in technology. Collaborated with peers from different countries to develop an AI-powered mental health support chatbot for adolescents, with emphasis on:</p>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                    <li style="margin-bottom: 0.5rem;">Ethical AI development and bias mitigation</li>
+                                    <li style="margin-bottom: 0.5rem;">Natural language processing for mental health applications</li>
+                                    <li style="margin-bottom: 0.5rem;">Cross-cultural team collaboration and communication</li>
+                                    <li style="margin-bottom: 0.5rem;">Presentation to international mentors and industry experts</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">This experience deepened my commitment to creating technology that serves vulnerable populations and reinforced the importance of diverse perspectives in AI development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="volunteer-media">
+                            <div class="volunteer-images">
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer3-1.jpg" alt="Girls in AI hackathon" class="volunteer-img">
+                                    <div class="img-caption">Hackathon Workshop</div>
+                                </div>
+                                <div class="image-container">
+                                    <img src="/assets/images/volunteer3-2.jpg" alt="Team presentation" class="volunteer-img">
+                                    <div class="img-caption">Final Presentation</div>
+                                </div>
+                            </div>
+                            
+                            <div class="certificate-section">
+                                <div class="certificate-card">
+                                    <div class="certificate-icon">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div class="certificate-info">
+                                        <h4>Hackathon Completion Certificate</h4>
+                                        <p>Awarded by Teens in AI for participation in the Ada Lovelace Hackathon</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-code"></i> Girls in AI Hackathon</h3>
-                        <p class="activity-role">Workshop Facilitator & Judge</p>
-                        <p>Conducted AI workshops for 50+ female high school students. Mentored teams in developing machine learning solutions for social impact challenges.</p>
-                        <a href="assets/certificates/girls-ai.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ACADEMIC & SCIENTIFIC EVENTS SECTION ===== -->
+    <section class="academic-events">
+        <div class="container">
+            <h2 class="section-title fade-in">Academic & Scientific Events</h2>
+            
+            <div class="timeline-container">
+                <!-- Damascus International Fair -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Damascus International Fair – 62nd Edition</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Distinction & Creativity Agency</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2025</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Scientific Projects Pavilion Participant</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Represented Manara University at the prestigious Damascus International Fair, showcasing innovative robotics projects to international visitors, industry professionals, and academic peers. Demonstrated the potential of Syrian engineering talent and fostered connections between academia and industry.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Damascus Fair -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Damascus International Fair">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-university"></i> Damascus International Fair</h3>
-                        <p class="activity-role">Exhibition Presenter</p>
-                        <p>Presented innovative robotics projects to international visitors and industry professionals. Demonstrated practical applications of intelligent systems.</p>
-                        <a href="assets/certificates/damascus-fair.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- University Fair -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="University Project Fair">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-graduation-cap"></i> Manara University Project Fair</h3>
-                        <p class="activity-role">Project Lead & Presenter</p>
-                        <p>Showcased undergraduate research projects to university community and industry partners. Received "Most Innovative Project" award.</p>
-                        <a href="assets/certificates/university-fair.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
+                <!-- Manara University Exhibition -->
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Manara University Student Exhibition</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Manara University</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2025</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Participant & Project Presenter</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Presented academic projects to faculty, students, and external visitors, fostering interdisciplinary collaboration and knowledge exchange. Received Certificate of Appreciation for exceptional project demonstration and technical communication.</p>
+                        </div>
                     </div>
                 </div>
 
                 <!-- InnoSync Conference -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="InnoSync Conference">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-users"></i> InnoSync Conference (JCI)</h3>
-                        <p class="activity-role">Speaker & Panelist</p>
-                        <p>Presented research on "Human-Centered Robotics" and participated in discussions about innovation in developing countries.</p>
-                        <a href="assets/certificates/innosync.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- DCA Event -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1545235617-9465d2a55698?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="DCA Event">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-star"></i> Distinction & Creativity Agency</h3>
-                        <p class="activity-role">Event Organizer & Coordinator</p>
-                        <p>Organized national STEM competition for distinguished students. Managed logistics, judging panels, and award ceremonies.</p>
-                        <a href="assets/certificates/dca.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Science Olympiad -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Science Olympiad">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-atom"></i> Syrian Science Olympiad</h3>
-                        <p class="activity-role">Support Coach & Mentor</p>
-                        <p>Provided training and mentorship to olympiad participants in robotics and AI categories. Developed practice materials and mock competitions.</p>
-                        <a href="assets/certificates/olympiad.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Robotics Coach -->
-                <div class="activity-card fade-in">
-                    <div class="activity-image">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Robotics Coaching">
-                    </div>
-                    <div class="activity-content">
-                        <h3><i class="fas fa-chalkboard-teacher"></i> Robotics Coach</h3>
-                        <p class="activity-role">Syrian Computer Society</p>
-                        <p>Conducted weekly robotics workshops for high school students. Developed curriculum covering basics to advanced robotics concepts.</p>
-                        <a href="assets/certificates/robotics-coach.pdf" class="certificate-link" target="_blank">
-                            <i class="fas fa-certificate"></i> View Certificate
-                        </a>
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">InnoSync Conference – Innovation & Youth Leadership</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Junior Chamber International (JCI)</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2025</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Conference Participant</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Participated in discussions on innovation culture, entrepreneurship, and youth leadership in Syria. Engaged with professionals from various sectors to explore how technology can drive positive social change and economic development in challenging environments.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Humanitarian Work -->
-    <section class="humanitarian-section">
+    <!-- ===== ACADEMIC SERVICE SECTION ===== -->
+    <section class="academic-service" style="background-color: var(--light-gray);">
         <div class="container">
-            <h2 class="section-title">Humanitarian Work</h2>
-            <div class="humanitarian-content fade-in">
-                <div class="humanitarian-image">
-                    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Humanitarian Aid">
+            <h2 class="section-title fade-in">Academic Service & Organization</h2>
+            
+            <div class="timeline-container">
+                <!-- DCA -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Distinction & Creativity Agency (DCA)</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2018 – 2024</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Event-Based Volunteer</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Supported numerous academic events organized by DCA, including national competitions, admission tests for distinguished programs, and scientific exhibitions. Responsibilities included:</p>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                <li style="margin-bottom: 0.5rem;">Logistics coordination for academic competitions</li>
+                                <li style="margin-bottom: 0.5rem;">Supporting talented students through the admission process</li>
+                                <li style="margin-bottom: 0.5rem;">Organizing scientific exhibitions and public engagement events</li>
+                                <li style="margin-bottom: 0.5rem;">Mentoring younger students interested in STEM fields</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="humanitarian-text">
-                    <h3><i class="fas fa-hands-helping"></i> Syrian Earthquake Relief - Jableh</h3>
-                    <p class="humanitarian-subtitle">February 2023 - Community Support Volunteer</p>
-                    <p>In the aftermath of the devastating earthquake, I joined relief efforts in Jableh to assist displaced families. My work focused on:</p>
-                    <ul class="humanitarian-list">
-                        <li><i class="fas fa-home"></i> Coordinating shelter and basic needs distribution</li>
-                        <li><i class="fas fa-heart"></i> Providing emotional support to affected families</li>
-                        <li><i class="fas fa-users"></i> Organizing community activities for children</li>
-                        <li><i class="fas fa-hand-holding-medical"></i> Assisting in medical aid distribution</li>
-                    </ul>
-                    <p class="humanitarian-reflection">This experience reinforced my belief in the resilience of the human spirit and the importance of community. It strengthened my commitment to developing technology that serves humanity in times of need.</p>
-                    <div class="humanitarian-gallery">
-                        <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixlib=rb-4.0.3&auto=format&fit=crop&w-400&q=80" alt="Relief work 1">
-                        <img src="https://images.unsplash.com/photo-1583339793403-3d9b001b6008?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Relief work 2">
+
+                <!-- Syrian Science Olympiad -->
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Syrian Science Olympiad (SSO)</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2023</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Academic Support – Senior Category</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Assisted in organizing the Syrian Science Olympiad for senior students, supporting registration processes, exam logistics, and encouraging academic excellence in science and mathematics. This experience allowed me to give back to the academic community that nurtured my own scientific development.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <!-- ===== EDUCATION & YOUTH EMPOWERMENT SECTION ===== -->
+    <section class="youth-empowerment">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Community Engagement</h3>
-                    <p>Technology Serving Humanity</p>
+            <h2 class="section-title fade-in">Education & Youth Empowerment</h2>
+            
+            <div class="timeline-container">
+                <!-- Robotics Project Coach -->
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Robotics Project Coach – RFG Program</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-university"></i>
+                                    <span>Manara University & Sanad Youth Development Foundation</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2023</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Coach & Mentor</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Coached student teams in robotics projects, providing guidance on Arduino programming, control systems, and project documentation. Mentored students through the complete engineering design process, from concept development to prototype testing and presentation.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <a href="index.html">Home</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="volunteer.html">Volunteering</a>
-                    <a href="skills.html">Skills</a>
-                    <a href="about.html">About</a>
-                </div>
-                <div class="footer-social">
-                    <a href="https://linkedin.com/in/khaddour-tala" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/khaddour-tala" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:khaddour.tala@example.com"><i class="fas fa-envelope"></i></a>
+
+                <!-- Robotics Trainer -->
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-dot"></div>
+                    <div class="card" style="padding: 1.5rem;">
+                        <div class="volunteer-header">
+                            <h3 class="volunteer-title">Robotics & Programming Trainer</h3>
+                            <div class="volunteer-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-users"></i>
+                                    <span>Syrian Computer Society</span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>2023 – 2024</span>
+                                </div>
+                            </div>
+                            <div class="role-badge">Trainer & Workshop Facilitator</div>
+                        </div>
+                        
+                        <div class="volunteer-description">
+                            <p>Conducted hands-on workshops teaching robotics fundamentals, basic AI concepts, and programming to youth from diverse backgrounds. Focused on making technology accessible and inspiring the next generation of engineers, particularly encouraging girls to pursue STEM fields.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Robotics Portfolio. Documenting service and impact.</p>
+        </div>
+    </section>
+
+    <!-- ===== PERSONAL STATEMENT SECTION ===== -->
+    <section class="statement-section">
+        <div class="statement-container">
+            <h2 class="statement-title fade-in">Why I Volunteer</h2>
+            
+            <div class="statement-quote fade-in delay-1">
+                "From pain, innovation is born."
             </div>
+            
+            <div class="statement-paragraph fade-in delay-2">
+                <p>Growing up in a conflict-affected country, I witnessed firsthand how adversity can either break or build. I chose the latter. The challenges my community faced became the crucible that shaped my resilience and deepened my commitment to service.</p>
+                
+                <p style="margin-top: 1.5rem;">For me, volunteering is not charity—it is responsibility. As an engineer, I believe our greatest innovations must serve humanity's most pressing needs. The earthquake response taught me that technical skills are meaningless unless coupled with empathy and action. The workshops I taught reminded me that knowledge is a gift meant to be shared.</p>
+                
+                <p style="margin-top: 1.5rem;">In every competition, every training session, every hour spent organizing academic events, I see an opportunity to build capacity—both in myself and in others. I've learned to smile while solving hard problems, to find hope in difficult circumstances, and to recognize that our shared humanity is our greatest resource.</p>
+                
+                <p style="margin-top: 1.5rem;">My journey in robotics and intelligent systems is fundamentally human-centered because I believe technology should amplify our compassion, not replace it. Whether designing rehabilitation devices or teaching programming to youth, the goal remains the same: to create pathways where limitations once existed.</p>
+            </div>
+            
+            <div class="statement-signature fade-in delay-3">
+                This is not only what I do — this is who I am.
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-content">
+            <h3 class="footer-name">Tala Khaddour</h3>
+            <p class="footer-tagline">Robotics • Intelligence • Human-Centered Innovation</p>
+            <p class="copyright">© 2024 Tala Khaddour. All academic and research rights reserved.<br>Designed for scholarship review committees worldwide.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.backgroundColor = 'white';
+            navLinks.style.padding = '2rem';
+            navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            navLinks.style.gap = '1.5rem';
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.getElementById('navLinks').style.display = 'none';
+                }
+            });
+        });
+
+        // Staggered fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with the 'fade-in' class
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
