@@ -6,7 +6,7 @@
     <title>Tala Khaddour | Robotics Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -14,101 +14,87 @@
 <body>
     <!-- Navigation -->
     <nav class="main-nav" id="mainNav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">Tala Khaddour</a>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="projects.html" class="nav-link">Projects</a></li>
-                <li><a href="volunteer.html" class="nav-link">Volunteering</a></li>
-                <li><a href="skills.html" class="nav-link">Skills & Me</a></li>
-            </ul>
-            
-            <div class="nav-social">
-                <a href="https://linkedin.com/in/talakhaddour" class="nav-icon" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    Tala Khaddour
+                    <span class="nav-logo-dot"></span>
                 </a>
-                <a href="https://github.com/KHADDOUR-TALA" class="nav-icon" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:tala.khaddour@example.com" class="nav-icon">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="assets/docs/cv.pdf" class="cv-button" target="_blank">
-                    <i class="fas fa-file-pdf"></i> CV
-                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteering</a></li>
+                    <li><a href="skills.html" class="nav-link">Skills & Me</a></li>
+                </ul>
+                
+                <div class="nav-social">
+                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:tala.khaddour@example.com" class="social-icon-small" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="assets/docs/cv.pdf" class="cv-button" target="_blank">
+                        <i class="fas fa-download"></i> CV
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-container">
-            <div class="hero-content fade-in-up">
-                <h1 class="hero-title">Tala Khaddour</h1>
-                <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
-                
-                <div class="hero-quote fade-in-up delay-1">
-                    <p class="quote-text">"I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them."</p>
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content fade-in">
+                    <div class="hero-title-container">
+                        <h1>Tala Khaddour</h1>
+                        <p class="hero-subtitle">Robotics & Intelligent Systems Engineer</p>
+                    </div>
+                    
+                    <blockquote class="quote-large fade-in delay-1">
+                        "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond them."
+                    </blockquote>
+                    
+                    <div class="hero-description fade-in delay-2">
+                        <p>A Syrian engineer passionate about creating accessible robotic solutions for healthcare and rehabilitation. My work focuses on bridging advanced technology with real-world impact in resource-constrained environments, combining rigorous engineering with humanitarian vision.</p>
+                        <p>Every project begins with empathy, every innovation serves a purpose, and every technical solution aims to restore dignity and independence.</p>
+                    </div>
                 </div>
                 
-                <div class="hero-description fade-in-up delay-2">
-                    <p>Passionate about robotics and artificial intelligence, I design systems that bridge advanced engineering with human-centered solutions. My work focuses on creating accessible technology for rehabilitation and healthcare, inspired by real-world challenges.</p>
-                    <p>Every innovation begins with empathy, every design is guided by purpose, and every technical solution serves a human need.</p>
-                </div>
-            </div>
-            
-            <div class="profile-visual fade-in-up delay-3">
-                <div class="orb-decoration"></div>
-                <div class="orb-decoration"></div>
-                <div class="orb-decoration"></div>
-                <div class="profile-orb">
-                    <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-image">
+                <div class="profile-visual fade-in delay-3">
+                    <div class="geometric-decoration"></div>
+                    <div class="geometric-decoration"></div>
+                    <div class="geometric-container">
+                        <div class="profile-hexagon">
+                            <img src="assets/images/profile.jpg" alt="Tala Khaddour" class="profile-image" id="profileImage">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quotes Section -->
-    <section class="quotes-section">
-        <div class="quotes-container">
-            <h2 class="section-title fade-in-up">Inspiration</h2>
-            
-            <div class="quote-carousel">
-                <div class="quote-card fade-in-up delay-1">
-                    <div class="quote-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <p class="quote-text">"The real problem is not whether machines think, but whether men do."</p>
-                    <p class="quote-author">B.F. Skinner</p>
-                </div>
-                
-                <div class="quote-card fade-in-up delay-2">
-                    <div class="quote-icon">
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-decoration"></div>
+        <div class="quote-decoration"></div>
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote-card-single fade-in">
+                    <div class="quote-icon-large">
                         <i class="fas fa-brain"></i>
                     </div>
-                    <p class="quote-text">"The science of today is the technology of tomorrow."</p>
-                    <p class="quote-author">Edward Teller</p>
-                </div>
-                
-                <div class="quote-card fade-in-up delay-3">
-                    <div class="quote-icon">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <p class="quote-text">"Innovation distinguishes between a leader and a follower."</p>
-                    <p class="quote-author">Steve Jobs</p>
-                </div>
-                
-                <div class="quote-card fade-in-up delay-4">
-                    <div class="quote-icon">
-                        <i class="fas fa-hands-helping"></i>
-                    </div>
-                    <p class="quote-text">"The best way to predict the future is to invent it."</p>
-                    <p class="quote-author">Alan Kay</p>
+                    <p class="quote-text-large">"The real problem is not whether machines think, but whether men do. The mystery which surrounds a thinking machine already surrounds a thinking man."</p>
+                    <p class="quote-author">B.F. Skinner, Psychologist & Innovator</p>
                 </div>
             </div>
         </div>
@@ -116,49 +102,75 @@
 
     <!-- Education Section -->
     <section class="education-section">
-        <div class="timeline-container">
-            <h2 class="section-title fade-in-up">Education</h2>
+        <div class="container">
+            <div class="section-intro fade-in">
+                <h2>Education & Research</h2>
+                <p>Academic journey focused on robotics, control systems, and creating accessible technology solutions.</p>
+            </div>
             
-            <div class="timeline">
+            <div class="education-grid">
                 <!-- Manara University -->
-                <div class="timeline-item fade-in-up delay-1">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2019 - 2023</span>
-                        <a href="https://manara.edu.sy" target="_blank" class="university-link">
-                            Manara University
+                <div class="education-card-innovative fade-in delay-1">
+                    <div class="university-header">
+                        <a href="https://manara.edu.sy" target="_blank" class="university-name">
+                            <i class="fas fa-university"></i> Manara University
                         </a>
-                        <h3>B.Sc. in Mechatronics Engineering</h3>
-                        <p>Graduated with Honors (GPA: 3.8/4.0)</p>
-                        <p class="thesis-title">Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation" - Score: 98/100</p>
-                        <p>Specialized in robotics, control systems, and artificial intelligence with focus on accessible healthcare technology.</p>
-                        
-                        <div class="gallery-grid">
-                            <div class="gallery-item">
-                                <img src="assets/images/graduation/1.jpg" alt="Graduation Ceremony">
+                        <span class="gpa-badge">GPA: 3.8/4.0</span>
+                    </div>
+                    
+                    <h3>B.Sc. in Mechatronics Engineering</h3>
+                    
+                    <div class="education-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i> 2019 - 2023
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-graduation-cap"></i> Graduated with Honors
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-file-alt"></i> Thesis: 98/100
+                        </span>
+                    </div>
+                    
+                    <p>Thesis: "Design and Control of a Hand Exoskeleton for Rehabilitation" - Focused on creating affordable rehabilitation devices using advanced control systems and computer vision.</p>
+                    
+                    <div class="education-gallery">
+                        <div class="gallery-item-hover">
+                            <img src="assets/images/graduation/1.jpg" alt="Graduation">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
                             </div>
-                            <div class="gallery-item">
-                                <img src="assets/images/graduation/2.jpg" alt="Thesis Defense">
-                            </div>
-                            <div class="gallery-item">
-                                <img src="assets/images/graduation/3.jpg" alt="University Campus">
+                        </div>
+                        <div class="gallery-item-hover">
+                            <img src="assets/images/graduation/2.jpg" alt="Research">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-search-plus"></i>
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <!-- National Center for the Distinguished -->
-                <div class="timeline-item fade-in-up delay-2">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2016 - 2018</span>
-                        <a href="https://ncd.gov.sy" target="_blank" class="university-link">
-                            National Center for the Distinguished
+                <div class="education-card-innovative fade-in delay-2">
+                    <div class="university-header">
+                        <a href="https://ncd.gov.sy" target="_blank" class="university-name">
+                            <i class="fas fa-award"></i> National Center for the Distinguished
                         </a>
-                        <h3>Physics & Mathematics Program</h3>
-                        <p>Achieved national distinction ranking in top 1%</p>
-                        <p>Developed strong foundations in analytical thinking, problem-solving, and scientific methodology through intensive olympiad training.</p>
+                        <span class="gpa-badge">Top 1%</span>
                     </div>
+                    
+                    <h3>Physics & Mathematics Program</h3>
+                    
+                    <div class="education-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i> 2016 - 2018
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-trophy"></i> National Distinction
+                        </span>
+                    </div>
+                    
+                    <p>Selected among top students nationwide for intensive training in physics, mathematics, and scientific methodology. Developed strong analytical thinking and problem-solving skills through olympiad preparation.</p>
                 </div>
             </div>
         </div>
@@ -166,75 +178,74 @@
 
     <!-- Contact Section -->
     <section class="contact-section">
-        <div class="contact-container">
-            <div class="contact-info fade-in-up">
-                <h2>Get In Touch</h2>
-                <p>I'm always interested in discussing research collaborations, graduate opportunities, or innovative projects that combine technology with human impact.</p>
+        <div class="container">
+            <h2 class="fade-in">Get In Touch</h2>
+            
+            <div class="contact-grid-innovative">
+                <div class="contact-item-minimal fade-in delay-1">
+                    <div class="contact-icon-minimal">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span class="contact-label">Location</span>
+                    <span class="contact-value">Latakia, Syria</span>
+                </div>
                 
-                <div class="contact-grid">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Location</h3>
-                        <p>Latakia, Syria</p>
+                <div class="contact-item-minimal fade-in delay-2">
+                    <div class="contact-icon-minimal">
+                        <i class="fas fa-phone"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Phone</h3>
-                        <p><a href="tel:+963XXXXXXXXX">+963 XXX XXX XXX</a></p>
+                    <span class="contact-label">Phone</span>
+                    <a href="tel:+963XXXXXXXXX" class="contact-value">+963 XXX XXX XXX</a>
+                </div>
+                
+                <div class="contact-item-minimal fade-in delay-3">
+                    <div class="contact-icon-minimal">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email</h3>
-                        <p><a href="mailto:tala.khaddour@example.com">tala.khaddour@example.com</a></p>
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:tala.khaddour@example.com" class="contact-value">tala.khaddour@example.com</a>
+                </div>
+                
+                <div class="contact-item-minimal fade-in delay-4">
+                    <div class="contact-icon-minimal">
+                        <i class="fas fa-file-pdf"></i>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <h3>Curriculum Vitae</h3>
-                        <a href="assets/docs/cv.pdf" class="action-button secondary" target="_blank">Download CV</a>
-                    </div>
+                    <span class="contact-label">Curriculum Vitae</span>
+                    <a href="assets/docs/cv.pdf" class="cv-button" style="margin-top: 1rem; display: inline-block;" target="_blank">
+                        Download CV
+                    </a>
                 </div>
             </div>
             
-            <div class="contact-form fade-in-up delay-1">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" class="form-textarea" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
+            <div class="contact-social-row fade-in delay-3">
+                <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://scholar.google.com" class="social-icon-small" target="_blank" title="Google Scholar">
+                    <i class="fas fa-graduation-cap"></i>
+                </a>
+                <a href="https://orcid.org" class="social-icon-small" target="_blank" title="ORCID">
+                    <i class="fab fa-orcid"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-content">
-                <h2>Tala Khaddour</h2>
-                <p>Robotics & Intelligent Systems Engineer</p>
+        <div class="container">
+            <div class="footer-container">
+                <a href="index.html" class="footer-logo">
+                    TK
+                    <span class="nav-logo-dot"></span>
+                </a>
+                
+                <p style="color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto;">
+                    Robotics & Intelligent Systems Engineer | Creating Accessible Technology for Healthcare & Rehabilitation
+                </p>
                 
                 <ul class="footer-links">
                     <li><a href="index.html" class="footer-link">Home</a></li>
@@ -244,21 +255,30 @@
                 </ul>
                 
                 <div class="footer-social">
-                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon" target="_blank">
+                    <a href="https://linkedin.com/in/talakhaddour" class="social-icon-small" target="_blank" style="background: rgba(255, 255, 255, 0.1); color: white;">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon" target="_blank">
+                    <a href="https://github.com/KHADDOUR-TALA" class="social-icon-small" target="_blank" style="background: rgba(255, 255, 255, 0.1); color: white;">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="mailto:tala.khaddour@example.com" class="social-icon">
+                    <a href="mailto:tala.khaddour@example.com" class="social-icon-small" style="background: rgba(255, 255, 255, 0.1); color: white;">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
                 
-                <p class="copyright">&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="currentYear"></span> Tala Khaddour. All rights reserved.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.8rem;">Designed for academic and research purposes</p>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="image-modal" id="imageModal" style="display: none;">
+        <button class="modal-close" id="modalClose">&times;</button>
+        <img src="" alt="" class="modal-image" id="modalImage">
+    </div>
 
     <script src="assets/js/main.js"></script>
 </body>
