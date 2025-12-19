@@ -744,37 +744,46 @@
         }
 
         /* ===== RESPONSIVE DESIGN ===== */
-        @media (max-width: 992px) {
-            .hero-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .hero-philosophy {
-                padding-left: 0;
-                border-left: none;
-                border-top: 3px solid var(--primary-blue);
-                padding-top: 1rem;
-            }
-            
-            .profile-img {
-                width: 280px;
-                height: 280px;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .project-item {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .project-item:nth-child(even) {
-                direction: ltr;
-            }
-        }
+     @media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-philosophy {
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--primary-blue);
+        padding-top: 1rem;
+    }
+    
+    .profile-image-container {
+        order: 1; /* Ensure image comes first on mobile */
+        margin-bottom: 2rem;
+    }
+    
+    .hero-text {
+        order: 2; /* Ensure text comes after image on mobile */
+    }
+    
+    .profile-img {
+        width: 280px;
+        height: 350px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-item:nth-child(even) {
+        direction: ltr;
+    }
+}
 
        @media (max-width: 992px) {
     .hero-container {
@@ -869,26 +878,29 @@
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-text fade-in">
-                <h1 class="hero-name">Tala Khaddour</h1>
-                <p class="hero-title">Robotics & Intelligent Systems Engineer</p>
-                <blockquote class="hero-philosophy">
-                    "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond."
-                </blockquote>
-                <p class="hero-bio">
-                    A dedicated engineer specializing in rehabilitation robotics, adaptive control systems, and human-centered AI. 
-                    My research focuses on creating intelligent systems that augment human capability, particularly for individuals with mobility challenges. 
-                    Born from adversity in a conflict-affected region, I channel resilience into technological innovation that bridges gaps between human limitation and possibility.
-                </p>
-                <a href="#contact" class="btn">Connect for Research Collaboration</a>
-            </div>
-            <div class="profile-image-container fade-in delay-1">
-                <img src="/assets/images/profile.jpg" alt="Tala Khaddour - Robotics Engineer" class="profile-img">
-            </div>
+<section id="home" class="hero">
+    <div class="container hero-container">
+        <!-- PROFILE IMAGE MOVED TO LEFT -->
+        <div class="profile-image-container fade-in">
+            <img src="/assets/images/profile.jpg" alt="Tala Khaddour - Robotics Engineer" class="profile-img">
         </div>
-    </section>
+        
+        <!-- TEXT CONTENT MOVED TO RIGHT -->
+        <div class="hero-text fade-in delay-1">
+            <h1 class="hero-name">Tala Khaddour</h1>
+            <p class="hero-title">Robotics & Intelligent Systems Engineer</p>
+            <blockquote class="hero-philosophy">
+                "I believe in human potential without limits. When the body reaches its boundaries, the mind creates a path beyond."
+            </blockquote>
+            <p class="hero-bio">
+                A dedicated engineer specializing in rehabilitation robotics, adaptive control systems, and human-centered AI. 
+                My research focuses on creating intelligent systems that augment human capability, particularly for individuals with mobility challenges. 
+                Born from adversity in a conflict-affected region, I channel resilience into technological innovation that bridges gaps between human limitation and possibility.
+            </p>
+            <a href="#contact" class="btn">Connect for Research Collaboration</a>
+        </div>
+    </div>
+</section>
 
     <!-- ===== QUOTES SECTION ===== -->
     <section class="quotes">
