@@ -210,67 +210,101 @@
         }
 
         /* ===== HERO SECTION ===== */
-        .hero {
-            padding-top: 140px;
-            padding-bottom: 80px;
-            background: linear-gradient(to bottom, var(--soft-cream) 0%, var(--white) 100%);
-        }
+.hero {
+    padding-top: 140px;
+    padding-bottom: 80px;
+    background: linear-gradient(to bottom, var(--soft-cream) 0%, var(--white) 100%);
+}
 
-        .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 4rem;
-        }
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
 
-        .hero-text {
-            flex: 1;
-        }
+.hero-text {
+    flex: 1;
+}
 
-        .hero-name {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--navy);
-        }
+.hero-name {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--navy);
+}
 
-        .hero-title {
-            font-size: 1.5rem;
-            color: var(--accent-blue);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
-        }
+.hero-title {
+    font-size: 1.5rem;
+    color: var(--accent-blue);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
 
-        .hero-philosophy {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--dark-gray);
-            margin-bottom: 2rem;
-            padding-left: 1rem;
-            border-left: 3px solid var(--primary-blue);
-            line-height: 1.5;
-        }
+.hero-philosophy {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary-blue);
+    line-height: 1.5;
+}
 
-        .hero-bio {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--dark-gray);
-            margin-bottom: 2rem;
-        }
+.hero-bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+}
 
-        .profile-image-container {
-            flex-shrink: 0;
-        }
+.profile-image-container {
+    flex-shrink: 0;
+    position: relative;
+}
 
-        .profile-img {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--primary-blue);
-            box-shadow: var(--shadow);
-            background-color: var(--light-gray);
-            display: block;
-        }
+.profile-img {
+    width: 320px;
+    height: 400px; /* Slightly taller for rectangular aspect ratio */
+    object-fit: cover;
+    border-radius: var(--border-radius); /* Changed from 50% to match card radius */
+    border: 3px solid var(--primary-blue);
+    box-shadow: var(--shadow);
+    background-color: var(--light-gray);
+    display: block;
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: Add a subtle decorative corner */
+.profile-image-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-blue);
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.profile-image-container::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-blue);
+    opacity: 0.1;
+    border-radius: 50%;
+    z-index: -1;
+}
 
         /* ===== QUOTES SECTION ===== */
         .quotes {
@@ -699,79 +733,76 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .hero-name {
-                font-size: 2.8rem;
-            }
-            
-            .hero-title {
-                font-size: 1.3rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .edu-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-            
-            .project-images {
-                grid-template-columns: 1fr;
-            }
-        }
+       @media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-philosophy {
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--primary-blue);
+        padding-top: 1rem;
+    }
+    
+    .profile-img {
+        width: 280px;
+        height: 350px; /* Adjusted for rectangular aspect ratio */
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .project-item {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .project-item:nth-child(even) {
+        direction: ltr;
+    }
+}
 
-        @media (max-width: 576px) {
-            section {
-                padding: 60px 16px;
-            }
-            
-            .hero {
-                padding-top: 120px;
-            }
-            
-            .hero-name {
-                font-size: 2.3rem;
-            }
-            
-            .hero-title {
-                font-size: 1.1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .card {
-                padding: 1.5rem;
-            }
-            
-            .edu-card {
-                padding: 1.5rem;
-            }
-            
-            .profile-img {
-                width: 240px;
-                height: 240px;
-            }
-            
-            .skill-category {
-                padding: 1.5rem;
-            }
-        }
+@media (max-width: 576px) {
+    section {
+        padding: 60px 16px;
+    }
+    
+    .hero {
+        padding-top: 120px;
+    }
+    
+    .hero-name {
+        font-size: 2.3rem;
+    }
+    
+    .hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .edu-card {
+        padding: 1.5rem;
+    }
+    
+    .profile-img {
+        width: 240px;
+        height: 300px; /* Adjusted for rectangular aspect ratio */
+    }
+    
+    .skill-category {
+        padding: 1.5rem;
+    }
+}
     </style>
 </head>
 <body>
