@@ -209,7 +209,7 @@
             cursor: pointer;
         }
 
-        /* ===== HERO SECTION ===== */
+      /* ===== HERO SECTION ===== */
 .hero {
     padding-top: 140px;
     padding-bottom: 80px;
@@ -260,50 +260,93 @@
 .profile-image-container {
     flex-shrink: 0;
     position: relative;
+    padding: 15px;
+    background: linear-gradient(145deg, var(--white), var(--soft-cream));
+    border-radius: var(--border-radius);
+    box-shadow: 
+        0 8px 30px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(137, 207, 240, 0.3);
 }
 
 .profile-img {
     width: 320px;
-    height: 400px; /* Slightly taller for rectangular aspect ratio */
+    height: 380px; /* Elegant portrait ratio */
     object-fit: cover;
-    border-radius: var(--border-radius); /* Changed from 50% to match card radius */
-    border: 3px solid var(--primary-blue);
-    box-shadow: var(--shadow);
-    background-color: var(--light-gray);
+    border-radius: calc(var(--border-radius) - 4px);
+    border: 2px solid var(--primary-blue);
+    box-shadow: 
+        0 4px 15px rgba(137, 207, 240, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.9);
     display: block;
     transition: var(--transition);
+    background-color: var(--light-gray);
+    filter: grayscale(10%) contrast(105%) brightness(102%);
 }
 
 .profile-img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 12px 35px rgba(0, 0, 0, 0.12),
+        0 0 0 2px var(--primary-blue);
+    filter: grayscale(0%) contrast(110%) brightness(105%);
 }
 
-/* Optional: Add a subtle decorative corner */
+/* Professional corner accent */
 .profile-image-container::before {
     content: '';
     position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    background-color: var(--primary-blue);
-    opacity: 0.1;
-    border-radius: 70%;
-    z-index: -1;
+    top: 8px;
+    right: 8px;
+    width: 25px;
+    height: 25px;
+    border-top: 2px solid var(--primary-blue);
+    border-right: 2px solid var(--primary-blue);
+    border-radius: 0 var(--border-radius-sm) 0 0;
+    opacity: 0.7;
 }
 
 .profile-image-container::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: -10px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent-blue);
-    opacity: 0.1;
-    border-radius: 50%;
-    z-index: -1;
+    bottom: 8px;
+    left: 8px;
+    width: 25px;
+    height: 25px;
+    border-bottom: 2px solid var(--accent-blue);
+    border-left: 2px solid var(--accent-blue);
+    border-radius: 0 0 0 var(--border-radius-sm);
+    opacity: 0.7;
+}
+
+/* Subtle pattern overlay for depth */
+.profile-image-container {
+    background-image: 
+        linear-gradient(135deg, transparent 70%, rgba(137, 207, 240, 0.03) 70%),
+        linear-gradient(45deg, transparent 70%, rgba(93, 138, 168, 0.03) 70%);
+}
+
+/* Optional: Add a subtle name plate effect */
+.profile-caption {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--accent-blue);
+    font-weight: 500;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(137, 207, 240, 0.2);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-image-container:hover .profile-caption {
+    opacity: 1;
 }
 
         /* ===== QUOTES SECTION ===== */
