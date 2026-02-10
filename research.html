@@ -8,30 +8,30 @@
     
     <!-- Font Awesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         /* ========= UNIFIED PROFESSIONAL COLOR SCHEME ========= */
         :root {
-            /* Professional Academic Color Palette */
-            --color-primary: #05475E;      /* Deep Navy - Primary */
-            --color-secondary: #127686;    /* Teal - Secondary */
-            --color-accent: #339BA7;       /* Light Teal - Accent */
-            --color-light: #ACCDE4;        /* Light Blue - Backgrounds */
-            --color-blue: #4F97C8;         /* Sky Blue - Highlights */
+            /* Elegant Teal-Blue Palette */
+            --color-primary: #007C91; /* Deep Teal Blue */
+            --color-secondary: #0A3D62; /* Dark Navy */
+            --color-accent: #3ABAB4; /* Light Teal */
+            --color-light: #F2F8FA; /* Soft Light Blue */
+            --color-blue: #007C91; /* Teal Blue for Highlights */
             
             /* Neutral Colors */
             --color-bg: #FFFFFF;
-            --color-paper: #F8FAFC;
-            --color-text: #1A2A36;
-            --color-text-light: #5A6B7A;
-            --color-border: #E2E8F0;
+            --color-paper: #F2F8FA;
+            --color-text: #1E293B;
+            --color-text-light: #475569;
+            --color-border: #DDE5EA;
             --color-white: #FFFFFF;
-            --color-shadow: rgba(5, 71, 94, 0.1);
+            --color-shadow: rgba(0, 124, 145, 0.1);
             
             /* Typography */
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            --font-heading: 'Source Sans Pro', sans-serif;
+            --font-sans: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
             --max-width: 1200px;
             --border-radius: 8px;
             --transition: all 0.3s ease;
@@ -60,10 +60,11 @@
         }
 
         h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            color: var(--color-primary);
+            font-family: var(--font-serif);
+            color: var(--color-text);
             font-weight: 600;
             line-height: 1.3;
+            letter-spacing: -0.01em;
         }
 
         p {
@@ -128,7 +129,7 @@
         }
 
         .nav-logo-text {
-            font-family: var(--font-heading);
+            font-family: var(--font-serif);
             font-size: 1.3rem;
             color: var(--color-white);
             font-weight: 700;
@@ -161,7 +162,7 @@
         .hero-section {
             position: relative;
             padding: 6rem 0;
-            background: linear-gradient(rgba(5, 71, 94, 0.9), rgba(18, 118, 134, 0.9)),
+            background: linear-gradient(rgba(0, 124, 145, 0.9), rgba(58, 186, 180, 0.9)),
                         url('https://qcs.ae/wp-content/uploads/2023/04/1020X450.jpg');
             background-size: cover;
             background-position: center;
@@ -268,7 +269,7 @@
         }
 
         .tech-tag {
-            background: rgba(18, 118, 134, 0.1);
+            background: rgba(10, 61, 98, 0.1);
             color: var(--color-secondary);
             padding: 0.25rem 0.75rem;
             border-radius: 12px;
@@ -338,7 +339,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(5, 71, 94, 0.8);
+            background: rgba(0, 124, 145, 0.8);
             color: white;
             padding: 1rem;
         }
@@ -366,7 +367,7 @@
         }
 
         .footer-name {
-            font-family: var(--font-heading);
+            font-family: var(--font-serif);
             font-size: 1.8rem;
             color: var(--color-white);
             margin-bottom: 0.5rem;
@@ -433,11 +434,10 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="professional experience.html" class="nav-link">Professional Experience</a></li>
                     <li><a href="research.html" class="nav-link nav-link-active">Research</a></li>
-                    <li><a href="volunteering.html" class="nav-link">Volunteering</a></li>
-                    <li><a href="cv.html" class="nav-link">CV</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="volunteer.html" class="nav-link">Volunteer</a></li>
+                    <li><a href="Participation.html" class="nav-link">Participation</a></li>
                 </ul>
             </nav>
         </div>
@@ -731,7 +731,6 @@
             <h3 class="footer-name">Tala Khaddour</h3>
             <p class="footer-tagline">Robotics · Intelligent Systems · Sustainable Energy</p>
             <p class="footer-meta">
-                Robotics and Intelligent Systems Engineering | Manara University<br>
                 khaddour.tala@gmail.com | 
                 <a href="https://www.linkedin.com/in/tala-khaddour/" style="color: var(--color-light);">LinkedIn</a> | 
                 <a href="https://github.com/KHADDOUR-TALA" style="color: var(--color-light);">GitHub</a>
